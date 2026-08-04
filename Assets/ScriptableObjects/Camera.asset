@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b81c016566e64f49bfbf779f5117887, type: 3}
+  m_Name: Camera
+  m_EditorClassIdentifier: 
+  <MinPitchLimit>k__BackingField: -89
+  <MaxPitchLimit>k__BackingField: 89
+  <MoveSpeedSmoothing>k__BackingField: 100
+  <TurnSpeedSmoothing>k__BackingField: 100
+  <DeadPlayerTurnSpeedResponse>k__BackingField: 2
+  <BobSpeedMin>k__BackingField: 0
+  <BobAmplitudeMin>k__BackingField: 0.01
+  <BobFrequencyMin>k__BackingField: 0.35
+  <BobSpeedMax>k__BackingField: 1.5
+  <BobAmplitudeMax>k__BackingField: 0.025
+  <BobFrequencyMax>k__BackingField: 2.5
+  <BobHorizontalMultiplier>k__BackingField: 0
+  <BobAmplitudeResponse>k__BackingField: 8
+  <BobFrequencyResponse>k__BackingField: 4
+  <BobDecayDamping>k__BackingField: 0.12
+  <BobSlideAmplitude>k__BackingField: 0
+  <BobSlideFrequency>k__BackingField: 0
+  <AttackDamping>k__BackingField: 0.5
+  <DecayDamping>k__BackingField: 0.3
+  <MoveStrength>k__BackingField: 4
+  <SlideStrength>k__BackingField: 4
+  <StrengthResponse>k__BackingField: 8

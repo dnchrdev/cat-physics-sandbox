@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3ad668faea14844b15bffee90678d3, type: 3}
+  m_Name: Door
+  m_EditorClassIdentifier: 
+  <IsRagdoll>k__BackingField: 0
+  <IsKinematicOnStart>k__BackingField: 0
+  <UseCustomHandDistance>k__BackingField: 1
+  <CustomHandDistance>k__BackingField: 0.5
+  <AnchorDirection>k__BackingField: {x: 0, y: 0, z: 1}
+  <VisualConfig>k__BackingField: {fileID: 11400000, guid: 1ba6ca4d34ef2a842b82a8be24468da4, type: 2}
+  <PhysicsConfig>k__BackingField: {fileID: 11400000, guid: 9ea14693014e0004d8cf84619c42d1b9, type: 2}
+  <HitType>k__BackingField: 1
+  <GrabType>k__BackingField: 3
+  <CollisionHitType>k__BackingField: 0
+  <CollisionTriggerType>k__BackingField: 0

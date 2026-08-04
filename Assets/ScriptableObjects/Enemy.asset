@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d55d0acaae038149b21b4b935f75c82, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: 
+  <GroundMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1
+  <WalkAnimationResponse>k__BackingField: 15
+  <PatrolSpeed>k__BackingField: 1
+  <AnimationPatrolSpeed>k__BackingField: 0.69
+  <PatrolStoppingDistance>k__BackingField: 0.25
+  <PatrolWaitMinDuration>k__BackingField: 1
+  <PatrolWaitMaxDuration>k__BackingField: 2
+  <IsRandomPatroling>k__BackingField: 0
+  <IncludeReversedPatroling>k__BackingField: 1
+  <PatrolingIndexMinIncrement>k__BackingField: 1
+  <PatrolingIndexMaxIncrement>k__BackingField: 3
+  <PatrolingIndexMinReverseStrike>k__BackingField: 1
+  <PatrolingIndexMaxReverseStrike>k__BackingField: 3
+  <HitMinVelocity>k__BackingField: 0.25
+  <PlayerFindDistance>k__BackingField: 25
+  <PursuitSpeed>k__BackingField: 1.5
+  <AnimationPursuitSpeed>k__BackingField: 0.775
+  <PursuitDuration>k__BackingField: 10
+  <VisionSphereRadius>k__BackingField: 0.1
+  <AttackStartMaxYawAngle>k__BackingField: 5
+  <ApplyDamageMaxYawAngle>k__BackingField: 90
+  <AttackRotationSpeed>k__BackingField: 360
+  <AttackCooldown>k__BackingField: 1
+  <AttackSphereDistance>k__BackingField: 1
+  <AttackHorizontalDistance>k__BackingField: 1
+  <RespawnDuration>k__BackingField: 5
+  <VisionMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1
+  <HeadLookYawMaxAngle>k__BackingField: 80
+  <HeadLookPitchMaxAngle>k__BackingField: 80
+  <HeadLookResponse>k__BackingField: 2
+  <PatrolingHeadLookMinSeconds>k__BackingField: 2
+  <PatrolingHeadLookMaxSeconds>k__BackingField: 4
+  <PatrolingHeadLookMinSecondsDelay>k__BackingField: 4
+  <PatrolingHeadLookMaxSecondsDelay>k__BackingField: 8

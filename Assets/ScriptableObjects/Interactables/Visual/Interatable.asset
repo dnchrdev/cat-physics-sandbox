@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acda05a74b580f428de96ebed4f3bd3, type: 3}
+  m_Name: Interatable
+  m_EditorClassIdentifier: 
+  <UseGrabPositionIndication>k__BackingField: 1
+  <UseOutlineOnFocus>k__BackingField: 1
+  <OutlineModeOnFocus>k__BackingField: 0
+  <OutlineColorOnFocus>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
+  <OutlineWidthOnFocus>k__BackingField: 15
+  <OnGrabMaterial>k__BackingField: {fileID: 0}
+  <UseOutlineOnGrab>k__BackingField: 1
+  <OutlineModeOnGrab>k__BackingField: 0
+  <OutlineColorOnGrab>k__BackingField: {r: 0, g: 0, b: 1, a: 1}
+  <OutlineWidthOnGrab>k__BackingField: 15

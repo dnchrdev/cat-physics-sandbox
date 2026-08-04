@@ -1,0 +1,42 @@
+{
+    "SavedID": 123,
+    "TutorialCompleted": true,
+    "LookSensitivity": 50,
+    "AudioVolume": 5,
+    "IsDymanicJoystick": true,
+    "IsFollowJoystick": true,
+    "JoystickRadius": 125,
+    "PositionsX": [
+        -393.0,
+        -217.0,
+        -393.0,
+        -217.0,
+        200.0,
+        -304.000244140625
+    ],
+    "PositionsY": [
+        419.0,
+        424.0,
+        419.0,
+        424.0,
+        200.0,
+        256.0000305175781
+    ],
+    "IsDefault": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 72
+}
