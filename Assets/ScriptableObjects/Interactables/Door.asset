@@ -17,8 +17,8 @@ MonoBehaviour:
   <UseCustomHandDistance>k__BackingField: 1
   <CustomHandDistance>k__BackingField: 0.5
   <AnchorDirection>k__BackingField: {x: 0, y: 0, z: 1}
-  <VisualConfig>k__BackingField: {fileID: 11400000, guid: 1ba6ca4d34ef2a842b82a8be24468da4, type: 2}
-  <PhysicsConfig>k__BackingField: {fileID: 11400000, guid: 9ea14693014e0004d8cf84619c42d1b9, type: 2}
+  <InteractableVisualConfig>k__BackingField: {fileID: 11400000, guid: 1ba6ca4d34ef2a842b82a8be24468da4, type: 2}
+  <InteractablePhysicsConfig>k__BackingField: {fileID: 11400000, guid: 9ea14693014e0004d8cf84619c42d1b9, type: 2}
   <HitType>k__BackingField: 1
   <GrabType>k__BackingField: 3
   <CollisionHitType>k__BackingField: 0

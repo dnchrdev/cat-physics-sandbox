@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Feature.CameraFeature
 {
-    [CreateAssetMenu(fileName = "CameraConfig", menuName = "SO/CameraConfig")]
+    [CreateAssetMenu(fileName = "CameraConfig", menuName = "Config/CameraConfig")]
     public class CameraConfig : ScriptableObject
     {
         [field: Header("CameraPivot")]

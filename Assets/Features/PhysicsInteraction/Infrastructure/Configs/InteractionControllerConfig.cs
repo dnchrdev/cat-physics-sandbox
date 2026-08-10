@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Feature.PhysicsInteraction
 {
-    [CreateAssetMenu(fileName = "InteractionControllerConfig", menuName = "SO/InteractionControllerConfig")]
+    [CreateAssetMenu(fileName = "InteractionControllerConfig", menuName = "Configs/InteractionControllerConfig")]
         public class InteractionControllerConfig : ScriptableObject
     {
         [field: SerializeField] public float FocusDistance { get; private set; } = 0.5f;

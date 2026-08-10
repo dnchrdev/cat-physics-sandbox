@@ -39,9 +39,6 @@ namespace Feature.PlayerFeature
         {
             _tr = transform;
 
-            if (ignoreColliders == null)
-                return;
-
             _ignoreList = ignoreColliders;
 
             _ignoreRaycastLayer = LayerMask.NameToLayer("Ignore Raycast");
@@ -51,6 +48,7 @@ namespace Feature.PlayerFeature
             _calculateRealSurfaceNormal = collideRealSurfaceNormal;
             _calculateRealHitDistance = calculateRealHitDistance;
             _groundLayerMask = groundLayermask;
+            
         }
 
         public void SetSphereRadius(float newRadius)
@@ -86,7 +84,7 @@ namespace Feature.PlayerFeature
             ResetFlags();
 
             Vector3 worldDirection = GetCastDirection();
-            Vector3 worldOrigin = _tr.TransformPoint(_origin);
+            Vector3 worldOrigin = _tr.position;
 
             if (_ignoreListLayers.Length != _ignoreList.Count)
             {
@@ -133,16 +131,7 @@ namespace Feature.PlayerFeature
                 QueryTriggerInteraction.Ignore);
 
             bool hitIsWithinRange = hasHit && _hit.distance + _sphereCastRadius <= realDetectionDistance;
-
-//#if UNITY_EDITOR
-//            DebugShape.DrawArrow(_origin, _direction, duration: Time.deltaTime, length: realDetectionDistance);
-//            DebugShape.DrawSphere(
-//                _origin + _direction.normalized * realDetectionDistance,
-//                sphereCastRadius,
-//                hitIsWithinRange ? Color.red : Color.green,
-//                duration: Time.deltaTime);
-//#endif
-
+            
             if (hitIsWithinRange)
             {
                 _hitPosition = _hit.point;
@@ -156,10 +145,6 @@ namespace Feature.PlayerFeature
                 if (_calculateRealHitDistance)
                     _hitDistance = ExtractDotVector(origin - _hitPosition, direction).magnitude;
 
-//#if UNITY_EDITOR
-//                DebugShape.DrawSphere(_hitPosition, sphereCastRadius * 0.5f, Color.yellow, duration: 0.1f);
-//                DebugShape.DrawArrow(_hitPosition, _hitNormal, duration: 0.1f, length: 0.3f, color: Color.cyan);
-//#endif
 
                 if (_calculateRealSurfaceNormal)
                     _hitNormal = CalculateRealSurfaceNormal(_hitPosition, direction, _hitNormal);
@@ -181,7 +166,7 @@ namespace Feature.PlayerFeature
             {
                 if (Vector3.Angle(hit2.normal, -direction) >= 89f)
                 {
-                    _backupNormal = fallbackNormal;
+                    _backupNormal = _backupNormal;
                     return _backupNormal;
                 }
 

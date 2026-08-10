@@ -7,11 +7,12 @@ namespace Feature.SettingsPanel
 {
     public class SettingsPanelInstaller: MonoInstaller
     {
-        [SerializeField] private SettingsPresenter _presenter;
+        [SerializeField] private SettingsView _view;
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<SettingsPresenter>().FromInstance(_presenter).AsSingle();
+            Container.BindInterfacesAndSelfTo<SettingsPresenter>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<SettingsView>().FromInstance(_view).AsSingle();
         }
     }
 }

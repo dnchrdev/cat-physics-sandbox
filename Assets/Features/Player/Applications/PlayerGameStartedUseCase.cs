@@ -10,7 +10,7 @@ namespace Feature.PlayerFeature
         [Inject] private PlayerRig _playerRig;
         [Inject] private InteractableResetService _interactableResetService;
 
-        public void GameStartedStart()
+        public void GameStarted()
         {
             _characterMotor.SetPosition(_playerRig.GameStartTransform.position);
             _characterMotor.SetRotation(_playerRig.GameStartTransform.rotation);

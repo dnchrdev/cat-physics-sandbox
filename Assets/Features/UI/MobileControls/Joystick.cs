@@ -12,26 +12,26 @@ namespace Feature.UI
         public enum Axes { XAndY, XOnly, YOnly }
 
         [Header("Axes")]
-        [SerializeField] private Axes activeAxes = Axes.XAndY;
-        [SerializeField] private float valueMultiplier = 1f;
+        [SerializeField] private Axes _activeAxes = Axes.XAndY;
+        [SerializeField] private float _valueMultiplier = 1f;
 
         [Header("References")]
-        [SerializeField] private Image thumbImage;
+        [SerializeField] private Image _thumbImage;
 
         [Header("Radii")]
-        [SerializeField] private float movementRadius = 75f;
-        [SerializeField] private float deadzoneRadius = 0f;
+        [SerializeField] private float _movementRadius = 75f;
+        [SerializeField] private float _deadzoneRadius = 0f;
 
         [Header("Value")]
-        [SerializeField] private bool normalizeOutput = true;
+        [SerializeField] private bool _normalizeOutput = true;
 
         [Header("Dynamic mode")]
-        [SerializeField] private bool isDynamic = false;
-        [SerializeField] private RectTransform dynamicActivationArea;
+        [SerializeField] private bool _isDynamic = false;
+        [SerializeField] private RectTransform _dynamicActivationArea;
 
         [Header("Follow pointer")]
-        [SerializeField] private bool isFollowPointer = false;
-        [SerializeField] private float followRadius = 75f;
+        [SerializeField] private bool _isFollowPointer = false;
+        [SerializeField] private float _followRadius = 75f;
 
         private RectTransform _joystickRect;
         private RectTransform _thumbRect;
@@ -51,7 +51,7 @@ namespace Feature.UI
         private PointerEventForwarder _forwarder;
 
         public Vector2 Value => _currentValue;
-        public bool NormalizeOutput { get => normalizeOutput; set => normalizeOutput = value; }
+        public bool NormalizeOutput { get => _normalizeOutput; set => _normalizeOutput = value; }
 
         private void Update()
         {
@@ -73,10 +73,10 @@ namespace Feature.UI
         {
             EnsureRefs();
 
-            movementRadius = radius;
-            followRadius = radius;
-            isDynamic = dynamic;
-            isFollowPointer = follow;
+            _movementRadius = radius;
+            _followRadius = radius;
+            _isDynamic = dynamic;
+            _isFollowPointer = follow;
 
             _joystickRect.sizeDelta = new Vector2(radius * 2f, radius * 2f);
 
@@ -87,7 +87,7 @@ namespace Feature.UI
             ResetThumb();
             TearDownCurrentMode();
 
-            if (isDynamic) ConfigureDynamicMode();
+            if (_isDynamic) ConfigureDynamicMode();
             else ConfigureStaticMode();
 
             _isEnabled = true;
@@ -108,7 +108,7 @@ namespace Feature.UI
             _isHeld = true;
             _pointerLocalOrigin = Vector2.zero;
 
-            if (isDynamic)
+            if (_isDynamic)
             {
                 RectTransformUtility.ScreenPointToWorldPointInRectangle(
                     GetActivationArea(), eventData.position, eventData.pressEventCamera,
@@ -147,36 +147,36 @@ namespace Feature.UI
                 return;
             }
 
-            if (isFollowPointer && rawDelta.sqrMagnitude > _effectiveFollowRadiusSq)
+            if (_isFollowPointer && rawDelta.sqrMagnitude > _effectiveFollowRadiusSq)
             {
-                var followClamped = rawDelta.normalized * followRadius;
+                var followClamped = rawDelta.normalized * _followRadius;
                 _joystickRect.localPosition += (Vector3)(rawDelta - followClamped);
             }
 
             var clampedDelta = rawDelta.sqrMagnitude > _movementRadiusSq
-                ? rawDelta.normalized * movementRadius
+                ? rawDelta.normalized * _movementRadius
                 : rawDelta;
 
             _thumbRect.localPosition = (Vector3)clampedDelta;
 
-            _currentValue = normalizeOutput
-                ? clampedDelta.normalized * valueMultiplier
-                : clampedDelta * _invMovementRadius * valueMultiplier;
+            _currentValue = _normalizeOutput
+                ? clampedDelta.normalized * _valueMultiplier
+                : clampedDelta * _invMovementRadius * _valueMultiplier;
         }
 
         private void EnsureRefs()
         {
             if (_joystickRect == null) _joystickRect = (RectTransform)transform;
-            if (_thumbRect == null) _thumbRect = thumbImage.rectTransform;
+            if (_thumbRect == null) _thumbRect = _thumbImage.rectTransform;
             if (_background == null) _background = GetComponent<Graphic>();
         }
 
         private void CacheRadii()
         {
-            _movementRadiusSq = movementRadius * movementRadius;
-            _deadzoneRadiusSq = deadzoneRadius * deadzoneRadius;
-            _invMovementRadius = movementRadius > 0f ? 1f / movementRadius : 0f;
-            _effectiveFollowRadiusSq = followRadius * followRadius;
+            _movementRadiusSq = _movementRadius * _movementRadius;
+            _deadzoneRadiusSq = _deadzoneRadius * _deadzoneRadius;
+            _invMovementRadius = _movementRadius > 0f ? 1f / _movementRadius : 0f;
+            _effectiveFollowRadiusSq = _followRadius * _followRadius;
         }
 
         private void TearDownCurrentMode()
@@ -207,40 +207,40 @@ namespace Feature.UI
 
         private void EnsureDynamicActivationArea()
         {
-            if (dynamicActivationArea != null) return;
+            if (_dynamicActivationArea != null) return;
 
-            dynamicActivationArea = new GameObject(
+            _dynamicActivationArea = new GameObject(
                 "JoystickActivationArea",
                 typeof(RectTransform),
                 typeof(CanvasRenderer),
                 typeof(Image)
             ).GetComponent<RectTransform>();
 
-            dynamicActivationArea.GetComponent<Image>().color = Color.clear;
+            _dynamicActivationArea.GetComponent<Image>().color = Color.clear;
 
-            var canvas = thumbImage.canvas;
-            dynamicActivationArea.SetParent(canvas.transform, false);
-            dynamicActivationArea.SetAsFirstSibling();
-            dynamicActivationArea.anchorMin = Vector2.zero;
-            dynamicActivationArea.anchorMax = Vector2.one;
-            dynamicActivationArea.sizeDelta = Vector2.zero;
-            dynamicActivationArea.anchoredPosition = Vector2.zero;
+            var canvas = _thumbImage.canvas;
+            _dynamicActivationArea.SetParent(canvas.transform, false);
+            _dynamicActivationArea.SetAsFirstSibling();
+            _dynamicActivationArea.anchorMin = Vector2.zero;
+            _dynamicActivationArea.anchorMax = Vector2.one;
+            _dynamicActivationArea.sizeDelta = Vector2.zero;
+            _dynamicActivationArea.anchoredPosition = Vector2.zero;
         }
 
         private RectTransform GetActivationArea()
         {
-            return dynamicActivationArea != null ? dynamicActivationArea : _joystickRect;
+            return _dynamicActivationArea != null ? _dynamicActivationArea : _joystickRect;
         }
 
         private void SetRaycastTargets(bool value)
         {
             if (_background != null) _background.raycastTarget = value;
-            thumbImage.raycastTarget = value;
+            _thumbImage.raycastTarget = value;
         }
 
         private Vector2 ApplyAxisMask(Vector2 v)
         {
-            return activeAxes switch
+            return _activeAxes switch
             {
                 Axes.XOnly => new Vector2(v.x, 0f),
                 Axes.YOnly => new Vector2(0f, v.y),

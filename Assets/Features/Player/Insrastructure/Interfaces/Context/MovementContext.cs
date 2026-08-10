@@ -13,7 +13,7 @@ namespace Feature.PlayerFeature
         [Inject] public Player Player { get; private set; }
         [Inject] public ICharacterMotor Motor { get; private set; }
         [Inject] public IReadOnlyCharacterMotor ReadOnlyMotor { get; private set; }
-        [Inject] public CharacterConfig Config { get; private set; }
+        [Inject] public PlayerCharacterConfig Config { get; private set; }
         [Inject] public IReadOnlyCamera ReadOnlyCamera { get; private set; }
         [Inject] public SurfaceDetector SurfaceDetector { get; private set; }
         [Inject] public SlidePhysicsCalculator SlidePhysicsCalculator { get; private set; }

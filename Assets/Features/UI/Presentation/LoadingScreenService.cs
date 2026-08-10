@@ -1,26 +1,22 @@
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using UnityEngine;
 using Zenject;
 
 namespace Feature.UI
 {
     public class LoadingScreenService : ILoadingScreenService, IInitializable, IDisposable
     {
-        private UIAnimator _animator;
-        private readonly List<Tween> _tweens = new();
-        private ILoadingScreen _loadingScreen;
+        [Inject] private readonly UIAnimator _animator;
+        [Inject] private readonly ILoadingScreenView _loadingScreenView;
 
-        public LoadingScreenService(UIAnimator animator, ILoadingScreen loadingScreen)
-        {
-            _animator = animator;
-            _loadingScreen = loadingScreen;
-        }
+        private readonly List<Tween> _tweens = new();
 
         public void Initialize()
         {
-            _loadingScreen.ShowLoadingPanel(false);
+            _loadingScreenView.ShowLoadingPanel(false);
             _tweens.Clear();
         }
 
@@ -36,28 +32,30 @@ namespace Feature.UI
             _tweens.Clear();
         }
 
-        public async UniTask StartLoadingAsync()
+        public async UniTask FadeInAsync()
         {
+            _loadingScreenView.ShowLoadingPanel(true);
             KillAllAnimationTweens();
 
-            _loadingScreen.ShowLoadingPanel(true);
-            _loadingScreen.SetLoadingScreenAlpha(0f);
-            _loadingScreen.SetLoadingCircleAlpha(0f);
+            _loadingScreenView.ShowLoadingPanel(true);
+            _loadingScreenView.SetLoadingScreenAlpha(0f);
+            _loadingScreenView.SetLoadingCircleAlpha(0f);
 
             var loadingCircleAlphaTween = _animator.AnimateFromTo(
                 from: 0f,
                 to: 1f,
-                alpha => _loadingScreen.SetLoadingCircleAlpha(alpha),
+                alpha => _loadingScreenView.SetLoadingCircleAlpha(alpha),
                 duration: 1f
             );
 
             _tweens.Add(loadingCircleAlphaTween);
 
-            var loadingCircleZAngleTween = _animator.AnimateFromTo(
+            var loadingCircleZAngleTween = _animator.AnimateFromToBySpeed(
                 from: 0f,
-                to: 2880f,
-                angle => _loadingScreen.SetLoadingCircleZAngle(angle),
-                duration: 15f
+                to: -360f,
+                angle => _loadingScreenView.SetLoadingCircleZAngle(angle),
+                speed: 180f,
+                duration: 0f
             );
 
             _tweens.Add(loadingCircleZAngleTween);
@@ -65,35 +63,38 @@ namespace Feature.UI
             await _animator.AnimateFromTo(
                 from: 0f,
                 to: 1f,
-                alpha => _loadingScreen.SetLoadingScreenAlpha(alpha),
+                alpha => _loadingScreenView.SetLoadingScreenAlpha(alpha),
                 duration: 1f
             ).AsyncWaitForCompletion();
         }
 
-        public async UniTask EndLoadingAsync()
+        public async UniTask FadeOutAsync()
         {
+            Debug.Log("FadeOut");
+            
             KillAllAnimationTweens();
 
-            _loadingScreen.ShowLoadingPanel(true);
-            _loadingScreen.SetLoadingScreenAlpha(0f);
-            _loadingScreen.SetLoadingCircleAlpha(0f);
+            _loadingScreenView.ShowLoadingPanel(true);
+            _loadingScreenView.SetLoadingScreenAlpha(0f);
+            _loadingScreenView.SetLoadingCircleAlpha(0f);
 
             var loadingCircleAlphaTween = _animator.AnimateFromTo(
                 from: 1f,
                 to: 0f,
-                alpha => _loadingScreen.SetLoadingCircleAlpha(alpha),
+                alpha => _loadingScreenView.SetLoadingCircleAlpha(alpha),
                 duration: 1f
             );
 
             _tweens.Add(loadingCircleAlphaTween);
 
-            float fromZ = _loadingScreen.GetLoadingCircleZAngle();
+            float fromZ = _loadingScreenView.GetLoadingCircleZAngle();
 
-            var loadingCircleZAngleTween = _animator.AnimateFromTo(
+            var loadingCircleZAngleTween = _animator.AnimateFromToBySpeed(
                 from: fromZ,
-                to: fromZ + 2880f,
-                angle => _loadingScreen.SetLoadingCircleZAngle(angle),
-                duration: 15f
+                to: fromZ - 360f,
+                angle => _loadingScreenView.SetLoadingCircleZAngle(angle),
+                speed: 180f,
+                duration: 0f
             );
 
             _tweens.Add(loadingCircleZAngleTween);
@@ -101,10 +102,11 @@ namespace Feature.UI
             await _animator.AnimateFromTo(
                 from: 1f,
                 to: 0f,
-                alpha => _loadingScreen.SetLoadingScreenAlpha(alpha),
+                alpha => _loadingScreenView.SetLoadingScreenAlpha(alpha),
                 duration: 1f
             ).AsyncWaitForCompletion();
-
+            
+            _loadingScreenView.ShowLoadingPanel(false);
             KillAllAnimationTweens();
         }
     }

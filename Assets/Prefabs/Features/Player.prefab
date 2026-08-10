@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 2304751734180912997}
+  _touchArea: {fileID: 2304751734180912997}
 --- !u!1 &747725956844750845
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,11 +380,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerRig: {fileID: 2080243770709198086}
   _physicsController: {fileID: 1048947420125015437}
-  _characterConfig: {fileID: 11400000, guid: e8068bab7ae5edc45ac893cb0a270517, type: 2}
-  _surfacesConfig: {fileID: 11400000, guid: 05f5d81be4597294fb9ececd3883c41b, type: 2}
-  _pcGameplayPanel: {fileID: 7782203863958907342}
-  _mobileGameplayPanel: {fileID: 4442270372505230270}
-  _knockoutView: {fileID: 8415906547870404006}
+  playerCharacterConfig: {fileID: 11400000, guid: e8068bab7ae5edc45ac893cb0a270517, type: 2}
+  _surfaces: {fileID: 11400000, guid: 05f5d81be4597294fb9ececd3883c41b, type: 2}
+  _mobileControlView: {fileID: 2090920024188925885}
+  _pcGameplayView: {fileID: 7598660802683973252}
+  _knockoutView: {fileID: 8674387825340826050}
 --- !u!1 &1446532515459867692
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 4811143202773700668}
+  _touchArea: {fileID: 4811143202773700668}
 --- !u!1 &1530406209752421745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 5698023728257704979}
+  _touchArea: {fileID: 5698023728257704979}
 --- !u!1 &5176549391705241210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 7016358013914080315}
+  _touchArea: {fileID: 7016358013914080315}
 --- !u!1 &5245788013543340175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,7 +2626,7 @@ GameObject:
   - component: {fileID: 6291513296602109507}
   - component: {fileID: 5277344822898174031}
   - component: {fileID: 5683693832148103548}
-  - component: {fileID: 7782203863958907342}
+  - component: {fileID: 7598660802683973252}
   m_Layer: 0
   m_Name: PCGameplayPanel
   m_TagString: Untagged
@@ -2693,7 +2693,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7782203863958907342
+--- !u!114 &7598660802683973252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2702,9 +2702,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5245788013543340175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d2de45fff75af4f8f4d8eef2c7c062, type: 3}
+  m_Script: {fileID: 11500000, guid: 79372a32360240e28a8dcb5ba091f8a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.PlayerFeature.PCGameplayView
 --- !u!1 &5598695056002067838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 7433244883219909451}
+  _touchArea: {fileID: 7433244883219909451}
 --- !u!1 &5945135003669175915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,16 +3129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5cc26331b4368d4f861ca818d2483ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeAxes: 0
-  valueMultiplier: 1
-  thumbImage: {fileID: 8021137652421681773}
-  movementRadius: 150
-  deadzoneRadius: 0
-  normalizeOutput: 1
-  isDynamic: 0
-  dynamicActivationArea: {fileID: 2822808660916468149}
-  isFollowPointer: 0
-  followRadius: 150
+  _activeAxes: 0
+  _valueMultiplier: 1
+  _thumbImage: {fileID: 8021137652421681773}
+  _movementRadius: 75
+  _deadzoneRadius: 0
+  _normalizeOutput: 1
+  _isDynamic: 0
+  _dynamicActivationArea: {fileID: 2822808660916468149}
+  _isFollowPointer: 0
+  _followRadius: 75
 --- !u!1 &6648207812187231148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,6 +3363,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -3494,7 +3495,7 @@ GameObject:
   - component: {fileID: 6374749054103319573}
   - component: {fileID: 2343519700739901948}
   - component: {fileID: 3704834213142775858}
-  - component: {fileID: 8415906547870404006}
+  - component: {fileID: 8674387825340826050}
   m_Layer: 0
   m_Name: KnockoutPanel
   m_TagString: Untagged
@@ -3561,7 +3562,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8415906547870404006
+--- !u!114 &8674387825340826050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3570,9 +3571,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7869315098176870243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991f0d62c6ae1b043a5dcb4adf360eb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fc26da7ed4a40d5afcb019395481350, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.PlayerFeature.KnockoutView
   _continueButton: {fileID: 4534686143989438732}
   _restartButton: {fileID: 5780428014289525618}
 --- !u!1 &8306506030802189592
@@ -3751,7 +3752,7 @@ GameObject:
   - component: {fileID: 745856784440063831}
   - component: {fileID: 5340317964770321721}
   - component: {fileID: 5322959824472982113}
-  - component: {fileID: 4442270372505230270}
+  - component: {fileID: 2090920024188925885}
   m_Layer: 0
   m_Name: MobileControlPanel
   m_TagString: Untagged
@@ -3826,7 +3827,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4442270372505230270
+--- !u!114 &2090920024188925885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3835,9 +3836,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8831617539033998499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da70423c1d2ba4a4fbf12e766e791a92, type: 3}
+  m_Script: {fileID: 11500000, guid: d47163ec3eda4ecfb40c0f3be9fbd767, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.PlayerFeature.MobileControlView
   _openSettingsButton: {fileID: 4982613915287909841}
   _openMobileAdjustmentButton: {fileID: 2783878031897748333}
   _joystickMove: {fileID: 2447146289212470246}
@@ -3852,7 +3853,7 @@ MonoBehaviour:
   _hitButton: {fileID: 8755846540674078510}
   _grabButton: {fileID: 4642283853620803207}
   _throwButton: {fileID: 3421206174559965900}
-  _releasepButton: {fileID: 6645471086100793709}
+  _releaseButton: {fileID: 6645471086100793709}
 --- !u!1 &9196768153216738774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,4 +3959,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d514c8906a7d6b419ce8d9c2ff773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {fileID: 7606769323614859226}
+  _touchArea: {fileID: 7606769323614859226}

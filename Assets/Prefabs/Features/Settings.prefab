@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73112bf0d3cd8bf4a9326285bcb6c66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presenter: {fileID: 4733319465257236486}
+  _view: {fileID: 4529573442871941027}
 --- !u!1 &2778440184781462084
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +838,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -2776,9 +2777,9 @@ GameObject:
   - component: {fileID: 308404168317392965}
   - component: {fileID: 1750029733969866582}
   - component: {fileID: 7387098919139659569}
-  - component: {fileID: 4733319465257236486}
+  - component: {fileID: 4529573442871941027}
   m_Layer: 5
-  m_Name: Presenter
+  m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2843,7 +2844,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4733319465257236486
+--- !u!114 &4529573442871941027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2852,13 +2853,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7363286880986985943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4d7c10fa93a6944a59a9f55383ba43, type: 3}
+  m_Script: {fileID: 11500000, guid: b4af7220f5b34692bf96d6075e2e3e9f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.SettingsPanel.SettingsView
   _exitSettingsButton: {fileID: 2768912574584641991}
   _sensitivitySlider: {fileID: 4826094053912940836}
   _volumeSlider: {fileID: 1218676009478898201}
-  _joystickSlider: {fileID: 2618408319920620173}
+  _joystickSlider: {fileID: 1218676009478898201}
   _dynamicJoystickButton: {fileID: 6469976199704727179}
   _followJoystickButton: {fileID: 6277145963892602524}
 --- !u!1 &7471871263222809410

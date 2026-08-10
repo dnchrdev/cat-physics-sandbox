@@ -18,10 +18,10 @@ namespace Feature.UI
 
         public void ApplyState(PanelState state)
         {
-            Cursor.visible = state.CursorVisible;
+            Cursor.visible = state.IsCursorVisible;
             Cursor.lockState = state.LockState;
 
-            if (state.Pause)
+            if (state.IsPaused)
                 _gamePauseService.SetPause();
             else
                 _gamePauseService.SetPlay();

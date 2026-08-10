@@ -6,7 +6,7 @@ namespace Feature.UI
 {
     public interface ILoadingScreenService
     {
-        UniTask StartLoadingAsync();
-        UniTask EndLoadingAsync();
+        UniTask FadeInAsync();
+        UniTask FadeOutAsync();
     }
 }

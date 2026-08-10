@@ -16,7 +16,7 @@ namespace Feature.PlayerFeature
         protected Player Player => _ctx.Player;
         protected ICharacterMotor Motor => _ctx.Motor;
         protected Vector3 MotorPosition => _ctx.ReadOnlyMotor.GetPosition();
-        protected CharacterConfig Config => _ctx.Config;
+        protected PlayerCharacterConfig Config => _ctx.Config;
         protected Vector3 CameraForward => _ctx.ReadOnlyCamera.Forward;
         protected SurfaceDetector SurfaceDetector => _ctx.SurfaceDetector;
         protected SlidePhysicsCalculator UnstableSlideCalculator => _ctx.SlidePhysicsCalculator;

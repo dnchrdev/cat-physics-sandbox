@@ -7,11 +7,11 @@ namespace Feature.PlayerFeature
     {
         [SerializeField] private PlayerRig _playerRig;
         [SerializeField] private CharacterMotor _physicsController;
-        [SerializeField] private CharacterConfig _characterConfig;
-        [SerializeField] private SurfacesConfigSO _surfacesConfig;
-        [SerializeField] private PCGameplayPresenter _pcGameplayPanel;
-        [SerializeField] private MobileControlPresenter _mobileGameplayPanel;
-        [SerializeField] private PlayerKnockoutPanel _knockoutView;
+        [SerializeField] private PlayerCharacterConfig playerCharacterConfig;
+        [SerializeField] private SurfacesConfig _surfaces;
+        [SerializeField] private MobileControlView  _mobileControlView;
+        [SerializeField] private PCGameplayView _pcGameplayView;
+        [SerializeField] private KnockoutView _knockoutView;
 
         public override void InstallBindings()
         {
@@ -21,14 +21,11 @@ namespace Feature.PlayerFeature
 
             //Application
             Container.Bind<SlidePhysicsCalculator>().AsSingle();
-            Container.Bind<DeadCharacterState>().AsSingle();
-            Container.Bind<WalkCharacterState>().AsSingle();
-            Container.Bind<JumpCharacterState>().AsSingle();
-            Container.Bind<AirborneCharacterState>().AsSingle();
-
             Container.BindInterfacesTo<CharacterStateMachine>().AsSingle();
             Container.Bind<PlayerRespawnUseCase>().AsSingle();
             Container.Bind<PlayerGameStartedUseCase>().AsSingle();
+            
+            //Adapter
 
             //Infrastructure
             Container.Bind<MovementContext>().AsSingle();
@@ -36,16 +33,17 @@ namespace Feature.PlayerFeature
 
             Container.BindInterfacesTo<CharacterMotor>().FromInstance(_physicsController).AsSingle();
 
-            Container.Bind<CharacterConfig>().FromInstance(_characterConfig).AsSingle();
-            Container.Bind<SurfacesConfigSO>().FromInstance(_surfacesConfig).AsSingle();
+            Container.Bind<PlayerCharacterConfig>().FromInstance(playerCharacterConfig).AsSingle();
+            Container.Bind<SurfacesConfig>().FromInstance(_surfaces).AsSingle();
             Container.Bind<SurfaceDetector>().AsSingle();
 
             //Presentation
-            Container.BindInterfacesAndSelfTo<PlayerPresenterOrchestrator>().AsSingle();
-
-            Container.Bind<MobileControlPresenter>().FromInstance(_mobileGameplayPanel).AsSingle();
-            Container.Bind<PCGameplayPresenter>().FromInstance(_pcGameplayPanel).AsSingle();
-            Container.Bind<PlayerKnockoutPanel>().FromInstance(_knockoutView).AsSingle();
+            Container.BindInterfacesAndSelfTo<GameplayControlPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<KnockoutPresenter>().AsSingle();
+            
+            Container.BindInterfacesTo<MobileControlView>().FromInstance(_mobileControlView).AsSingle();
+            Container.BindInterfacesTo<PCGameplayView>().FromInstance(_pcGameplayView).AsSingle();
+            Container.BindInterfacesTo<KnockoutView>().FromInstance(_knockoutView).AsSingle();
         }
     }
 }

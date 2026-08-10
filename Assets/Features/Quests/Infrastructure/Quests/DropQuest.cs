@@ -26,7 +26,7 @@ namespace Feature.Quests
             }
         }
 
-        void OnHit(IQuestInteractable item, Collision col, Rigidbody rb)
+        void OnHit(IQuestInteractable item, Collision col)
         {
             if (item.GetTransform().position.y < _minY)
             {

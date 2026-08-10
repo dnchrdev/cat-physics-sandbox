@@ -14,7 +14,7 @@ namespace Feature.Quests
         public string DescriptionENG;
     }
 
-    [CreateAssetMenu(fileName = "QuestConfig", menuName = "SO/QuestConfig")]
+    [CreateAssetMenu(fileName = "QuestsConfig", menuName = "Configs/QuestsConfig")]
     public class QuestsConfig : ScriptableObject
     {
         [SerializeField] private List<QuestData> _quests;

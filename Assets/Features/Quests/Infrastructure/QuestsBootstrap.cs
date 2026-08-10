@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Feature.Quests
 {
-    public class QuestsBootstrap : MonoBehaviour, IInitializable
+    public class QuestsBootstrap : MonoBehaviour
     {
         [SerializeField] private string _firstQuestName;
         
@@ -26,7 +26,7 @@ namespace Feature.Quests
             _quests.AddRange(gameObject.GetComponents<BaseQuest>());
         }
 
-        public void Initialize()
+        public void Awake()
         {
             foreach (var questBase in _quests)
             {
@@ -37,6 +37,9 @@ namespace Feature.Quests
                 var questData = _config.GetQuest(questBase.Name);
                 
                 string description;
+                
+                Debug.Log($"YG2.lang = {YG2.lang}");
+                
                 if (YG2.lang == "ru")
                 {
                     description =  questData.DescriptionRU;

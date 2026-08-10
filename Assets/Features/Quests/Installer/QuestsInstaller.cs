@@ -8,10 +8,10 @@ namespace Feature.Quests
     {
         [SerializeField] private QuestsConfig _config;
         [SerializeField] private QuestsBootstrap _bootstrap;
-        [SerializeField] private CurrentQuestView _pcCurrentQuestView;
-        [SerializeField] private CurrentQuestView _mobileCurrentQuestView;
+        [SerializeField] private PCCurrentQuestView _pcCurrentQuestView;
+        [SerializeField] private MobileCurrentQuestView _mobileCurrentQuestView;
         [SerializeField] private AllQuestsView _allQuestsView;
-        [SerializeField] private QuestHitsView _questHitsView;
+        [SerializeField] private QuestHintsView _questHintsView;
 
         private IReadOnlyControlSettings _controlSettings;
 
@@ -28,7 +28,7 @@ namespace Feature.Quests
             Container.Bind<QuestCardFactory>().AsSingle();
             Container.Bind<QuestCaldsManager>().AsSingle();
             Container.BindInterfacesAndSelfTo<QuestTipsManager>().AsSingle();
-            Container.Bind<TipFactory>().AsSingle();
+            Container.Bind<HintsFactory>().AsSingle();
 
             Container.Bind<QuestsConfig>().FromInstance(_config).AsSingle();
             Container.BindInterfacesTo<QuestsBootstrap>().FromInstance(_bootstrap).AsSingle();
@@ -36,22 +36,22 @@ namespace Feature.Quests
 
             if (_controlSettings.IsMobile)
             {
-                Container.Bind<CurrentQuestView>().FromInstance(_mobileCurrentQuestView).AsSingle();
+                Container.BindInterfacesTo<MobileCurrentQuestView>().FromInstance(_mobileCurrentQuestView).AsSingle();
                 Container.BindInterfacesTo<CurrentQuestPresenter>().AsSingle().NonLazy();;
                 _pcCurrentQuestView.gameObject.SetActive(false);
             }
             else
             {
-                Container.Bind<CurrentQuestView>().FromInstance(_pcCurrentQuestView).AsSingle();
+                Container.BindInterfacesTo<PCCurrentQuestView>().FromInstance(_pcCurrentQuestView).AsSingle();
                 Container.BindInterfacesTo<CurrentQuestPresenter>().AsSingle().NonLazy();
                 _mobileCurrentQuestView.gameObject.SetActive(false);
             }
 
-            Container.Bind<AllQuestsView>().FromInstance(_allQuestsView).AsSingle();
-            Container.Bind<AllQuestsPresenter>().AsSingle().NonLazy();
-
-            Container.Bind<QuestHitsView>().FromInstance(_questHitsView).AsSingle();
+            Container.BindInterfacesAndSelfTo<AllQuestsPresenter>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<QuestHintsPresenter>().AsSingle().NonLazy();
+
+            Container.BindInterfacesTo<AllQuestsView>().FromInstance(_allQuestsView).AsSingle();
+            Container.BindInterfacesTo<QuestHintsView>().FromInstance(_questHintsView).AsSingle();
             
         }
     }

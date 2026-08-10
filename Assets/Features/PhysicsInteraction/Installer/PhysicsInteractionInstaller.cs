@@ -11,8 +11,8 @@ namespace Feature.PhysicsInteraction
         [SerializeField] private InteractableHandRig _handRig;
         [SerializeField] private InteractionRoot _interactionRoot;
         [SerializeField] private InteractionControllerConfig _interactionControllerConfig;
-        [SerializeField] private InteractionTipShower _pcInteractionTipShower;
-        [SerializeField] private InteractionTipShower _mobileInteractionTipShower;
+        [SerializeField] private InteractionHintsShower _pcInteractionHintsShower;
+        [SerializeField] private InteractionHintsShower _mobileInteractionHintsShower;
         [SerializeField] private InteractionIndication _interactionIndication;
 
         private IReadOnlyControlSettings _controlSettings;
@@ -31,14 +31,14 @@ namespace Feature.PhysicsInteraction
 
             if (_controlSettings.IsMobile)
             {
-                Container.Bind<InteractionTipShower>().FromInstance(_mobileInteractionTipShower).AsSingle();
+                Container.BindInterfacesAndSelfTo<InteractionHintsShower>().FromInstance(_mobileInteractionHintsShower).AsSingle();
             }
             else
             {
-                Container.Bind<InteractionTipShower>().FromInstance(_pcInteractionTipShower).AsSingle();
+                Container.BindInterfacesAndSelfTo<InteractionHintsShower>().FromInstance(_pcInteractionHintsShower).AsSingle();
             }
 
-            Container.Bind<InteractionIndication>().FromInstance(_interactionIndication).AsSingle();
+            Container.BindInterfacesAndSelfTo<InteractionIndication>().FromInstance(_interactionIndication).AsSingle();
             Container.Bind<InteractableHandRig>().FromInstance(_handRig).AsSingle();
             Container.Bind<InteractionControllerConfig>().FromInstance(_interactionControllerConfig).AsSingle();
             Container.Bind<InteractionRoot>().FromInstance(_interactionRoot).AsSingle();

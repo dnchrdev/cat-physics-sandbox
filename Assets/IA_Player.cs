@@ -191,6 +191,16 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""SaveMetrics"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d05a106-1e6b-48e7-985e-8f280650f4cb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -347,6 +357,17 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                     ""action"": ""QuestAdv"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8a816c6-62b1-42aa-b0f6-a79023412e99"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveMetrics"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -365,6 +386,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         m_Keyboard_ToggleSettings = m_Keyboard.FindAction("ToggleSettings", throwIfNotFound: true);
         m_Keyboard_AllQuests = m_Keyboard.FindAction("AllQuests", throwIfNotFound: true);
         m_Keyboard_QuestAdv = m_Keyboard.FindAction("QuestAdv", throwIfNotFound: true);
+        m_Keyboard_SaveMetrics = m_Keyboard.FindAction("SaveMetrics", throwIfNotFound: true);
     }
 
     ~@IA_Player()
@@ -455,6 +477,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
     private readonly InputAction m_Keyboard_ToggleSettings;
     private readonly InputAction m_Keyboard_AllQuests;
     private readonly InputAction m_Keyboard_QuestAdv;
+    private readonly InputAction m_Keyboard_SaveMetrics;
     /// <summary>
     /// Provides access to input actions defined in input action map "Keyboard".
     /// </summary>
@@ -506,6 +529,10 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Keyboard/QuestAdv".
         /// </summary>
         public InputAction @QuestAdv => m_Wrapper.m_Keyboard_QuestAdv;
+        /// <summary>
+        /// Provides access to the underlying input action "Keyboard/SaveMetrics".
+        /// </summary>
+        public InputAction @SaveMetrics => m_Wrapper.m_Keyboard_SaveMetrics;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -562,6 +589,9 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
             @QuestAdv.started += instance.OnQuestAdv;
             @QuestAdv.performed += instance.OnQuestAdv;
             @QuestAdv.canceled += instance.OnQuestAdv;
+            @SaveMetrics.started += instance.OnSaveMetrics;
+            @SaveMetrics.performed += instance.OnSaveMetrics;
+            @SaveMetrics.canceled += instance.OnSaveMetrics;
         }
 
         /// <summary>
@@ -603,6 +633,9 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
             @QuestAdv.started -= instance.OnQuestAdv;
             @QuestAdv.performed -= instance.OnQuestAdv;
             @QuestAdv.canceled -= instance.OnQuestAdv;
+            @SaveMetrics.started -= instance.OnSaveMetrics;
+            @SaveMetrics.performed -= instance.OnSaveMetrics;
+            @SaveMetrics.canceled -= instance.OnSaveMetrics;
         }
 
         /// <summary>
@@ -713,5 +746,12 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnQuestAdv(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SaveMetrics" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSaveMetrics(InputAction.CallbackContext context);
     }
 }

@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4186060553140189485}
   - component: {fileID: 5228236973891225775}
   m_Layer: 0
-  m_Name: LoadingPanel
+  m_Name: LoadingScreenView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f525090f2c1bcc48a033b8162bb9005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingScreen: {fileID: 5228236973891225775}
+  loadingScreenView: {fileID: 5228236973891225775}
   _gameplayPanelConfig: {fileID: 11400000, guid: 18c9c8931e3503b4ea2f3e41a3ee169c, type: 2}
 --- !u!1 &3155060601394642120
 GameObject:
@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 3132309313547599164}
   - component: {fileID: 3565628418768181526}
   - component: {fileID: 3400242882891764004}
+  - component: {fileID: 8946885594563290543}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -317,6 +318,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -362,6 +364,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8946885594563290543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675147634949742557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b277a125b903a244aa4b17ed17038157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.Shared.CanvasSortOrder
+  _sortOrder: 100
 --- !u!1 &7405941155180692654
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -495,15 +510,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6efc6dd1d4260004c923ca42c8f7151f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Feature.PlayerFeature
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
-    public class CharacterMotor : MonoBehaviour, ICharacterMotor, ICharacterMotorReset, IReadOnlyCharacterMotor
+    public class CharacterMotor : MonoBehaviour, ICharacterMotor, ICharacterMotorReset, IReadOnlyCharacterMotor, IInitializable
     {
         [Header("Floating")] [Range(0f, 2f)] [SerializeField]
         private float _floatingDistance = 0.25f;
@@ -35,15 +36,14 @@ namespace Feature.PlayerFeature
 
         private Collider _collider;
         private Rigidbody _rb;
-        private Transform _tr;
         private CharacterSensor _sensor;
 
-        private void Awake()
+        public void Initialize()
         {
             Setup();
 
             _ignoreColliders.Add(_collider);
-            _sensor = new CharacterSensor(this._tr, _ignoreColliders, _calculateRealSurfaceNormal,
+            _sensor = new CharacterSensor(transform, _ignoreColliders, _calculateRealSurfaceNormal,
                 _calculateRealHitDistance, _groundMask);
 
             RecalculateColliderDimensions();
@@ -117,7 +117,6 @@ namespace Feature.PlayerFeature
 
         private void Setup()
         {
-            _tr = transform;
             _collider = GetComponent<Collider>();
             _rb = GetComponent<Rigidbody>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
@@ -185,11 +184,13 @@ namespace Feature.PlayerFeature
 
             if (!_sensor.HasDetectedHit())
             {
+                //Debug.Log($"false sensor");
+                //RecalibrateSensor();
                 _isStable = false;
                 _isGrounded = false;
                 return;
             }
-
+            //Debug.Log($"grounded = {IsGrounded()}");
             float angle = Vector3.Angle(_sensor.GetNormal(), Vector3.up);
 
             _isStable = angle <= _stableAngle;
@@ -199,8 +200,7 @@ namespace Feature.PlayerFeature
             float distanceToGo = _floatingDistance - distance;
 
             _currentGroundAdjustmentVelocity = Vector3.zero;
-
-
+            
             if (IsGrounded())
             {
                 Vector3 normal = _sensor.GetNormal();

@@ -18,7 +18,7 @@ namespace Feature.PhysicsInteraction
 
         public event Action<IQuestInteractable> QuestHitEvent;
         public event Action<IQuestInteractable> QuestThrowEvent;
-        public event Action<IQuestInteractable, Collision, Rigidbody> QuestColliderHitEvent;
+        public event Action<IQuestInteractable, Collision> QuestColliderHitEvent;
 
         [SerializeField] private InteractableConfig _config;
         [SerializeField] private Rigidbody _rb;
@@ -43,12 +43,13 @@ namespace Feature.PhysicsInteraction
         private InteractionType _interactionType;
 
         public bool IsGrabbed => _grabable?.IsGrabbed() ?? false;
-        public bool UseGrabPositionIndication => _config.VisualConfig.UseGrabPositionIndication;
+        public bool UseGrabPositionIndication => _config.InteractableVisualConfig.UseGrabPositionIndication;
         public InteractionType InteractionType => _interactionType;
         public Vector3 Anchor => _config.AnchorDirection;
         public bool UseCustomHandDistance => _config.UseCustomHandDistance;
         public float CustomHandDistance => _config.CustomHandDistance;
         public Transform GetTransform() => transform;
+        public Rigidbody GetRigidbody() => _rb;
 
         [Inject]
         private void Construct(
@@ -80,9 +81,9 @@ namespace Feature.PhysicsInteraction
             _collider = collider;
             _colliderHitEvent = hitEnter;
 
-            _physics = new InteractablePhysics(_rb, _collider, _config.PhysicsConfig, _config.IsKinematicOnStart,
+            _physics = new InteractablePhysics(_rb, _collider, _config.InteractablePhysicsConfig, _config.IsKinematicOnStart,
                 _config.IsRagdoll);
-            _visual = new InteractableVisual(_meshRenderer, _config.VisualConfig);
+            _visual = new InteractableVisual(_meshRenderer, _config.InteractableVisualConfig);
             _ownership = new InteractableOwnership();
             _state = new InteractableState(transform, _physics, _config.IsKinematicOnStart);
 
@@ -172,7 +173,7 @@ namespace Feature.PhysicsInteraction
             var owner = _ownership.GetOwner();
             _ownership.ClearOwner();
             
-            QuestColliderHitEvent?.Invoke(this, collision, _rb);
+            QuestColliderHitEvent?.Invoke(this, collision);
 
             if (_hitHandler == null) return;
             if (owner == null) return;

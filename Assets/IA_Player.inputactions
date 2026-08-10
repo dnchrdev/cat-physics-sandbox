@@ -105,6 +105,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "SaveMetrics",
+                    "type": "Button",
+                    "id": "9d05a106-1e6b-48e7-985e-8f280650f4cb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -259,6 +269,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "QuestAdv",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8a816c6-62b1-42aa-b0f6-a79023412e99",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveMetrics",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

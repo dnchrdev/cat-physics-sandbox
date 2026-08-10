@@ -7,12 +7,13 @@ using Zenject;
 public class TutorialInstaller : MonoInstaller
 {
     [SerializeField] private TutorialCompletedChecker _tutorialCompletedChecker;
-    [SerializeField] private TutorialPresenter _presenter;
+    [SerializeField] private TutorialCompletedView _tutorialCompletedView;
 
     public override void InstallBindings()
     {
         Container.BindInterfacesAndSelfTo<TutorialCompletedChecker>().FromInstance(_tutorialCompletedChecker).AsSingle();
         Container.Bind<CompleteTutorialUseCase>().AsSingle();
-        Container.BindInterfacesTo<TutorialPresenter>().FromInstance(_presenter).AsSingle().NonLazy();
+        Container.Bind<TutorialCompletedPresenter>().AsSingle().NonLazy();
+        Container.BindInterfacesTo<TutorialCompletedView>().FromInstance(_tutorialCompletedView).AsSingle().NonLazy();
     }
 }

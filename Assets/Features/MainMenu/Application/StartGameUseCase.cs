@@ -3,25 +3,45 @@ using Feature.Core;
 using Feature.Scene;
 using Feature.Storage;
 using Feature.UI;
+using UnityEngine;
+using Zenject;
 
 namespace Feature.MainMenu
 {
     public class StartGameUseCase
     {
-        private IStorageDataService _storageDataService;
-        private SceneLoaderService _levelLoaderService;
+        [Inject] private readonly SceneLoadingService _sceneLoadingService;
+        [Inject] private readonly ILoadingScreenService _loadingScreenService;
+        [Inject] private readonly StorageDataService _storageDataService;
 
-        public StartGameUseCase(IStorageDataService storageDataService, SceneLoaderService levelLoaderService)
+        
+        public async UniTask<Result> StartTutorialAsync()
         {
-            _storageDataService = storageDataService;
-            _levelLoaderService = levelLoaderService;
+            return await LoadSceneUnloadMainMenuAsync(SceneId.Tutorial);
+        }
+        
+        public async UniTask<Result> StartGameplayAsync()
+        {
+            return await LoadSceneUnloadMainMenuAsync(SceneId.Gameplay);
         }
 
-        public void StartGame(bool isTutorial)
+        private async UniTask<Result> LoadSceneUnloadMainMenuAsync(SceneId scene)
         {
-            _storageDataService.Save();
-            _levelLoaderService.GoToNextScene(isTutorial? "Tutorial": "Gameplay", "MainMenu").Forget();
-        }
+            await _loadingScreenService.FadeInAsync();
 
+            var unloadResult = await _sceneLoadingService.UnloadAsync(SceneId.MainMenu);
+            if (unloadResult.IsSuccess == false) return unloadResult;
+ 
+            var loadResult = await _sceneLoadingService.LoadAsync(scene, false);
+            if (loadResult.IsSuccess == false) return loadResult;
+
+            await UniTask.WaitForEndOfFrame();
+                
+            var activateResult = await _sceneLoadingService.ActivateAsync(scene);
+            if (activateResult.IsSuccess == false) return activateResult;
+            
+            await _loadingScreenService.FadeOutAsync();
+            return Result.Success();
+        }
     }
 }

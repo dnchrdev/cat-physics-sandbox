@@ -57,6 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -235,9 +236,9 @@ GameObject:
   - component: {fileID: 1568529390630328110}
   - component: {fileID: 844552450516962364}
   - component: {fileID: 1586256774059515752}
-  - component: {fileID: 8984766718496157756}
+  - component: {fileID: 3576124690064282011}
   m_Layer: 0
-  m_Name: Presenter
+  m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,7 +302,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8984766718496157756
+--- !u!114 &3576124690064282011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,9 +311,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3554685374469158180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca10bbc696071e04f986948299b25102, type: 3}
+  m_Script: {fileID: 11500000, guid: fe759cca285f4f6da489d6c85871fe4e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.Tutorial.TutorialCompletedView
   _startGameButton: {fileID: 865946155886296218}
 --- !u!1 &5987178409176796258
 GameObject:
@@ -361,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tutorialCompletedChecker: {fileID: 7341561800711283437}
-  _presenter: {fileID: 8984766718496157756}
+  _tutorialCompletedView: {fileID: 3576124690064282011}
 --- !u!1 &6740429176530475590
 GameObject:
   m_ObjectHideFlags: 0

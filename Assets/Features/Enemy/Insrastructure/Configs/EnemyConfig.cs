@@ -2,7 +2,7 @@
 
 namespace Feature.EnemyFeature
 {
-    [CreateAssetMenu(fileName = "EnemyConfig", menuName = "SO/EnemyConfig")]
+    [CreateAssetMenu(fileName = "EnemyConfig", menuName = "Configs/EnemyConfig")]
     public class EnemyConfig : ScriptableObject
     {
         [field: Header("Common")]

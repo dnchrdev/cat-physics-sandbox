@@ -216,6 +216,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _additionalTips: []
+  _minInteractableHitVelocity: 0.25
 --- !u!1 &643388778053806113
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,9 +861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301a60ac1600324478ffdcf5baa0a54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ShowedContent>k__BackingField: {fileID: 1750642307154037105}
-  <HiddenContent>k__BackingField: {fileID: 5351584516936005344}
-  <ClosedButton>k__BackingField: {fileID: 6210643190165363441}
+  _showedContent: {fileID: 1750642307154037105}
+  _hiddenContent: {fileID: 5351584516936005344}
+  _closeButton: {fileID: 6210643190165363441}
 --- !u!1 &1432741703884691346
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,13 +944,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558753484619479586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e8583e75b631f4592368470a37025c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f3557d583094974bfba69a6927e53c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Description>k__BackingField: {fileID: 2847385925233145944}
-  <FillImage>k__BackingField: {fileID: 7546922299339520156}
-  <HintsButton>k__BackingField: {fileID: 2448463323284828525}
-  <AllQuestsButton>k__BackingField: {fileID: 2731543168085339895}
+  _description: {fileID: 2847385925233145944}
+  _fillImage: {fileID: 7546922299339520156}
 --- !u!1 &1583967745487946391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,13 +1242,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2068105713083982378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e8583e75b631f4592368470a37025c, type: 3}
+  m_Script: {fileID: 11500000, guid: b113af62f21f46a0bb1a019409828e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Description>k__BackingField: {fileID: 4595625102432155618}
-  <FillImage>k__BackingField: {fileID: 2668788817612523094}
-  <HintsButton>k__BackingField: {fileID: 8758981886272128084}
-  <AllQuestsButton>k__BackingField: {fileID: 7570499901030759399}
+  _description: {fileID: 4595625102432155618}
+  _fillImage: {fileID: 2668788817612523094}
+  _hintsButton: {fileID: 8758981886272128084}
+  _allQuestsButton: {fileID: 7570499901030759399}
 --- !u!1 &2092326041436940025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,8 +1684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dd5010243296948979fd894043c763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <VisibleTipParent>k__BackingField: {fileID: 7933758196727402556}
-  <HiddenTipParent>k__BackingField: {fileID: 5672985994220736879}
+  _visibleTipParent: {fileID: 7933758196727402556}
+  _hiddenTipParent: {fileID: 5672985994220736879}
 --- !u!1 &4015885052103317659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +1981,7 @@ MonoBehaviour:
   _pcCurrentQuestView: {fileID: 3684568423072972633}
   _mobileCurrentQuestView: {fileID: 4846214960550547044}
   _allQuestsView: {fileID: 7488473408176953335}
-  _questHitsView: {fileID: 9070612700995569884}
+  _questHintsView: {fileID: 9070612700995569884}
 --- !u!1 &4885565978554377127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,6 +2530,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

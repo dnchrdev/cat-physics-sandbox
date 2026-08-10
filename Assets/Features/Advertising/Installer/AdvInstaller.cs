@@ -6,13 +6,13 @@ namespace Feature.Advertising
 {
     public class AdvInstaller : MonoInstaller
     {
-        [SerializeField] private AdvPresenter _advPresenter;
-
+        [SerializeField] private AdvView _view;
+        
         public override void InstallBindings()
         {
             Container.Bind<IAdvRequestService>().To<AdvRequestService>().AsSingle();
-            Container.BindInterfacesTo<InterstitialAdvEverySeconds>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<AdvPresenter>().FromInstance(_advPresenter).AsSingle();
+            Container.BindInterfacesTo<InterstitialAdvService>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<AdvView>().FromInstance(_view).AsSingle();
         }
     }
 }

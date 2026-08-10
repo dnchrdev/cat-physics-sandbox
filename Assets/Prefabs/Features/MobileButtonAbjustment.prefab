@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cc5509a67e9b649bf97fe573fa583e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mobileAdjustmentPanel: {fileID: 7486783393202288203}
+  _mobileButtonsAdjustmentView: {fileID: 2471674801576130099}
 --- !u!1 &1044627418234986012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 2017818459739216382}
   - component: {fileID: 9187557368062653926}
   - component: {fileID: 406824126037805440}
-  - component: {fileID: 7486783393202288203}
+  - component: {fileID: 2471674801576130099}
   m_Layer: 7
   m_Name: MobileButtonAdjustmentPanel
   m_TagString: Untagged
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7486783393202288203
+--- !u!114 &2471674801576130099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1649,9 +1649,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4499103418873304775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43512d9024bdfed42b4406d6a1251d65, type: 3}
+  m_Script: {fileID: 11500000, guid: d21ba1b260cd4311ac154e6ef1858b85, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Feature.MobileButtonsAdjustment.MobileButtonsAdjustmentView
   _closeMobileAdjustmentButton: {fileID: 1207626523673652097}
   _resetAdjustmentButton: {fileID: 8471789856606558511}
   _draggableButtons:
@@ -2305,6 +2305,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

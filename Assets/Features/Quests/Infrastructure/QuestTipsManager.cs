@@ -12,7 +12,7 @@ namespace Feature.Quests
     public class QuestTipsManager: ITickable
     {
         [Inject] private readonly IReadOnlyCamera _readOnlyCamera;
-        [Inject] private readonly TipFactory _tipFactory;
+        [Inject] private readonly HintsFactory _hintsFactory;
         
         private RectTransform _rectTransform;
 
@@ -24,10 +24,10 @@ namespace Feature.Quests
 
         private Dictionary<Transform, GameObject> _targetAndTip = new();
 
-        public QuestTipsManager(IReadOnlyCamera readOnlyCamera, TipFactory tipFactory)
+        public QuestTipsManager(IReadOnlyCamera readOnlyCamera, HintsFactory hintsFactory)
         {
             _readOnlyCamera = readOnlyCamera;
-            _tipFactory = tipFactory;
+            _hintsFactory = hintsFactory;
         }
 
         public void ShowHints(Quest quest, Transform visibleParent)
@@ -47,7 +47,7 @@ namespace Feature.Quests
 
                 if (_hiddenQuestTips.Count == 0)
                 {
-                    var createTip = _tipFactory.GetTip(visibleParent, true);
+                    var createTip = _hintsFactory.GetHint(visibleParent, true);
                     await createTip;
 
                     tip = createTip.Result;
@@ -71,7 +71,7 @@ namespace Feature.Quests
 
                 if (_hiddenAddQuestTips.Count == 0)
                 {
-                    var createTip = _tipFactory.GetTip(visibleParent, false);
+                    var createTip = _hintsFactory.GetHint(visibleParent, false);
                     await createTip;
 
                     tip = createTip.Result;

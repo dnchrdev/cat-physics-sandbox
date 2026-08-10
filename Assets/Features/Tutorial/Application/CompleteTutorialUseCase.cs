@@ -1,34 +1,44 @@
 ﻿using Cysharp.Threading.Tasks;
+using Feature.Core;
 using Feature.Scene;
 using Feature.Storage;
 using Feature.UI;
+using Zenject;
 
 
 namespace Feature.Tutorial
 {
     public class CompleteTutorialUseCase
     {
-        private readonly SceneLoaderService _sceneLoader;
-        private PlayerProgress _playerProgress;
-        private UIPanelsManager _panelsManager;
-        private StorageDataService _storageDataService;
-
-        public CompleteTutorialUseCase(SceneLoaderService sceneLoader, PlayerProgress playerProgress, UIPanelsManager panelsManager, StorageDataService storageDataService)
-        {
-            _sceneLoader = sceneLoader;
-            _playerProgress = playerProgress;
-            _panelsManager = panelsManager;
-            _storageDataService = storageDataService;
-        }
-
-        public void StartGame()
+        [Inject] private readonly SceneLoadingService _sceneLoadingService;
+        [Inject] private readonly PlayerProgress _playerProgress;
+        [Inject] private readonly UIPanelsManager _panelsManager;
+        [Inject] private readonly StorageDataService _storageDataService;
+        [Inject] private readonly ILoadingScreenService _loadingScreenService;
+        
+        public async UniTask<Result> StartGameplayAsync()
         {
             _playerProgress.SetTutorialCompleted(true);
             _storageDataService.Save();
-            _panelsManager.OpenPanel(UIPanelTag.Gameplay);
+            _panelsManager.OpenPanel(PanelMode.Gameplay);
             _panelsManager.ClearAllPanels();
-            _sceneLoader.GoToNextScene(loadScenePath: "Gameplay", unloadScenePath: "Tutorial").Forget();
-        }
+            
+            await _loadingScreenService.FadeInAsync();
+            
+            var unloadResult = await _sceneLoadingService.UnloadAsync(SceneId.Tutorial);
+            if (unloadResult.IsSuccess == false) return unloadResult;
 
+            var loadResult = await _sceneLoadingService.LoadAsync(SceneId.Gameplay, false);
+            if (loadResult.IsSuccess == false) return loadResult;
+
+            await UniTask.WaitForEndOfFrame();
+            
+            var activateResult = await _sceneLoadingService.ActivateAsync(SceneId.Gameplay);
+            if (activateResult.IsSuccess == false) return activateResult;
+
+            await _loadingScreenService.FadeOutAsync();
+
+            return Result.Success();
+        }
     }
 }

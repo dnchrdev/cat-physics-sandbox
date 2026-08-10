@@ -45,24 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdollInteractableConfig: {fileID: 11400000, guid: a91945920e22d064ba07f16e50b2cce8, type: 2}
-  _physicsMaterialConfig: {fileID: 11400000, guid: 5dba957d5f132b543b2e21df8fa957a6, type: 2}
-  _rigdollBones:
-  - {fileID: 4996116656873324278}
-  - {fileID: 5269824828606345519}
-  - {fileID: 3213891714030055402}
-  - {fileID: 5221163429592877059}
-  - {fileID: 2805773213998934551}
-  - {fileID: 9049136829349568486}
-  - {fileID: 2123034531854521110}
-  - {fileID: 5958596456640763068}
-  - {fileID: 8599151652583286886}
-  - {fileID: 9196689695151592259}
-  - {fileID: 4298556908903096726}
-  - {fileID: 3681518318796552605}
-  - {fileID: 8633485465550585471}
-  - {fileID: 2468025694499740757}
-  - {fileID: 7001786520201068198}
-  - {fileID: 5507861426740887186}
+  _interactablePhysicsMaterialConfig: {fileID: 11400000, guid: 5dba957d5f132b543b2e21df8fa957a6, type: 2}
+  _enemyRig: {fileID: 8352831378843862220}
+  _ragdollBones: []
 --- !u!1 &2694547995512607004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,5 +4176,10 @@ Transform:
 --- !u!95 &5734872074515849209 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95509902755735526, guid: d6d06c887a1aae94f8c6e8cc2c0c557b, type: 3}
+  m_PrefabInstance: {fileID: 5675953918800738335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8352831378843862220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4408529143413816531, guid: d6d06c887a1aae94f8c6e8cc2c0c557b, type: 3}
   m_PrefabInstance: {fileID: 5675953918800738335}
   m_PrefabAsset: {fileID: 0}

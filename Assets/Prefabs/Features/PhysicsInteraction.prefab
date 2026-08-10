@@ -646,20 +646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c59a18d7aaf7104984e83d7603256f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionAndTip:
-  - InteractionType: 1
-    TipObj:
-    - {fileID: 0}
-    - {fileID: 0}
-  - InteractionType: 2
-    TipObj:
-    - {fileID: 0}
-  - InteractionType: 3
-    TipObj:
-    - {fileID: 0}
-  _afterGrabTipObj:
-  - {fileID: 0}
-  - {fileID: 0}
+  _interactionAndHint: []
+  _afterGrabhintObj: []
 --- !u!1 &2692657781833220525
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,8 +744,8 @@ MonoBehaviour:
   _handRig: {fileID: 4957319540297109446}
   _interactionRoot: {fileID: 4081955961545571102}
   _interactionControllerConfig: {fileID: 11400000, guid: 2a88111225e91ea48ad6a7c42193a718, type: 2}
-  _pcInteractionTipShower: {fileID: 1998544199243676500}
-  _mobileInteractionTipShower: {fileID: 7600751820211333775}
+  _pcInteractionHintsShower: {fileID: 1998544199243676500}
+  _mobileInteractionHintsShower: {fileID: 7600751820211333775}
   _interactionIndication: {fileID: 4482961902200733272}
 --- !u!1 &2903425064044820527
 GameObject:
@@ -1301,6 +1289,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1723,17 +1712,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c59a18d7aaf7104984e83d7603256f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionAndTip:
+  _interactionAndHint:
   - InteractionType: 1
-    TipObj:
+    HintObj:
     - {fileID: 2912178852053911582}
   - InteractionType: 2
-    TipObj:
+    HintObj:
     - {fileID: 8607702422333866648}
   - InteractionType: 3
-    TipObj:
+    HintObj:
     - {fileID: 1476662976320348411}
-  _afterGrabTipObj:
+  _afterGrabhintObj:
   - {fileID: 727052019208953692}
 --- !u!1 &6215958017074149563
 GameObject:

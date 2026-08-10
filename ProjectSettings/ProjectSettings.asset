@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 28
+  serializedVersion: 29
   productGUID: 65acf73cc1eac9e4dbbe32622d852eed
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -41,7 +41,6 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
-  m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -73,6 +72,8 @@ PlayerSettings:
   androidStartInFullscreen: 1
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 0
+  androidRequestedVisibleInsets: 0
+  androidSystemBarsBehavior: 2
   androidDisplayOptions: 1
   androidBlitType: 0
   androidResizeableActivity: 1
@@ -152,13 +153,11 @@ PlayerSettings:
   - {fileID: -944628639613478452, guid: 56870cf60c924f043a5eeec7c3ab702d, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
-  m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 1
   xboxOneEnable7thCore: 1
   vrSettings:
     enable360StereoCapture: 0
-  isWsaHolographicRemotingEnabled: 0
-  enableFrameTimingStats: 0
+  enableFrameTimingStats: 1
   enableOpenGLProfilerGPURecorders: 1
   allowHDRDisplaySupport: 0
   useHDRDisplay: 0
@@ -181,7 +180,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 25
+  AndroidMinSdkVersion: 26
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   AndroidPreferredDataLocation: 1
@@ -206,6 +205,7 @@ PlayerSettings:
   tvOSTargetOSVersionString: 15.0
   VisionOSSdkVersion: 0
   VisionOSTargetOSVersionString: 1.0
+  xcodeProjectType: 0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -273,7 +273,6 @@ PlayerSettings:
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 2
-  AndroidAllowedArchitectures: -13
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
@@ -546,7 +545,6 @@ PlayerSettings:
   - m_BuildTarget: WebGLSupport
     m_APIs: 1c000000
     m_Automatic: 1
-  m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
   openGLRequireES31: 0
@@ -734,6 +732,8 @@ PlayerSettings:
   switchMicroSleepForYieldTime: 25
   switchRamDiskSpaceSize: 12
   switchUpgradedPlayerSettingsToNMETA: 0
+  switchCaStoreSource: 0
+  switchCaStoreFilePath: 
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -843,30 +843,31 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
+    Android: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
     EmbeddedLinux: DOTWEEN;DOTWEEN_NOPHYSICS2D
     GameCoreScarlett: DOTWEEN;DOTWEEN_NOPHYSICS2D
     GameCoreXboxOne: DOTWEEN;DOTWEEN_NOPHYSICS2D
     Kepler: DOTWEEN;DOTWEEN_NOPHYSICS2D
-    LinuxHeadlessSimulation: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    Nintendo Switch: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
+    LinuxHeadlessSimulation: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    Nintendo Switch: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
     Nintendo Switch 2: DOTWEEN;DOTWEEN_NOPHYSICS2D
-    PS4: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    PS5: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
+    PS4: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    PS5: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
     QNX: DOTWEEN;DOTWEEN_NOPHYSICS2D
-    Standalone: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
+    Standalone: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
     VisionOS: DOTWEEN;DOTWEEN_NOPHYSICS2D
-    WebGL: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    Windows Store Apps: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    XboxOne: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    iPhone: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
-    tvOS: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2
+    WebGL: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    Windows Store Apps: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    XboxOne: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    iPhone: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
+    tvOS: PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;AutoTranslateLangs_yg;StickyAdv_yg;Localization_yg;Fullscreen_yg;BannerAdv_yg;DOTWEEN;DOTWEEN_NOPHYSICS2D;NJSON_YG2;YandexGamesPlatform_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
+  il2cppLTOMode: {}
   il2cppStacktraceInformation: {}
   managedStrippingLevel:
     Standalone: 4
@@ -938,7 +939,6 @@ PlayerSettings:
   XboxOneXTitleMemory: 8
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
-  vrEditorSettings: {}
   cloudServicesEnabled: {}
   luminIcon:
     m_Name: 
@@ -961,6 +961,7 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
+  enableDirectStorage: 0
   cloudProjectId: 42bb7c4e-8bda-42d5-b3f5-c965968dabbf
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

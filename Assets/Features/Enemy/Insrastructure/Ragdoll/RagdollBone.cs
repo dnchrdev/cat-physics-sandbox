@@ -28,6 +28,12 @@ namespace Feature.EnemyFeature
             _container = container;
         }
 
+        private void OnValidate()
+        {
+            if(_entityWorldBind ==  null) throw new NullReferenceException("Entity World Bind cannot be null.");
+        }
+
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();

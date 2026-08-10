@@ -4,33 +4,33 @@ namespace Feature.PlayerFeature
 {
     public class SurfaceDetector
     {
-        private SurfacesConfigSO _surfacesConfig;
+        private SurfacesConfig _surfaces;
 
         private Surface currentSurface = null;
 
-        public SurfaceDetector(SurfacesConfigSO surfacesConfig)
+        public SurfaceDetector(SurfacesConfig surfaces)
         {
-            _surfacesConfig = surfacesConfig;
+            _surfaces = surfaces;
         }
 
         public Surface CurrentSurface => currentSurface;
-        public Surface DefaultSurface => _surfacesConfig.DefaultSurface;
+        public Surface DefaultSurface => _surfaces.DefaultSurface;
 
         public void ResetToDefault()
         {
-            currentSurface = _surfacesConfig.DefaultSurface;
+            currentSurface = _surfaces.DefaultSurface;
         }
 
         public void ResetToUnstable()
         {
-            currentSurface = _surfacesConfig.UnstableSurface;
+            currentSurface = _surfaces.UnstableSurface;
         }
 
         public void GetSurfaceData(GameObject ground)
         {
             if (ground != null)
             {
-                bool validSurface = _surfacesConfig.GetSurface(ground, out Surface surface);
+                bool validSurface = _surfaces.GetSurface(ground, out Surface surface);
 
                 if (validSurface)
                 {
@@ -38,12 +38,12 @@ namespace Feature.PlayerFeature
                 }
                 else
                 {
-                    SetCurrentSurface(_surfacesConfig.DefaultSurface);
+                    SetCurrentSurface(_surfaces.DefaultSurface);
                 }
             }
             else
             {
-                SetCurrentSurface(_surfacesConfig.DefaultSurface);
+                SetCurrentSurface(_surfaces.DefaultSurface);
             }
         }
 

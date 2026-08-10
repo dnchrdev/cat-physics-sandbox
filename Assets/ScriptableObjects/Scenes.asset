@@ -12,10 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7547c9c0969039409ce596965a1c9e1, type: 3}
   m_Name: Scenes
   m_EditorClassIdentifier: 
-  <_scenes>k__BackingField:
-  - <ScenePath>k__BackingField: MainMenu
+  <MainMenu>k__BackingField:
+    <Id>k__BackingField: 0
+    <AddressableRef>k__BackingField:
+      m_AssetGUID: 9fc0d4010bbf28b4594072e72b8655ab
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     <LoadMode>k__BackingField: 1
-  - <ScenePath>k__BackingField: Tutorial
+  <Tutorial>k__BackingField:
+    <Id>k__BackingField: 1
+    <AddressableRef>k__BackingField:
+      m_AssetGUID: 95ab9dd77c8cb5848a42a487297bbf61
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     <LoadMode>k__BackingField: 1
-  - <ScenePath>k__BackingField: Gameplay
+  <Gameplay>k__BackingField:
+    <Id>k__BackingField: 2
+    <AddressableRef>k__BackingField:
+      m_AssetGUID: 2fbac99ac9fedfa4fb010e5a644ce3bb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     <LoadMode>k__BackingField: 1

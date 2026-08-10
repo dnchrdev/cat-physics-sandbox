@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Feature.UI
+﻿namespace Feature.UI
 {
     public interface IPanel
     {
+        PanelMode[] PanelModes { get; }
+        PanelInput PanelInput { get; }
         void InitPanel();
-        List<UIPanelTag> PanelTags { get; }
         void OnEnterPanel();
         void OnExitPanel();
     }

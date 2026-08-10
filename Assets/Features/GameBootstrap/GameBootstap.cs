@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using Feature.Scene;
 using Feature.UI;
 using System;
+using Feature.Core;
 using UnityEngine;
 using Zenject;
 
@@ -11,14 +12,14 @@ namespace Feature.GameBootstrap
     {
         [SerializeField] private int _saveID;
 
-        private SceneLoaderService _sceneLoaderService;
+        private SceneLoadingService _sceneLoadingService;
         private StorageDataService _storageDataService;
         private ILoadingScreenService _loadingScreenService;
 
         [Inject]
-        private void Construct(SceneLoaderService sceneLoaderService, StorageDataService storageDataService, ILoadingScreenService loadingScreenService)
+        private void Construct(SceneLoadingService sceneLoadingService, StorageDataService storageDataService, ILoadingScreenService loadingScreenService)
         {
-            _sceneLoaderService = sceneLoaderService;
+            _sceneLoadingService = sceneLoadingService;
             _storageDataService = storageDataService;
             _loadingScreenService = loadingScreenService;
         }
@@ -31,19 +32,28 @@ namespace Feature.GameBootstrap
 
         private async UniTask LoadGame()
         {
-            await _loadingScreenService.StartLoadingAsync();    
-            _storageDataService.Load(LoadMainMenu);  
+            await _loadingScreenService.FadeInAsync();    
+            _storageDataService.Load(OnSavedDataWasLoaded);  
         }
 
-        private void LoadMainMenu()
+        private void OnSavedDataWasLoaded()
         {
-            HandleMainManuLoadAsync().Forget();
+            HandleMainMenuLoadAsync().Forget();
         }
 
-        private async UniTask HandleMainManuLoadAsync()
+        private async UniTask<Result> HandleMainMenuLoadAsync()
         {
-            await _sceneLoaderService.GoToNextScene("MainMenu", false);
-            await _loadingScreenService.EndLoadingAsync();
+            var loadResult = await _sceneLoadingService.LoadAsync(SceneId.MainMenu, false);
+            if (loadResult.IsSuccess == false) return loadResult;
+           
+            await UniTask.WaitForEndOfFrame();
+            
+            var activateResult = await _sceneLoadingService.ActivateAsync(SceneId.MainMenu);
+            if (activateResult.IsSuccess == false) return activateResult;
+            
+            await _loadingScreenService.FadeOutAsync();
+
+            return Result.Success();
         }
     }
 }
