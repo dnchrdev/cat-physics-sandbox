@@ -24,7 +24,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
     skipInterAdvAfterReward: 0
     labelAdvSimLabel: 0
   Storage:
-    saveLocal: 1
+    saveLocal: 0
     saveCloud: 1
     flush: 0
   Basic:
