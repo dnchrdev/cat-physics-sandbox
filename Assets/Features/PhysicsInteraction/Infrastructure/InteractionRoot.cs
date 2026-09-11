@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure
 {
     public class InteractionRoot : MonoBehaviour        
     {

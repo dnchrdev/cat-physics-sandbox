@@ -1,7 +1,6 @@
 ﻿using System;
-using Feature.UI;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter.Interfaces
 {
     public interface ICurrentQuestView
     {

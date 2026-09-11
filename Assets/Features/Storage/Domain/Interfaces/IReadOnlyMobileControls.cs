@@ -1,9 +1,7 @@
-using Feature.MobileButtonsAdjustment;
-using System.Collections;
-using System.Collections.Generic;
+using Features.MobileButtonsAdjustment.Adapter;
 using UnityEngine;
 
-namespace Feature.Storage
+namespace Features.Storage.Domain.Interfaces
 {
     public interface IReadOnlyMobileControls
     {

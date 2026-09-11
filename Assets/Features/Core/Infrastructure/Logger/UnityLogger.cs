@@ -1,20 +1,24 @@
 using System;
 using UnityEngine;
+using ILogger = Features.Core.Infrastructure.Interfaces.ILogger;
 
-public class UnityLogger : ILogger
+namespace Features.Core.Infrastructure.Logger
 {
-    public void Log(Type logType, string message)
+    public class UnityLogger : ILogger
     {
-        Debug.Log($"{nameof(logType)}: {message}");
-    }
+        public void Log(Type logType, string message)
+        {
+            Debug.Log($"{nameof(logType)}: {message}");
+        }
 
-    public void LogWarning(Type logType, string message)
-    {
-        Debug.LogWarning($"{nameof(logType)}: {message}");
-    }
+        public void LogWarning(Type logType, string message)
+        {
+            Debug.LogWarning($"{nameof(logType)}: {message}");
+        }
 
-    public void LogError(Type logType, string message)
-    {
-        Debug.LogError($"{nameof(logType)}: {message}");
+        public void LogError(Type logType, string message)
+        {
+            Debug.LogError($"{nameof(logType)}: {message}");
+        }
     }
 }

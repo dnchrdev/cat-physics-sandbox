@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Interfaces
 {
     public interface IHitable
     {

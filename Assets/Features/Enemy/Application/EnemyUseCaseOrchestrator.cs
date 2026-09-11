@@ -1,7 +1,8 @@
-﻿using Feature.Shared;
+﻿using Features.Enemy.Insrastructure.Configs;
+using Features.Shared;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application
 {
     public class EnemyUseCaseOrchestrator
     {

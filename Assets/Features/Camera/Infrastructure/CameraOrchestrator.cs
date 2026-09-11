@@ -1,13 +1,11 @@
-﻿using Feature.Core;
-using Feature.EnemyFeature;
-using Feature.Input;
-using Feature.PlayerFeature;
-using Feature.Storage;
-using System;
+﻿using System;
+using Features.Camera.Application;
+using Features.Core.Infrastructure.Services.Interfaces;
+using Features.Input.Infrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraOrchestrator : IInitializable, IDisposable, ITickable
     {
@@ -18,7 +16,7 @@ namespace Feature.CameraFeature
         [Inject] private readonly PlayerRespawnedUseCase _playerRespawnedUseCase;
         [Inject] private readonly CameraHeadbob _cameraHeadbob;
         [Inject] private readonly ICameraInput _cameraInput;
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
         [Inject] private readonly IGamePauseService _pauseService;
 
         public void Initialize()

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.CameraFeature
+﻿namespace Features.Camera.Infrastructure.Interfaces
 {
     public interface ICameraPhysics
     {

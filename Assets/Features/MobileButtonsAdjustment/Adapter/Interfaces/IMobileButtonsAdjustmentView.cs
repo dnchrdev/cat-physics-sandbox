@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Feature.Storage;
-using Feature.UI;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Adapter.Interfaces
 {
     public interface IMobileButtonsAdjustmentView
     {

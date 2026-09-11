@@ -1,7 +1,8 @@
-﻿using Feature.BehaviourTree;
-using UnityEngine;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Attack
 {
     public class TaskAttacking : EnemyTask
     {

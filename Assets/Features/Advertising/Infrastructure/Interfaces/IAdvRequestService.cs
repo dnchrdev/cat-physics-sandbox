@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
-using UnityEngine;
 
-namespace Feature.Advertising
+namespace Features.Advertising.Infrastructure.Interfaces
 {
     public interface IAdvRequestService
     {

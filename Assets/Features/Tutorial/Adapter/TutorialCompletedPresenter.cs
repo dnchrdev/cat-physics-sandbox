@@ -1,8 +1,10 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Features.Tutorial.Adapter.Interfaces;
+using Features.Tutorial.Application;
 using Zenject;
 
-namespace Feature.Tutorial
+namespace Features.Tutorial.Adapter
 {
     public class TutorialCompletedPresenter : IInitializable, IDisposable
     {

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using Feature.MobileButtonsAdjustment;
-using Feature.Storage;
-using Feature.UI;
+using Features.MobileButtonsAdjustment.Adapter;
+using Features.Player.Adapter.Interfaces;
+using Features.Storage.Domain.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.MobileControls;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     public class MobileControlView : MonoBehaviour, IMobileControlView, IPanel
     {

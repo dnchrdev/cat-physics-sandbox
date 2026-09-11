@@ -1,13 +1,13 @@
-﻿using Feature.PlayerFeature;
+﻿using Features.Camera.Infrastructure.Config;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraPosition
     {
         [Inject] private readonly CameraConfig _config;
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
         
         private readonly Transform _root;
 

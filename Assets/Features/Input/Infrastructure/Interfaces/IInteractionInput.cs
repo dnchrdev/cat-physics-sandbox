@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-
-namespace Feature.Input
+﻿namespace Features.Input.Infrastructure.Interfaces
 {
     public interface IInteractionInput
     {

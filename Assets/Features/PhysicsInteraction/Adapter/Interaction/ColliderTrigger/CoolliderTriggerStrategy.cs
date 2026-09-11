@@ -1,7 +1,8 @@
-﻿using Feature.Shared;
+﻿using Features.PhysicsInteraction.Infrastructure.Interfaces;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.ColliderTrigger
 {
     public class CoolliderTriggerStrategy : IColliderTrigger
     {

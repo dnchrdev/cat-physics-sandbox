@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Feature.Shared
+namespace Features.Shared.UI
 {
     public class CanvasSortOrder : MonoBehaviour
     {

@@ -1,14 +1,15 @@
 using Cysharp.Threading.Tasks;
-using Feature.Scene;
-using Feature.UI;
-using System;
-using Feature.Core;
+using Features.Core.Utils;
+using Features.Scene.Data;
+using Features.Scene.Infrastructure;
+using Features.Storage.Infrastructure;
+using Features.UI.Presentation.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.GameBootstrap
+namespace Features.GameBootstrap
 {
-    public class GameBootstap : MonoBehaviour, IInitializable
+    public class GameBootstrap : MonoBehaviour, IInitializable
     {
         [SerializeField] private int _saveID;
 

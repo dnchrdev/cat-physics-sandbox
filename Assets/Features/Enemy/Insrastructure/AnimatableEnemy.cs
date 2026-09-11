@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Features.Enemy.Application;
+using Features.Enemy.Insrastructure.Configs;
+using UnityEngine;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class AnimatableEnemy: IAnimatableEnemy
     {

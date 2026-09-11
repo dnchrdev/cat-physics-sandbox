@@ -1,7 +1,6 @@
 ﻿using System;
-using Feature.UI;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Adapter.Interfaces
 {
     public interface IMainMenuView
     {

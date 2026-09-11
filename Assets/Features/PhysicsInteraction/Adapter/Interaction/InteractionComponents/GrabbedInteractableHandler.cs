@@ -1,9 +1,10 @@
-﻿using System;
-using Feature.CameraFeature;
-using Feature.Shared;
+﻿using Features.Camera.Infrastructure.Interfaces;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractionComponents
 {
     public class GrabbedInteractableHandler
     {

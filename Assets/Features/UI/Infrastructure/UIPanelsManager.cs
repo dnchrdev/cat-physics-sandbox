@@ -1,10 +1,14 @@
-using Feature.Core;
 using System.Collections.Generic;
-using Feature.Storage;
+using Features.Core.Utils;
+using Features.Storage.Domain.Interfaces;
+using Features.UI.Infrastructure.Configs;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.UI
+namespace Features.UI.Infrastructure
 {
     public class UIPanelsManager : ITickable, IInitializable
     {

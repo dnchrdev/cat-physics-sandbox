@@ -1,8 +1,9 @@
-using Feature.PhysicsInteraction;
-using System.Collections.Generic;
+using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure.Interfaces;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure.Quests
 {
     public class DropQuest : BaseQuest
     {

@@ -1,8 +1,8 @@
 using System;
+using Features.Advertising.Infrastructure.Interfaces;
 using YG;
-using Zenject;
 
-namespace Feature.Advertising
+namespace Features.Advertising.Infrastructure
 {
     public class AdvRequestService : IAdvRequestService
     {

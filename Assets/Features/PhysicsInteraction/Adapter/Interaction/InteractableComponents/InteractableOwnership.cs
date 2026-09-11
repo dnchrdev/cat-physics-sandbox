@@ -1,10 +1,6 @@
-﻿using Feature.Core;
-using Feature.EnemyFeature;
-using Feature.PhysicsInteractio;
-using Feature.Shared;
-using UnityEngine;
+﻿using Features.Shared;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractableComponents
 {
     public class InteractableOwnership
     {

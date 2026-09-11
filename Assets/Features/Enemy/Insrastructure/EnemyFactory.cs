@@ -1,11 +1,10 @@
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyFactory
     {
@@ -24,7 +23,7 @@ namespace Feature.EnemyFeature
             _enemyPrefabRef = enemyPrefabRef;
         }
 
-        public async UniTask<Enemy> CreateAsync(
+        public async UniTask<Domain.Enemy> CreateAsync(
             Vector3 position, Quaternion rotation, Transform parent, PatrolPoints patrolPoints)
         {
             await EnsurePrefabLoadedAsync();
@@ -42,7 +41,7 @@ namespace Feature.EnemyFeature
                 return null;
             }
 
-            return context.Container.Resolve<Enemy>();
+            return context.Container.Resolve<Domain.Enemy>();
         }
 
         public async UniTask WarmupAsync()

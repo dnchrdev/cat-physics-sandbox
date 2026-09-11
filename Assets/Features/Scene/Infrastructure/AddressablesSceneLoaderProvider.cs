@@ -1,9 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
+using Features.Scene.Data;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
-namespace Feature.Scene
+namespace Features.Scene.Infrastructure
 {
     public interface ISceneLoaderProvider
     {

@@ -1,20 +1,21 @@
-﻿using UnityEngine;
+﻿using Features.Player.Insrastructure.Configs;
+using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure.Surface
 {
     public class SurfaceDetector
     {
         private SurfacesConfig _surfaces;
 
-        private Surface currentSurface = null;
+        private Data.Surface currentSurface = null;
 
         public SurfaceDetector(SurfacesConfig surfaces)
         {
             _surfaces = surfaces;
         }
 
-        public Surface CurrentSurface => currentSurface;
-        public Surface DefaultSurface => _surfaces.DefaultSurface;
+        public Data.Surface CurrentSurface => currentSurface;
+        public Data.Surface DefaultSurface => _surfaces.DefaultSurface;
 
         public void ResetToDefault()
         {
@@ -30,7 +31,7 @@ namespace Feature.PlayerFeature
         {
             if (ground != null)
             {
-                bool validSurface = _surfaces.GetSurface(ground, out Surface surface);
+                bool validSurface = _surfaces.GetSurface(ground, out Data.Surface surface);
 
                 if (validSurface)
                 {
@@ -47,7 +48,7 @@ namespace Feature.PlayerFeature
             }
         }
 
-        private void SetCurrentSurface(Surface surface)
+        private void SetCurrentSurface(Data.Surface surface)
         {
             currentSurface = surface;
         }

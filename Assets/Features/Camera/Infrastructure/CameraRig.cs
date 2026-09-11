@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraRig: MonoBehaviour
     {

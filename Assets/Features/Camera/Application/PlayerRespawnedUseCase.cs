@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using Features.Camera.Infrastructure;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Application
 {
     public class PlayerRespawnedUseCase
     {

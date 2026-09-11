@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Feature.Core;
+using Features.Core.Utils;
+using Features.Scene.Config;
+using Features.Scene.Data;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Zenject;
 
-namespace Feature.Scene
+namespace Features.Scene.Infrastructure
 {
     internal enum SceneState
     {

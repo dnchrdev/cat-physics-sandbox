@@ -1,18 +1,18 @@
-﻿using Feature.Core;
-using System;
+﻿using Features.Core.Infrastructure.Binder;
+using Features.Core.Infrastructure.Services.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyBinder : MonoBehaviour
     {
         private EntityWorldBind _entityWorldBind;
-        private Enemy _enemy;
+        private Domain.Enemy _enemy;
         private IWorldEntityService _worldEntityService;
 
         [Inject]
-        private void Construct(Enemy enemy, EnemyRig enemyRig, IWorldEntityService worldEntityService)
+        private void Construct(Domain.Enemy enemy, EnemyRig enemyRig, IWorldEntityService worldEntityService)
         {
             _entityWorldBind = GetComponent<EntityWorldBind>();
             _enemy = enemy;

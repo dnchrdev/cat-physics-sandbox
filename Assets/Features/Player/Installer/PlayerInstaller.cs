@@ -1,7 +1,15 @@
+using Features.Player.Adapter;
+using Features.Player.Applications;
+using Features.Player.Applications.FSM;
+using Features.Player.Domain;
+using Features.Player.Insrastructure;
+using Features.Player.Insrastructure.Configs;
+using Features.Player.Insrastructure.Interfaces.Context;
+using Features.Player.Insrastructure.Surface;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Installer
 {
     public class PlayerInstaller : MonoInstaller
     {
@@ -16,7 +24,7 @@ namespace Feature.PlayerFeature
         public override void InstallBindings()
         {
             //Domain
-            Container.BindInterfacesAndSelfTo<Player>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Domain.Player>().AsSingle();
             Container.BindInterfacesAndSelfTo<MovementState>().AsSingle();
 
             //Application

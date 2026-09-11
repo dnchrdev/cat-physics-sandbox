@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using Feature.Advertising;
-using Feature.Input;
-using Feature.PlayerFeature;
-using Feature.UI;
-using UnityEngine;
+using Features.Advertising.Infrastructure.Interfaces;
+using Features.Quests.Adapter.Interfaces;
+using Features.Quests.Application;
+using Features.Quests.Domain;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter
 {
     public class CurrentQuestPresenter : IInitializable, IDisposable
     {
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
         [Inject] private readonly IAdvRequestService _advRequestService;
         [Inject] private readonly ResetAllQuestsUseCase _resetAllQuestsUseCase;
         [Inject] private readonly ICurrentQuestView _view;

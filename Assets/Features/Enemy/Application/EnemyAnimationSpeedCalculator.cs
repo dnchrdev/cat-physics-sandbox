@@ -1,10 +1,10 @@
-﻿using System;
-using Feature.Core;
+﻿using Features.Core.Math;
+using Features.Enemy.Insrastructure;
+using Features.Enemy.Insrastructure.Configs;
 using UnityEngine;
-using UnityEngine.AI;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application
 {
     public class EnemyAnimationSpeedCalculator: IInitializable
     {

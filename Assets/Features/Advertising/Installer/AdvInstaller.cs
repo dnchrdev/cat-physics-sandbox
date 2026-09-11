@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using Features.Advertising.Application;
+using Features.Advertising.Infrastructure;
+using Features.Advertising.Infrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Advertising
+namespace Features.Advertising.Installer
 {
     public class AdvInstaller : MonoInstaller
     {

@@ -1,10 +1,11 @@
 using System;
-using System.Collections.Generic;
-using Feature.Advertising;
-using Feature.UI;
+using Features.Advertising.Infrastructure.Interfaces;
+using Features.Quests.Adapter.Interfaces;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter
 {
     public class QuestHintsPresenter : IInitializable, IDisposable
     {

@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using Feature.UI;
+using Features.SettingsPanel.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Feature.SettingsPanel
+namespace Features.SettingsPanel.Infrastructure
 {
     public class SettingsView : MonoBehaviour, ISettingsView, IPanel
     {

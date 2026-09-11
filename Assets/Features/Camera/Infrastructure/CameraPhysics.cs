@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using Features.Camera.Infrastructure.Interfaces;
+using UnityEngine;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraPhysics : MonoBehaviour, IReadOnlyCamera, ICameraPhysics
     {
-        [SerializeField] private Camera _camera;
+        [SerializeField] private UnityEngine.Camera _camera;
 
-        public Camera Camera => _camera;
+        public UnityEngine.Camera Camera => _camera;
         public Vector3 Forward => _camera.transform.forward;
         public Vector3 Position => _camera.transform.position;
         public Quaternion Rotation => _camera.transform.rotation;

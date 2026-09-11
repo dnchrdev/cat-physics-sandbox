@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using Feature.Shared;
+﻿using Features.PhysicsInteraction.Infrastructure;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractionComponents
 {
     public class InteractableOnFocusHandler
     {

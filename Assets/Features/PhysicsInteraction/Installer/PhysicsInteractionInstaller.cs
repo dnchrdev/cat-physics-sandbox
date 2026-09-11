@@ -1,10 +1,14 @@
-using Feature.Storage;
-using Feature.UI;
-using System;
+using Features.PhysicsInteraction.Adapter;
+using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.PhysicsInteraction.Application;
+using Features.PhysicsInteraction.Application.Factory;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Installer
 {
     public class PhysicsInteractionInstaller : MonoInstaller
     {

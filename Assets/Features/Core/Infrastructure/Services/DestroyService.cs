@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.Core
+namespace Features.Core.Infrastructure.Services
 {
     public sealed class DestroyService : MonoBehaviour
     {

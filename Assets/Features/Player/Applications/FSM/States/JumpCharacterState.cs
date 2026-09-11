@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Features.Player.Domain;
+using Features.Player.Insrastructure.Interfaces.Context;
+using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Applications.FSM.States
 {
     public class JumpCharacterState : AliveCharacterState
     {

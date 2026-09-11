@@ -1,8 +1,8 @@
-﻿using Feature.Core;
-using Feature.EnemyFeature;
+﻿using Features.Core.Infrastructure.Binder;
+using Features.Enemy.Insrastructure.Ragdoll;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction
 {
     public class EntityBindResolver
     {

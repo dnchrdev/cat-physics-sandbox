@@ -1,9 +1,11 @@
 using System;
-using Feature.Core;
-using Feature.Shared;
+using Features.Core.Utils;
+using Features.Player.Domain.Interfeces;
+using Features.Player.Insrastructure.Interfaces;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Domain
 {
     public class Player : IEntity, ITarget, IReadOnlyPlayer, ILiveEvents
     {

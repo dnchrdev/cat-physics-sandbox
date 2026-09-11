@@ -1,15 +1,15 @@
-using Zenject;
 using UnityEngine;
+using Zenject;
 
-namespace Feature.GameBootstrap
+namespace Features.GameBootstrap.Installer
 {
     public class GameBootstrapInstaller : MonoInstaller
     {
-        [SerializeField] private GameBootstap _gameBootstrap;
+        [SerializeField] private GameBootstrap _gameBootstrap;
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<GameBootstap>().FromInstance(_gameBootstrap).AsSingle();
+            Container.BindInterfacesTo<GameBootstrap>().FromInstance(_gameBootstrap).AsSingle();
         }
     }
 }

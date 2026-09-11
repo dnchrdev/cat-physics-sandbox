@@ -1,12 +1,15 @@
 ﻿using Cysharp.Threading.Tasks;
-using Feature.Core;
-using Feature.Scene;
-using Feature.Storage;
-using Feature.UI;
+using Features.Core.Utils;
+using Features.Scene.Data;
+using Features.Scene.Infrastructure;
+using Features.Storage.Domain;
+using Features.Storage.Infrastructure;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Interfaces;
 using Zenject;
 
-
-namespace Feature.Tutorial
+namespace Features.Tutorial.Application
 {
     public class CompleteTutorialUseCase
     {

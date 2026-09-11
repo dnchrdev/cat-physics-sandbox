@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.Shared
+﻿namespace Features.Shared
 {
     public enum TeamType
     {

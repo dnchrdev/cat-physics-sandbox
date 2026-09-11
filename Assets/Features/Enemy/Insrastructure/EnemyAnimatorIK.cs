@@ -1,10 +1,8 @@
-﻿using Feature.PlayerFeature;
-using Feature.UI;
-using System.Collections;
+﻿using Features.Player.Domain.Interfeces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyAnimatorIK : MonoBehaviour
     {

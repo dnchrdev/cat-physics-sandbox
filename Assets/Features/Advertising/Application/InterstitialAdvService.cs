@@ -1,9 +1,10 @@
-﻿using Feature.Core;
-using Feature.PlayerFeature;
+﻿using Features.Advertising.Adapter.Interfaces;
+using Features.Advertising.Infrastructure.Interfaces;
+using Features.Core.Infrastructure.Services.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Advertising
+namespace Features.Advertising.Application
 {
     public class InterstitialAdvService : IInitializable, ITickable
     {
@@ -13,7 +14,7 @@ namespace Feature.Advertising
         [Inject] private readonly IGamePauseService _gamePauseService;
         [Inject] private readonly IAdvRequestService _advRequestService;
         [Inject] private readonly IAdvView _view;
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
 
         private float _timerUntilAdv;
         private bool _panelShown;

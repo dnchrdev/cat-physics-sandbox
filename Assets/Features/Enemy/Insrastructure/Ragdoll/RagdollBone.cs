@@ -1,14 +1,12 @@
-﻿using Feature.Core;
-using Feature.PhysicsInteraction;
-using Feature.Shared;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
+using Features.Core.Infrastructure.Binder;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.PhysicsInteraction.Infrastructure.Collision;
+using Features.PhysicsInteraction.Infrastructure.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure.Ragdoll
 {
     public class RagdollBone : MonoBehaviour
     {

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
-namespace Feature.BehaviourTree
+namespace Features.BehaviourTree.Composite
 {
     public class Selector : Node
     {

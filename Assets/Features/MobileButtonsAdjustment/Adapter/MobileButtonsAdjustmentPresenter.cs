@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
-using Feature.Storage;
-using Feature.UI;
+using Features.MobileButtonsAdjustment.Adapter.Interfaces;
+using Features.MobileButtonsAdjustment.Infrastructure;
+using Features.Storage.Domain;
+using Features.Storage.Domain.Interfaces;
+using Features.Storage.Infrastructure.Interfaces;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Adapter
 {
     [Serializable]
     public enum AdjustableButtonType
@@ -75,6 +80,10 @@ namespace Feature.MobileButtonsAdjustment
         private void HandleAdjustmentButtonShow()
         {
             _visibility = _view.GetCurrentVisibility();
+            foreach (var button in _visibility)
+            {
+                _view.SetButtonVisibility(button.Key, button.Value);
+            }
         }
 
         private void HandleButtonDragged(AdjustableButtonType type, Vector2 position)

@@ -1,7 +1,6 @@
 ﻿using System;
-using Feature.UI;
 
-namespace Feature.SettingsPanel
+namespace Features.SettingsPanel.Adapter.Interfaces
 {
     public interface ISettingsView
     {

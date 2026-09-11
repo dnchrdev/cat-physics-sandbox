@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using Feature.Core;
+using Features.Core.Utils;
+using Features.Scene.Data;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace Feature.Scene
+namespace Features.Scene.Config
 {
     [CreateAssetMenu(fileName = "ScenesConfig", menuName = "Configs/ScenesConfig")]
     public class ScenesConfig : ScriptableObject

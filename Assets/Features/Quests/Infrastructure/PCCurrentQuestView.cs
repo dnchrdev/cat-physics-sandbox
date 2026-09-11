@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using Feature.Input;
-using Feature.UI;
+using Features.Input.Infrastructure.Interfaces;
+using Features.Quests.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure
 {
     public class PCCurrentQuestView : MonoBehaviour, ICurrentQuestView, IPanel
     {

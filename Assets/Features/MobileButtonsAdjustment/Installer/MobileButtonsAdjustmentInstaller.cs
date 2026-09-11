@@ -1,9 +1,9 @@
-﻿using Feature.Storage;
-using System.Collections;
+﻿using Features.MobileButtonsAdjustment.Adapter;
+using Features.MobileButtonsAdjustment.Infrastructure;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Installer
 {
     public class MobileButtonsAdjustmentInstaller : MonoInstaller
     {

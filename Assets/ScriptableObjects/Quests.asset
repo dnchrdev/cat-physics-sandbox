@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9afac2306920c428086cdb952a990f, type: 3}
   m_Name: Quests
   m_EditorClassIdentifier: 
+  <FirstQuestName>k__BackingField: Hit Boxes
   _quests:
   - Name: Hit Boxes
     TargetProgress: 3

@@ -1,10 +1,13 @@
 using System;
-using Feature.Storage;
-using Feature.UI;
+using Features.SettingsPanel.Adapter.Interfaces;
+using Features.Storage.Domain;
+using Features.Storage.Infrastructure.Interfaces;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using Zenject;
-using AudioSettings = Feature.Storage.AudioSettings;
+using AudioSettings = Features.Storage.Domain.AudioSettings;
 
-namespace Feature.SettingsPanel
+namespace Features.SettingsPanel.Adapter
 {
     public class SettingsPresenter : IInitializable, IDisposable
     {

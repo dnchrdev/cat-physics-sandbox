@@ -1,9 +1,9 @@
 ﻿using System;
-using Feature.CameraFeature;
-using Feature.Core;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.Core.Infrastructure.Services;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.Grab
 {
     public class GrabNearestPointStrategy : GrabStrategyBase
     {

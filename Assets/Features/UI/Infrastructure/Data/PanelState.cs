@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Feature.UI
+namespace Features.UI.Infrastructure.Data
 {
     [Serializable]
     public struct PanelState

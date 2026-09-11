@@ -1,17 +1,18 @@
-﻿using Feature.Core;
+﻿using Features.Core.Infrastructure.Binder;
+using Features.Core.Infrastructure.Services.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     public class PlayerBinder : MonoBehaviour
     {
         private EntityWorldBind _entityWorldBind;
-        private Player _player;
+        private Domain.Player _player;
         private IWorldEntityService _worldEntityService;
 
         [Inject]
-        private void Construct(Player player, IWorldEntityService worldEntityService)
+        private void Construct(Domain.Player player, IWorldEntityService worldEntityService)
         {
             _entityWorldBind = GetComponent<EntityWorldBind>();
             _player = player;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Adapter
 {
     public class MobileAdjustmentEventBus
     {

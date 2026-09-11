@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using Features.Enemy.Application;
+using Features.Enemy.Domain;
+using Features.Enemy.Insrastructure;
+using Features.Enemy.Insrastructure.Configs;
+using Features.Enemy.Insrastructure.Ragdoll;
+using Features.Enemy.Presentation.Animation;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Installer
 {
     public class EnemyInstaller : MonoInstaller
     {
@@ -19,7 +23,7 @@ namespace Feature.EnemyFeature
         public override void InstallBindings()
         {
             //Domain
-            Container.BindInterfacesAndSelfTo<Enemy>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Domain.Enemy>().AsSingle();
             Container.Bind<Blackboard>().AsSingle();
             
             Container.Bind<Animator>().FromInstance(_animator).AsSingle();

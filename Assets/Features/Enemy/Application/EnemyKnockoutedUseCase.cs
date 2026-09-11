@@ -1,15 +1,19 @@
-﻿using Cysharp.Threading.Tasks;
-using System;
+﻿using System;
 using System.Threading;
+using Cysharp.Threading.Tasks;
+using Features.Enemy.Domain;
+using Features.Enemy.Insrastructure;
+using Features.Enemy.Insrastructure.Configs;
+using Features.Enemy.Insrastructure.Ragdoll;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application
 {
     public class EnemyKnockoutedUseCase
     {
         [Inject] private readonly Blackboard _bb;
-        [Inject] private readonly Enemy _enemy;
+        [Inject] private readonly Domain.Enemy _enemy;
         [Inject]private readonly IAnimatableEnemy _animatableEnemy;
         [Inject] private readonly RagdollController _ragdollController;
         [Inject] private readonly EnemyConfig _enemyConfig;

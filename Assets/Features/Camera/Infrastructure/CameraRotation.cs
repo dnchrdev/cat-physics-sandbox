@@ -1,8 +1,9 @@
-﻿using Feature.Storage;
+﻿using Features.Camera.Infrastructure.Config;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraRotation
     {

@@ -1,9 +1,8 @@
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using System;
+using DG.Tweening;
 using UnityEngine;
 
-namespace Feature.UI
+namespace Features.UI.Utils
 {
     public class UIAnimator
     {

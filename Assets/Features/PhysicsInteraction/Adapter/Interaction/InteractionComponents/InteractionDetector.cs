@@ -1,10 +1,10 @@
 ﻿using System;
-using Feature.CameraFeature;
-using System.Collections;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.PhysicsInteraction.Infrastructure.Data;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractionComponents
 {
     public class InteractionDetector
     {

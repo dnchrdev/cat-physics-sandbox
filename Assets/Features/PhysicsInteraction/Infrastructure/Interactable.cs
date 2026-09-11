@@ -1,11 +1,18 @@
 ﻿using System;
-using Feature.CameraFeature;
-using Feature.PhysicsInteractio;
-using Feature.Shared;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.PhysicsInteraction.Adapter.Interaction.InteractableComponents;
+using Features.PhysicsInteraction.Application;
+using Features.PhysicsInteraction.Application.Factory;
+using Features.PhysicsInteraction.Infrastructure.Collision;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.PhysicsInteraction.Infrastructure.Data;
+using Features.PhysicsInteraction.Infrastructure.Interfaces;
+using Features.Quests.Infrastructure.Interfaces;
+using Features.Shared;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure
 {
     public class Interactable : MonoBehaviour, IResetable, IQuestInteractable
     {
@@ -18,7 +25,7 @@ namespace Feature.PhysicsInteraction
 
         public event Action<IQuestInteractable> QuestHitEvent;
         public event Action<IQuestInteractable> QuestThrowEvent;
-        public event Action<IQuestInteractable, Collision> QuestColliderHitEvent;
+        public event Action<IQuestInteractable, UnityEngine.Collision> QuestColliderHitEvent;
 
         [SerializeField] private InteractableConfig _config;
         [SerializeField] private Rigidbody _rb;
@@ -164,7 +171,7 @@ namespace Feature.PhysicsInteraction
                 _colliderTriggerEvent.OnTriggerEnterEvent += OnColliderTriggerEvent;
         }
 
-        private void OnColliderHitEvent(Collision collision)
+        private void OnColliderHitEvent(UnityEngine.Collision collision)
         {
             ColliderHit?.Invoke();
 

@@ -1,7 +1,6 @@
 ﻿using System;
-using Feature.UI;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Adapter.Interfaces
 {
     public interface IGameplayControlView
     {

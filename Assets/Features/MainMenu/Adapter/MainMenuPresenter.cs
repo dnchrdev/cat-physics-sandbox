@@ -1,11 +1,16 @@
 using System;
 using Cysharp.Threading.Tasks;
-using Feature.Storage;
-using Feature.UI;
+using Features.MainMenu.Adapter.Interfaces;
+using Features.MainMenu.Application;
+using Features.Storage.Domain;
+using Features.Storage.Domain.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation;
+using Features.UI.Presentation.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Adapter
 {
     public class MainMenuPresenter : IInitializable, IDisposable
     {

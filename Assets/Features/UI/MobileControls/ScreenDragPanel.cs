@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Feature.UI
+namespace Features.UI.MobileControls
 {
     public class ScreenDragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
     {

@@ -1,4 +1,4 @@
-﻿namespace Feature.Storage
+﻿namespace Features.Storage.Domain.Interfaces
 {
     public interface IReadOnlyControlSettings
     {

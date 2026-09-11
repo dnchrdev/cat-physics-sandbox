@@ -1,10 +1,9 @@
-﻿using Feature.Core;
-using System.Collections;
+﻿using Features.Core.Infrastructure.Services;
+using Features.UI.Infrastructure.Data;
 using UnityEngine;
 using Zenject;
 
-
-namespace Feature.UI
+namespace Features.UI.Presentation
 {
     public class CursorManager
     {

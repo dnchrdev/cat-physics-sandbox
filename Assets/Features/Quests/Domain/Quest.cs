@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Features.Quests.Infrastructure.Quests;
 
-namespace Feature.Quests
+namespace Features.Quests.Domain
 {
     public class Quest
     {

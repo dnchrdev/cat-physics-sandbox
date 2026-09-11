@@ -1,13 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
-using Feature.CameraFeature;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting.FullSerializer;
+﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.Quests.Application;
+using Features.Quests.Domain;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure
 {
     public class QuestTipsManager: ITickable
     {

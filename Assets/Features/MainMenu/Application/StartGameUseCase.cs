@@ -1,12 +1,12 @@
 using Cysharp.Threading.Tasks;
-using Feature.Core;
-using Feature.Scene;
-using Feature.Storage;
-using Feature.UI;
-using UnityEngine;
+using Features.Core.Utils;
+using Features.Scene.Data;
+using Features.Scene.Infrastructure;
+using Features.Storage.Infrastructure;
+using Features.UI.Presentation.Interfaces;
 using Zenject;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Application
 {
     public class StartGameUseCase
     {

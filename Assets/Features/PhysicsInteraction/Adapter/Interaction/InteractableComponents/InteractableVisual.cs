@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.PhysicsInteraction.Infrastructure.Data;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractableComponents
 {
     public class InteractableVisual
     {

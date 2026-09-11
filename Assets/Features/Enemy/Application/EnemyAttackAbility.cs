@@ -1,10 +1,12 @@
-﻿using Feature.PlayerFeature;
-using Feature.Shared;
+﻿using Features.Enemy.Insrastructure;
+using Features.Enemy.Insrastructure.Configs;
+using Features.Player.Domain.Interfeces;
+using Features.Shared;
 using UnityEngine;
 using Zenject;
 using IInitializable = Zenject.IInitializable;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application
 {
     public class EnemyAttackAbility : IInitializable
     {
@@ -12,9 +14,9 @@ namespace Feature.EnemyFeature
         [Inject] private readonly IMovableEnemy _movableEnemy;
         [Inject] private readonly EnemyRig _enemyRig;
         [Inject] private readonly EnemyConfig _config;
-        [Inject] private readonly Enemy _enemy;
+        [Inject] private readonly Domain.Enemy _enemy;
         [Inject] private readonly IReadOnlyPlayer _readOnlyPlayer;
-        [Inject] private readonly Player _targetPlayer;
+        [Inject] private readonly Player.Domain.Player _targetPlayer;
 
         private float _cooldown;
 

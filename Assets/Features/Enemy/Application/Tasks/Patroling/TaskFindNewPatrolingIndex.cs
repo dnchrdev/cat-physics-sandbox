@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
 using UnityEngine;
-using Feature.BehaviourTree;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Patroling
 {
     public class TaskFindNewPatrolingIndex : EnemyTask
     {

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.Quests
+﻿namespace Features.Quests.Application
 {
     public class CurrentQuestUpdateUseCase
     {

@@ -1,8 +1,9 @@
-﻿using Feature.BehaviourTree;
-using Unity.VisualScripting.FullSerializer;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
 using UnityEngine;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Patroling
 {
     public class TaskPatrolingToPoint : EnemyTask
     {

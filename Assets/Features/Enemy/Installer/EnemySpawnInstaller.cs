@@ -1,10 +1,9 @@
-using Cysharp.Threading.Tasks;
+using Features.Enemy.Insrastructure;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Installer
 {
     public class EnemySpawnInstaller : MonoInstaller
     {

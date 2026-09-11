@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Features.UI.Presentation.Interfaces;
+using Features.UI.Utils;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.UI
+namespace Features.UI.Presentation
 {
     public class LoadingScreenService : ILoadingScreenService, IInitializable, IDisposable
     {

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Feature.Shared
+namespace Features.PhysicsInteraction.Infrastructure.Collision
 {
     public class HitEnter : MonoBehaviour
     {
-        public event Action<Collision> OnHitEvent;
+        public event Action<UnityEngine.Collision> OnHitEvent;
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter(UnityEngine.Collision collision)
         {
             OnHitEvent?.Invoke(collision);
         }

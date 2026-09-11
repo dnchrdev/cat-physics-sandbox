@@ -1,8 +1,10 @@
-﻿using Feature.CameraFeature;
+﻿using Features.Camera.Application;
+using Features.Camera.Infrastructure;
+using Features.Camera.Infrastructure.Config;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Features.CustomCamera
+namespace Features.Camera.Installer
 {
     public class CameraInstaller : MonoInstaller
     {

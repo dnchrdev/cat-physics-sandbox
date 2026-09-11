@@ -1,4 +1,6 @@
-﻿namespace Feature.Storage
+﻿using Features.Storage.Domain.Interfaces;
+
+namespace Features.Storage.Domain
 {
     public class PlayerProgress : IReadOnlyPlayerProgress
     {

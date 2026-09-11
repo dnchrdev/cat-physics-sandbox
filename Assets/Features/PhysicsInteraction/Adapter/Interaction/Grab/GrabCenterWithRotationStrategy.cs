@@ -1,11 +1,7 @@
-﻿using Feature.Core;
-using System.Collections;
-using Feature.CameraFeature;
-using Unity.VisualScripting;
+﻿using Features.Core.Infrastructure.Services;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.Grab
 {
     public class GrabCenterWithRotationStrategy : GrabStrategyBase
     {

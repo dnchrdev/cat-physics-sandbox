@@ -1,6 +1,7 @@
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 
-namespace Feature.Storage
+namespace Features.Storage.Domain
 {
     public class ControlSettings : IReadOnlyControlSettings
     {

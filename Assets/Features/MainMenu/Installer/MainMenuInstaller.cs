@@ -1,9 +1,12 @@
-using Feature.Scene;
-using Feature.UI;
+using Features.MainMenu.Adapter;
+using Features.MainMenu.Adapter.Interfaces;
+using Features.MainMenu.Application;
+using Features.MainMenu.Infrastructure;
+using Features.Scene.Config;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Installer
 {
     public class MainMenuInstaller : MonoInstaller
     {

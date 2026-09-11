@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Features.Player.Applications.FSM;
+using Features.Player.Insrastructure.Interfaces;
+using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Domain
 {
     public struct CharacterState
     {

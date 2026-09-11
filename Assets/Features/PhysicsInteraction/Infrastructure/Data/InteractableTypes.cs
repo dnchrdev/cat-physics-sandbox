@@ -1,4 +1,4 @@
-﻿namespace Feature.PhysicsInteraction
+﻿namespace Features.PhysicsInteraction.Infrastructure.Data
 {
     public enum HitType
     {

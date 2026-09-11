@@ -1,8 +1,7 @@
-using Feature.EnemyFeature;
-using Feature.Shared;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.Core
+namespace Features.Core.Infrastructure.Binder
 {
     public class EntityWorldBind : MonoBehaviour
     {

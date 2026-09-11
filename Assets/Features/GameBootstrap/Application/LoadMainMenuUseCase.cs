@@ -1,8 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
-using Feature.Scene;
-using UnityEngine;
-
-namespace Feature.GameBootstrap
+﻿namespace Features.GameBootstrap.Application
 {
     public class LoadMainMenuUseCase
     {

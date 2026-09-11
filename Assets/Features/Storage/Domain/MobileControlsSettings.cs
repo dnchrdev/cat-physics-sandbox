@@ -1,8 +1,8 @@
-using Feature.MobileButtonsAdjustment;
-using System;
+using Features.MobileButtonsAdjustment.Adapter;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 
-namespace Feature.Storage
+namespace Features.Storage.Domain
 {
     public struct AnchoredPosition
     {

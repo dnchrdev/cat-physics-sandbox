@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Feature.UI
+﻿namespace Features.UI.Infrastructure.Data
 {
     public enum PanelInput
     {

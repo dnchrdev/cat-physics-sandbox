@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Feature.Shared
+namespace Features.Shared
 {
     public interface ILiveEvents
     {

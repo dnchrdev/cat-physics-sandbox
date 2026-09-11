@@ -1,10 +1,10 @@
-﻿using Feature.Core;
-using Feature.EnemyFeature;
-using Feature.PhysicsInteraction;
-using Feature.Shared;
+﻿using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure.Interfaces;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure.Quests
 {
     public class HitEnemyQuest: BaseQuest
     {

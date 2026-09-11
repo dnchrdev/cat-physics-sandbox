@@ -1,7 +1,7 @@
-﻿using Feature.PhysicsInteraction;
+﻿using Features.PhysicsInteraction.Infrastructure.Configs;
 using UnityEngine;
 
-namespace Feature.PhysicsInteractio
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractableComponents
 {
     public class InteractablePhysics
     {

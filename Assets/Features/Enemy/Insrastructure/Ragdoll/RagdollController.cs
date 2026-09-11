@@ -1,11 +1,9 @@
 ﻿using System;
-using Feature.PhysicsInteraction;
-using System.Collections;
 using System.Collections.Generic;
+using Features.PhysicsInteraction.Infrastructure.Configs;
 using UnityEngine;
-using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure.Ragdoll
 {
     public class RagdollController : MonoBehaviour
     {

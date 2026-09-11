@@ -1,9 +1,9 @@
-﻿
-using System.Collections;
+﻿using Features.SettingsPanel.Adapter;
+using Features.SettingsPanel.Infrastructure;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.SettingsPanel
+namespace Features.SettingsPanel.Installer
 {
     public class SettingsPanelInstaller: MonoInstaller
     {

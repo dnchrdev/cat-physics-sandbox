@@ -1,9 +1,8 @@
-﻿using Feature.Core;
-using Feature.Shared;
-using System;
-using UnityEngine;
+﻿using System;
+using Features.Core.Utils;
+using Features.Shared;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Domain
 {
     public class Enemy : IEntity, ITarget, ILiveEvents
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Feature.UI
+namespace Features.UI.Infrastructure.Data
 {
     [Serializable]
     public enum PanelMode

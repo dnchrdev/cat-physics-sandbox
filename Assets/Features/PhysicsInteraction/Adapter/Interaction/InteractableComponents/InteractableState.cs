@@ -1,8 +1,6 @@
-﻿using Feature.PhysicsInteractio;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.InteractableComponents
 {
     public class InteractableState
     {

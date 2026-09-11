@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyRig : MonoBehaviour
     {

@@ -1,8 +1,9 @@
 ﻿using System;
-using Feature.UI;
+using Features.MainMenu.Adapter.Interfaces;
+using Features.UI.Presentation.Buttons;
 using UnityEngine;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Infrastructure
 {
     public class MainMenuView : MonoBehaviour, IMainMenuView
     {

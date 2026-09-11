@@ -1,6 +1,6 @@
 using System;
 
-namespace Feature.Storage
+namespace Features.Storage.Infrastructure.Interfaces
 {
     public interface IStorageDataService
     {

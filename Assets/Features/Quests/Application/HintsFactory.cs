@@ -1,11 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
-using System.Collections;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace Feature.Quests
+namespace Features.Quests.Application
 {
     public class HintsFactory
     {

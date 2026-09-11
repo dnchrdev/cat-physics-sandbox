@@ -1,11 +1,14 @@
-using Feature.PhysicsInteraction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure.Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure.Quests
 {
     public class BaseQuest : MonoBehaviour, IDisposable
     {

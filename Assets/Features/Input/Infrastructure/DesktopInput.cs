@@ -1,8 +1,9 @@
 using System;
+using Features.Input.Infrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Input
+namespace Features.Input.Infrastructure
 {
     public class DesktopInput : ITickable, IInitializable, IDisposable, IMovementInput, ICameraInput, IInteractionInput, IUIPanelInput
     {
@@ -41,7 +42,11 @@ namespace Feature.Input
             _actions.Keyboard.Throw.started += ctx => InvokeThrow();
             _actions.Keyboard.Release.started += ctx => InvokeRelease();
 
-            _actions.Keyboard.ToggleSettings.started += ctx => ToggleSettingsEvent?.Invoke();
+            _actions.Keyboard.ToggleSettings.started += ctx =>
+            {
+                Debug.Log("SETTINGS");
+                ToggleSettingsEvent?.Invoke();
+            };
             _actions.Keyboard.AllQuests.started += ctx => AllQuestsEvent?.Invoke();
             _actions.Keyboard.QuestAdv.started += ctx => QuestHintsEvent?.Invoke();
         }

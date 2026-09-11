@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Configs;
+using Features.UI.Presentation;
+using Features.UI.Presentation.Interfaces;
+using Features.UI.Utils;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.UI
+namespace Features.UI.Installer
 {
     public class UIInstaller : MonoInstaller
     {

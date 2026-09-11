@@ -1,4 +1,4 @@
-﻿namespace Feature.PlayerFeature
+﻿namespace Features.Player.Applications.FSM
 {
     public interface ICharacterState
     {

@@ -1,11 +1,13 @@
-﻿using Cysharp.Threading.Tasks;
-using System;
+﻿using System;
 using System.Threading;
-using UnityEngine;
-using UnityEngine.AI;
+using Cysharp.Threading.Tasks;
+using Features.Enemy.Domain;
+using Features.Enemy.Insrastructure;
+using Features.Enemy.Insrastructure.Configs;
+using Features.Enemy.Insrastructure.Ragdoll;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application
 {
     public class EnemyPursuitUseCase
     {

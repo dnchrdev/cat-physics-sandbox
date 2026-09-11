@@ -1,5 +1,7 @@
+using Features.Core.Infrastructure.Services.Interfaces;
 using UnityEngine;
-namespace Feature.Core
+
+namespace Features.Core.Infrastructure.Services
 {
     public class GamePauseService : IGamePauseService
     {

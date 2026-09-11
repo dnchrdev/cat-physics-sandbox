@@ -1,9 +1,11 @@
 ﻿using System;
-using Feature.UI;
-using System.Collections;
+using Features.Quests.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure
 {
     public class AllQuestsView : MonoBehaviour, IAllQuestsView, IPanel
     {

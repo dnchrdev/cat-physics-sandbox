@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
-using Feature.BehaviourTree;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Pursuit
 {
     public class TaskPursuitPlayer : EnemyTask
     {

@@ -1,17 +1,18 @@
 using System;
-using System.Collections.Generic;
-using Feature.Advertising;
-using Feature.UI;
-using UnityEngine;
+using Features.Advertising.Infrastructure.Interfaces;
+using Features.Player.Adapter.Interfaces;
+using Features.Player.Applications;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Adapter
 {
     public class KnockoutPresenter : IInitializable, IDisposable
     {
         [Inject] private PlayerRespawnUseCase _respawnUseCase;
         [Inject] private IAdvRequestService _advRequestService;
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Domain.Player _player;
         [Inject] private readonly UIPanelsManager _panelsManager;
         [Inject] private readonly IKnockoutView _knockoutView;
         

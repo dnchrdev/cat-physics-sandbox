@@ -1,16 +1,16 @@
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure.Configs
 {
     [CreateAssetMenu(fileName = "SurfacesConfig", menuName = "Configs/Surfaces")]
     public class SurfacesConfig : ScriptableObject
     {
-        [field: SerializeField] public Surface DefaultSurface { get; private set; }
-        [field: SerializeField] public Surface UnstableSurface { get; private set; }
+        [field: SerializeField] public Data.Surface DefaultSurface { get; private set; }
+        [field: SerializeField] public Data.Surface UnstableSurface { get; private set; }
 
-        [field: SerializeField] public Surface[] Surfaces { get; private set; }
+        [field: SerializeField] public Data.Surface[] Surfaces { get; private set; }
 
-        public bool GetSurface(GameObject gameObject, out Surface outputSurface)
+        public bool GetSurface(GameObject gameObject, out Data.Surface outputSurface)
         {
             outputSurface = null;
 

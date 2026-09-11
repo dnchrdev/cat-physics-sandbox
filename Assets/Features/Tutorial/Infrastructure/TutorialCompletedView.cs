@@ -1,8 +1,11 @@
 ﻿using System;
-using Feature.UI;
+using Features.Tutorial.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 
-namespace Feature.Tutorial
+namespace Features.Tutorial.Infrastructure
 {
     public class TutorialCompletedView : MonoBehaviour, ITutorialCompletedView, IPanel
     {

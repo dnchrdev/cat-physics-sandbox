@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     public class CharacterSensor
     {

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Feature.Storage;
-using Feature.UI;
+using Features.MobileButtonsAdjustment.Adapter;
+using Features.MobileButtonsAdjustment.Adapter.Interfaces;
+using Features.Storage.Domain.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Infrastructure
 {
     public class MobileButtonsAdjustmentView : MonoBehaviour, IMobileButtonsAdjustmentView, IPanel
     {
@@ -28,6 +32,7 @@ namespace Feature.MobileButtonsAdjustment
         {
             gameObject.SetActive(true);
             SubscribeButtons();
+            SubscribeDragHandlers(GetCurrentVisibility());
         }
 
         public void OnExitPanel()

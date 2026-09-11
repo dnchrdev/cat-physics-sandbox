@@ -1,10 +1,13 @@
 ﻿using System;
-using Feature.UI;
+using Features.Quests.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure
 {
     public class MobileCurrentQuestView : MonoBehaviour, ICurrentQuestView, IPanel
     {

@@ -1,8 +1,9 @@
 using System;
+using Features.Input.Infrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Input
+namespace Features.Input.Infrastructure
 {
     public class MobileInput : ITickable, IMovementInput, ICameraInput, IInteractionInput, IUIPanelInput
     {

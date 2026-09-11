@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
-namespace Feature.Scene
+namespace Features.Scene.Data
 {
     [Serializable]
     public struct SceneLoadData

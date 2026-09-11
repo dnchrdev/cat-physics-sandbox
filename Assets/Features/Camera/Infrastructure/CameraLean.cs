@@ -1,8 +1,9 @@
-﻿using Feature.PlayerFeature;
+﻿using Features.Camera.Infrastructure.Config;
+using Features.Player.Insrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure
 {
     public class CameraLean
     {

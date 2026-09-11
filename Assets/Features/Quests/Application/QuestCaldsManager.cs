@@ -1,11 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Application
 {
     public class QuestCaldsManager
     {

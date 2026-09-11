@@ -1,8 +1,12 @@
 ﻿using System;
-using Feature.UI;
+using Features.Quests.Adapter.Interfaces;
+using Features.Quests.Application;
+using Features.Quests.Domain;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter
 {
     public class AllQuestsPresenter : IInitializable, IDisposable
     {

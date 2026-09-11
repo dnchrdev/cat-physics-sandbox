@@ -1,7 +1,8 @@
-using Feature.Storage;
+using Features.Input.Infrastructure;
+using Features.Storage.Domain.Interfaces;
 using Zenject;
 
-namespace Feature.Input
+namespace Features.Input.Installer
 {
     public class InputInstaller : MonoInstaller
     {

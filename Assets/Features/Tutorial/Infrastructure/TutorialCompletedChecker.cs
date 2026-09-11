@@ -1,12 +1,10 @@
-using System;
-using Feature.Core;
-using Feature.PlayerFeature;
-using Feature.UI;
-using UnityEditor;
+using Features.Player.Domain.Interfeces;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Tutorial
+namespace Features.Tutorial.Infrastructure
 {
     public class TutorialCompletedChecker : MonoBehaviour
     {

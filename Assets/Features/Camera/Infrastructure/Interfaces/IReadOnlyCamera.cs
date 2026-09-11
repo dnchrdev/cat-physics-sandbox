@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure.Interfaces
 {
     public interface IReadOnlyCamera
     {
-        Camera Camera{ get; }
+        UnityEngine.Camera Camera{ get; }
         Vector3 Forward { get; }
         Vector3 Position { get; }
         Quaternion Rotation { get; }

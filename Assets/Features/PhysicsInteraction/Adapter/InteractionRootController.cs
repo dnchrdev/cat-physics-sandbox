@@ -1,19 +1,20 @@
-using Feature.CameraFeature;
-using Feature.PlayerFeature;
 using System;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.Player.Insrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter
 {
     public class InteractionRootController : IInitializable, IDisposable, IFixedTickable
     {
         private InteractionRoot _interactionRoot;
         private IReadOnlyCamera _readOnlyCamera;
         private IReadOnlyCharacterMotor _characterMotor;
-        private Player _player;
+        private Player.Domain.Player _player;
 
-        public InteractionRootController(InteractionRoot interactionRoot, IReadOnlyCamera readOnlyCamera, IReadOnlyCharacterMotor characterMotor, Player player)
+        public InteractionRootController(InteractionRoot interactionRoot, IReadOnlyCamera readOnlyCamera, IReadOnlyCharacterMotor characterMotor, Player.Domain.Player player)
         {
             _interactionRoot = interactionRoot;
             _readOnlyCamera = readOnlyCamera;

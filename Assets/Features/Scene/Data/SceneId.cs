@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Feature.Scene
+namespace Features.Scene.Data
 {
     [Serializable]
     public enum SceneId

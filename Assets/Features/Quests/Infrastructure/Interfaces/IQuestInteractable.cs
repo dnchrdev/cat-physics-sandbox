@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 
-public interface IQuestInteractable
+namespace Features.Quests.Infrastructure.Interfaces
 {
-    event Action<IQuestInteractable, Collision> QuestColliderHitEvent;
-    event Action<IQuestInteractable> QuestHitEvent;
-    event Action<IQuestInteractable> QuestThrowEvent;
-    Transform GetTransform();
-    Rigidbody GetRigidbody();
+    public interface IQuestInteractable
+    {
+        event Action<IQuestInteractable, Collision> QuestColliderHitEvent;
+        event Action<IQuestInteractable> QuestHitEvent;
+        event Action<IQuestInteractable> QuestThrowEvent;
+        Transform GetTransform();
+        Rigidbody GetRigidbody();
+    }
 }

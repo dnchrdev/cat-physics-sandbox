@@ -1,10 +1,10 @@
-﻿using Feature.Core;
-using System.Collections;
-using Feature.CameraFeature;
+﻿using Features.Camera.Infrastructure.Interfaces;
+using Features.Core.Infrastructure.Services;
+using Features.PhysicsInteraction.Infrastructure.Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.Grab
 {
     public abstract class GrabStrategyBase : IGrabable
     {

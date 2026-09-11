@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
-using Zenject;
 
-namespace Feature.Input
+namespace Features.Input.Infrastructure.Interfaces
 {
     public interface IMovementInput
     {

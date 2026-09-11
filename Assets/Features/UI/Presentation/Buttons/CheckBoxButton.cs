@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Feature.UI
+namespace Features.UI.Presentation.Buttons
 {
     public class CheckBoxButton : ImageButton
     {

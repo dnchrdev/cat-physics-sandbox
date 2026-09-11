@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Infrastructure.Config
 {
     [CreateAssetMenu(fileName = "CameraConfig", menuName = "Config/CameraConfig")]
     public class CameraConfig : ScriptableObject

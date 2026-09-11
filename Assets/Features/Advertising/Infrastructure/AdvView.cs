@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using Feature.UI;
+﻿using Features.Advertising.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using TMPro;
 using UnityEngine;
 
-namespace Feature.Advertising
+namespace Features.Advertising.Infrastructure
 {
     public class AdvView : MonoBehaviour, IAdvView, IPanel
     {

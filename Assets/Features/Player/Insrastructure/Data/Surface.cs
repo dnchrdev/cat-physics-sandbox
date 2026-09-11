@@ -1,6 +1,6 @@
 using System;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure.Data
 {
     [Serializable]
     public class Surface

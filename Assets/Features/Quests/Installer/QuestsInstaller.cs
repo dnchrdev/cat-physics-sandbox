@@ -1,13 +1,18 @@
-using Feature.Storage;
+using Features.Quests.Adapter;
+using Features.Quests.Application;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure;
+using Features.Quests.Infrastructure.Config;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Installer
 {
     public class QuestsInstaller : MonoInstaller
     {
         [SerializeField] private QuestsConfig _config;
-        [SerializeField] private QuestsBootstrap _bootstrap;
+        [SerializeField] private QuestsRefs _refs;
         [SerializeField] private PCCurrentQuestView _pcCurrentQuestView;
         [SerializeField] private MobileCurrentQuestView _mobileCurrentQuestView;
         [SerializeField] private AllQuestsView _allQuestsView;
@@ -23,6 +28,7 @@ namespace Feature.Quests
 
         public override void InstallBindings()
         {
+            Container.Bind<GameStartedUseCase>().AsSingle();
             Container.Bind<HintShowUseCase>().AsSingle();
             Container.Bind<ResetAllQuestsUseCase>().AsSingle();
             Container.Bind<QuestCardFactory>().AsSingle();
@@ -31,7 +37,7 @@ namespace Feature.Quests
             Container.Bind<HintsFactory>().AsSingle();
 
             Container.Bind<QuestsConfig>().FromInstance(_config).AsSingle();
-            Container.BindInterfacesTo<QuestsBootstrap>().FromInstance(_bootstrap).AsSingle();
+            Container.Bind<QuestsRefs>().FromInstance(_refs).AsSingle();
             Container.Bind<QuestsCollection>().AsSingle();
 
             if (_controlSettings.IsMobile)

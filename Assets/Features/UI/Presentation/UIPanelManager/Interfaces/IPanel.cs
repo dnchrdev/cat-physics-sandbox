@@ -1,4 +1,6 @@
-﻿namespace Feature.UI
+﻿using Features.UI.Infrastructure.Data;
+
+namespace Features.UI.Presentation.UIPanelManager.Interfaces
 {
     public interface IPanel
     {

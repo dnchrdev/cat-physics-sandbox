@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-using Feature.BehaviourTree;
-
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Patroling
 {
     public class TaskPatrolWaiting : EnemyTask
     {

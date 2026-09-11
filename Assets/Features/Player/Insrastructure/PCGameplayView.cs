@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using Feature.Input;
-using Feature.UI;
+using Features.Input.Infrastructure.Interfaces;
+using Features.Player.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     public class PCGameplayView : MonoBehaviour, IPCGameplayView, IPanel
     {
@@ -30,7 +31,6 @@ namespace Feature.PlayerFeature
         public void OnEnterPanel()
         {
             gameObject.SetActive(true);
-
             _input.ToggleSettingsEvent += OnToggleSettings;
         }
 
@@ -43,7 +43,6 @@ namespace Feature.PlayerFeature
 
         private void OnToggleSettings()
         {
-            Debug.Log("SETTINGS TOGGLE");
             SettingsOpenedEvent?.Invoke();
         }
     }

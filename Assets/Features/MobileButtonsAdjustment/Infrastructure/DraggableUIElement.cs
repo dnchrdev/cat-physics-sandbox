@@ -1,9 +1,8 @@
-﻿using System.Collections;
+﻿using System;
 using UnityEngine;
-using System;
 using UnityEngine.EventSystems;
 
-namespace Feature.MobileButtonsAdjustment
+namespace Features.MobileButtonsAdjustment.Infrastructure
 { 
     [RequireComponent(typeof(RectTransform))]
     public class DraggableUIElement : MonoBehaviour,

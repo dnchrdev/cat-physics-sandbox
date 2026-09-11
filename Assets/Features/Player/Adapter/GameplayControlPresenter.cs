@@ -1,11 +1,13 @@
 ﻿using System;
-using Feature.Input;
-using Feature.Storage;
-using Feature.UI;
+using Features.Input.Infrastructure.Interfaces;
+using Features.Player.Adapter.Interfaces;
+using Features.Storage.Domain.Interfaces;
+using Features.UI.Infrastructure;
+using Features.UI.Infrastructure.Data;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Adapter
 {
     public class GameplayControlPresenter : IInitializable, IDisposable
     {

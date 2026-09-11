@@ -1,4 +1,6 @@
-﻿namespace Feature.PlayerFeature
+﻿using Features.Player.Applications.FSM;
+
+namespace Features.Player.Insrastructure.Interfaces
 {
     public interface IStateSwitcher
     {

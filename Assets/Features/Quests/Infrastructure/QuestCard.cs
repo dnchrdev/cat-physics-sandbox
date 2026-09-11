@@ -1,11 +1,10 @@
-﻿using Feature.UI;
-using System;
-using System.Collections;
+﻿using System;
+using Features.UI.Presentation.Buttons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure
 {
     public class QuestCard : MonoBehaviour
     {

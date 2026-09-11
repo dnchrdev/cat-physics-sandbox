@@ -1,7 +1,7 @@
-﻿using Feature.Shared;
+﻿using Features.Shared;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Interfaces
 {
     public interface IColliderTrigger
     {

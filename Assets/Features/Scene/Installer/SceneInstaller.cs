@@ -1,8 +1,9 @@
-using System;
-using Zenject;
+using Features.Scene.Config;
+using Features.Scene.Infrastructure;
 using UnityEngine;
+using Zenject;
 
-namespace Feature.Scene
+namespace Features.Scene.Installer
 {
     public class SceneInstaller : MonoInstaller
     {

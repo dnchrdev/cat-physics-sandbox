@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
-namespace Feature.Shared
+namespace Features.PhysicsInteraction.Infrastructure.Collision
 {
     public class TriggerEnter : MonoBehaviour
     {

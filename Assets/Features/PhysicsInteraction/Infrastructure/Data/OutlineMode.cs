@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Data
 {
     [Serializable]
     public enum OutlineMode

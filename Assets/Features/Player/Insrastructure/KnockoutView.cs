@@ -1,8 +1,11 @@
 ﻿using System;
-using Feature.UI;
+using Features.Player.Adapter.Interfaces;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.Buttons;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     public class KnockoutView: MonoBehaviour, IKnockoutView, IPanel
     {

@@ -1,4 +1,4 @@
-namespace Feature.Core
+namespace Features.Core.Utils
 {
     public sealed class Result
     {

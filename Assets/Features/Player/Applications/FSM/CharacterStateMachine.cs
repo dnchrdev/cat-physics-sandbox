@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Features.Player.Applications.FSM.States;
+using Features.Player.Domain;
+using Features.Player.Insrastructure.Interfaces;
+using Features.Player.Insrastructure.Interfaces.Context;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Applications.FSM
 {
     public class CharacterStateMachine : ITickable, IFixedTickable, IStateSwitcher
     {

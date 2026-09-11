@@ -1,8 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using Feature.Core;
-using Feature.Scene;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Application.Interfaces
 {
     public interface IStartGameUseCase
     {

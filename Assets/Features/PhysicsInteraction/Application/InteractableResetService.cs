@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Features.PhysicsInteraction.Infrastructure.Interfaces;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Application
 {
     public class InteractableResetService: IDisposable
     {

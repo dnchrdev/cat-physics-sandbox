@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.BehaviourTree
+﻿namespace Features.BehaviourTree.Interfaces
 { 
     public interface IBehaviourTree 
     {

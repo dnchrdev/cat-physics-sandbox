@@ -1,12 +1,13 @@
-﻿using Feature.PhysicsInteraction;
-using Feature.Quests;
+﻿using Features.PhysicsInteraction.Application;
+using Features.Player.Insrastructure;
+using Features.Player.Insrastructure.Interfaces;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Applications
 {
     public class PlayerRespawnUseCase
     {
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Domain.Player _player;
         [Inject] private readonly ICharacterMotorReset _characterMotor;
         [Inject] private readonly PlayerRig _playerRig;
         [Inject] private readonly InteractableResetService _interactableResetService;

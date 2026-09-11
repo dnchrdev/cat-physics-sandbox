@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
-
-namespace Feature.BehaviourTree
+﻿namespace Features.BehaviourTree
 {
     public class Tree /*: IBehaviourTree*/
     {

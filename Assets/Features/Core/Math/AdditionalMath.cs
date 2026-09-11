@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.Core
+﻿namespace Features.Core.Math
 {
     public static class AdditionalMath
     {

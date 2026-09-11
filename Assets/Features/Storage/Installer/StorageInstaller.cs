@@ -1,6 +1,8 @@
+using Features.Storage.Domain;
+using Features.Storage.Infrastructure;
 using Zenject;
 
-namespace Feature.Storage
+namespace Features.Storage.Installer
 {
     public class StorageInstaller : MonoInstaller
     {

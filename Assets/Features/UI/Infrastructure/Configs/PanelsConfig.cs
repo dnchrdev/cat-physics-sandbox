@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Features.UI.Infrastructure.Data;
 using UnityEngine;
 
-namespace Feature.UI
+namespace Features.UI.Infrastructure.Configs
 {
     [CreateAssetMenu(fileName = "Panels", menuName = "Configs/Panels")]
     public class PanelsConfig : ScriptableObject

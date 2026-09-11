@@ -1,8 +1,15 @@
-using Feature.Core;
 using System;
 using System.Collections.Generic;
+using Features.Core.Infrastructure.Services;
+using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.PhysicsInteraction.Adapter.Interaction.ColliderHit;
+using Features.PhysicsInteraction.Adapter.Interaction.ColliderTrigger;
+using Features.PhysicsInteraction.Adapter.Interaction.Grab;
+using Features.PhysicsInteraction.Adapter.Interaction.Hit;
+using Features.PhysicsInteraction.Infrastructure.Data;
+using Features.PhysicsInteraction.Infrastructure.Interfaces;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Application.Factory
 {
     public class InteractionComponentsFactory
     {

@@ -1,8 +1,6 @@
-﻿using Feature.Core;
-using System.Collections;
-using UnityEngine;
+﻿using Features.Core.Utils;
 
-namespace Feature.Shared
+namespace Features.Shared
 {
     public interface ITarget
     {

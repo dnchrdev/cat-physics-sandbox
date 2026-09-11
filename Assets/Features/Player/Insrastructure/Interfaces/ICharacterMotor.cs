@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure.Interfaces
 {
     public interface ICharacterMotor
     {

@@ -1,8 +1,10 @@
-using Feature.UI;
 using System.Collections.Generic;
+using Features.PhysicsInteraction.Infrastructure.Data;
+using Features.UI.Infrastructure.Data;
+using Features.UI.Presentation.UIPanelManager.Interfaces;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure
 {
     public class InteractionHintsShower : MonoBehaviour, IInteractionTipShower, IPanel
     {

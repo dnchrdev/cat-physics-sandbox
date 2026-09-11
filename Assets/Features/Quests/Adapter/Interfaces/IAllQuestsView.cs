@@ -1,8 +1,7 @@
 ﻿using System;
-using Feature.UI;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter.Interfaces
 {
     public interface IAllQuestsView
     {

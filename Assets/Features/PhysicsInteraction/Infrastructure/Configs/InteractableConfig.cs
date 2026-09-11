@@ -1,7 +1,8 @@
 ﻿using System;
+using Features.PhysicsInteraction.Infrastructure.Data;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Configs
 {
     [CreateAssetMenu(fileName = "InteractableConfig", menuName = "Configs/InteractableConfig")]
     public class InteractableConfig : ScriptableObject

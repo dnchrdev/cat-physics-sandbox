@@ -1,8 +1,8 @@
 ﻿using System;
-using Feature.Storage;
+using Features.Storage.Domain.Interfaces;
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Adapter.Interfaces
 {
     public interface IMobileControlView : IGameplayControlView
     {

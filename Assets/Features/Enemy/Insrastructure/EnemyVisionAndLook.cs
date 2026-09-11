@@ -1,11 +1,9 @@
-﻿using Feature.PlayerFeature;
-using System.Collections;
+﻿using Features.Enemy.Insrastructure.Configs;
+using Features.Player.Domain.Interfeces;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UIElements;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyVisionAndLook
     {

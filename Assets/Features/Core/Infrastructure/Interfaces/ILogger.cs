@@ -1,9 +1,12 @@
 
 using System;
 
-public interface ILogger
+namespace Features.Core.Infrastructure.Interfaces
 {
-    void Log(Type logType, string message);
-    void LogWarning(Type logType, string message);
-    void LogError(Type logType, string message);
+    public interface ILogger
+    {
+        void Log(Type logType, string message);
+        void LogWarning(Type logType, string message);
+        void LogError(Type logType, string message);
+    }
 }

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using Feature.UI;
-using UnityEngine;
+﻿using Features.PhysicsInteraction.Infrastructure.Data;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure
 {
     public interface IInteractionTipShower
     {

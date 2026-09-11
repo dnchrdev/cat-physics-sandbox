@@ -1,19 +1,27 @@
 using System;
 using System.Collections.Generic;
-using Feature.BehaviourTree;
-using Feature.Core;
-using Feature.PlayerFeature;
+using Features.BehaviourTree;
+using Features.BehaviourTree.Composite;
+using Features.Core.Infrastructure.Services.Interfaces;
+using Features.Enemy.Application;
+using Features.Enemy.Application.Tasks;
+using Features.Enemy.Application.Tasks.Attack;
+using Features.Enemy.Application.Tasks.Patroling;
+using Features.Enemy.Application.Tasks.Pursuit;
+using Features.Enemy.Application.Tasks.Ragdoll;
+using Features.Enemy.Presentation.Animation;
 using UnityEngine;
 using Zenject;
-using Tree = Feature.BehaviourTree.Tree;
+using Blackboard = Features.Enemy.Domain.Blackboard;
+using Tree = Features.BehaviourTree.Tree;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyController : IInitializable, IDisposable, ITickable
     {
         [Inject] private readonly IGamePauseService _pauseService;
         [Inject] private readonly EnemyContext _ctx;
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
         [Inject] private readonly EnemyAnimationEvents _animationEvents;
         [Inject] private readonly EnemyUseCaseOrchestrator _useCaseOrchestrator;
         [Inject] private readonly EnemyAttackAbility _attackAbility;

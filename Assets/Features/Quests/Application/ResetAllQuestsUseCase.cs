@@ -1,6 +1,7 @@
-﻿using Zenject;
+﻿using Features.Quests.Domain;
+using Zenject;
 
-namespace Feature.Quests
+namespace Features.Quests.Application
 {
     public class ResetAllQuestsUseCase
     {

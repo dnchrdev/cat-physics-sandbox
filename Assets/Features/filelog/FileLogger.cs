@@ -1,54 +1,56 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 
-public static class FileLogger
+namespace Features.filelog
 {
-    private static string _logPath;
-    private static StreamWriter _writer;
-    private static bool _initialized;
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Initialize()
+    public static class FileLogger
     {
-        if (_initialized)
-            return;
+        private static string _logPath;
+        private static StreamWriter _writer;
+        private static bool _initialized;
 
-        _initialized = true;
-
-        _logPath = Path.Combine(Application.persistentDataPath, "game_log.txt");
-
-        _writer = new StreamWriter(_logPath, true)
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Initialize()
         {
-            AutoFlush = true
-        };
+            if (_initialized)
+                return;
 
-        //Application.logMessageReceived += HandleUnityLog;
-    }
+            _initialized = true;
 
-    public static void Log(string message)
-    {
-        Debug.Log(message);
-    }
+            _logPath = Path.Combine(Application.persistentDataPath, "game_log.txt");
 
-    private static void HandleUnityLog(
-        string condition,
-        string stackTrace,
-        LogType type)
-    {
-        if (_writer == null)
-            return;
-        //{DateTime.Now:yyyy-MM-dd HH:mm:ss}] [{type}] 
-        string log =
-            $"[{condition}";
+            _writer = new StreamWriter(_logPath, true)
+            {
+                AutoFlush = true
+            };
 
-        if (type == LogType.Error ||
-            type == LogType.Exception ||
-            type == LogType.Assert)
-        {
-            log += $"\n{stackTrace}";
+            //Application.logMessageReceived += HandleUnityLog;
         }
 
-        _writer.WriteLine(log);
+        public static void Log(string message)
+        {
+            Debug.Log(message);
+        }
+
+        private static void HandleUnityLog(
+            string condition,
+            string stackTrace,
+            LogType type)
+        {
+            if (_writer == null)
+                return;
+            //{DateTime.Now:yyyy-MM-dd HH:mm:ss}] [{type}] 
+            string log =
+                $"[{condition}";
+
+            if (type == LogType.Error ||
+                type == LogType.Exception ||
+                type == LogType.Assert)
+            {
+                log += $"\n{stackTrace}";
+            }
+
+            _writer.WriteLine(log);
+        }
     }
 }

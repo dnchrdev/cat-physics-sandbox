@@ -1,4 +1,4 @@
-﻿namespace Feature.MobileButtonsAdjustment
+﻿namespace Features.MobileButtonsAdjustment.Adapter
 {
     public interface IPanelLifeEvents
     {

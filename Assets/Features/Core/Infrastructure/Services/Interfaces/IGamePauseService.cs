@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Feature.Core
+﻿namespace Features.Core.Infrastructure.Services.Interfaces
 {
     public interface IGamePauseService
     {

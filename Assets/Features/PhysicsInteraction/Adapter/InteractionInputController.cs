@@ -1,17 +1,20 @@
-using Feature.Core;
-using Feature.CameraFeature;
-using Feature.Input;
-using Feature.UI;
-using Feature.PlayerFeature;
 using System;
+using Features.Camera.Infrastructure.Interfaces;
+using Features.Core.Utils;
+using Features.Input.Infrastructure.Interfaces;
+using Features.PhysicsInteraction.Adapter.Interaction.InteractionComponents;
+using Features.PhysicsInteraction.Infrastructure;
+using Features.PhysicsInteraction.Infrastructure.Configs;
+using Features.UI.Infrastructure;
 using UnityEngine;
 using Zenject;
+using ILogger = Features.Core.Infrastructure.Interfaces.ILogger;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter
 {
     public class InteractionInputController : IInitializable, IDisposable, ITickable
     {
-        [Inject] private readonly Player _player;
+        [Inject] private readonly Player.Domain.Player _player;
         [Inject] private readonly IInteractionInput _input;
         [Inject] private readonly ILogger _logger;
         [Inject] private readonly InteractableHandRig _handRig;

@@ -1,8 +1,7 @@
-﻿using Feature.PhysicsInteraction;
-using System.Collections;
+﻿using Features.PhysicsInteraction.Infrastructure.Interfaces;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.Hit
 {
     public class HitStrategy : IHitable
     {

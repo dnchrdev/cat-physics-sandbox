@@ -1,7 +1,7 @@
-﻿using Feature.Shared;
+﻿using Features.Shared;
 using UnityEngine;
 
-namespace Feature.Core
+namespace Features.Core.Infrastructure.Services.Interfaces
 {
     public interface IWorldEntityService
     {

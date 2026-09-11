@@ -1,11 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
-using Feature.Core;
-using Feature.Scene;
-using System;
-using System.Collections;
-using UnityEngine;
+﻿using System;
 
-namespace Feature.MainMenu
+namespace Features.MainMenu.Infrastructure.Interfaces
 {
     public interface IView
     {

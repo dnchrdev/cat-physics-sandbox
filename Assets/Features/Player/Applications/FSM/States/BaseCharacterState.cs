@@ -1,8 +1,13 @@
-﻿using Feature.CameraFeature;
-using Feature.Input;
+﻿using Features.Camera.Infrastructure;
+using Features.Input.Infrastructure.Interfaces;
+using Features.Player.Domain;
+using Features.Player.Insrastructure.Configs;
+using Features.Player.Insrastructure.Interfaces;
+using Features.Player.Insrastructure.Interfaces.Context;
+using Features.Player.Insrastructure.Surface;
 using UnityEngine;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Applications.FSM.States
 {
     public class BaseCharacterState : ICharacterState
     {
@@ -13,7 +18,7 @@ namespace Feature.PlayerFeature
         protected IStateSwitcher StateSwitcher => _ctx.ModuleSwitcher;
         protected IMovementInput MoveInput => _ctx.MoveInput;
         protected IInteractionInput InteractInput => _ctx.InteractInput;
-        protected Player Player => _ctx.Player;
+        protected Domain.Player Player => _ctx.Player;
         protected ICharacterMotor Motor => _ctx.Motor;
         protected Vector3 MotorPosition => _ctx.ReadOnlyMotor.GetPosition();
         protected PlayerCharacterConfig Config => _ctx.Config;

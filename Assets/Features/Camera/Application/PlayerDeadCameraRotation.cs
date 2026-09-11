@@ -1,11 +1,11 @@
-﻿using Feature.Core;
-using Feature.EnemyFeature;
-using Feature.PlayerFeature;
-using Feature.Shared;
+﻿using Features.Camera.Infrastructure;
+using Features.Camera.Infrastructure.Config;
+using Features.Core.Infrastructure.Services.Interfaces;
+using Features.Shared;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.CameraFeature
+namespace Features.Camera.Application
 {
     public class PlayerDeadCameraRotation
     {

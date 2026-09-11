@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Data
 {
     [Serializable]
     public struct ColliderDrag

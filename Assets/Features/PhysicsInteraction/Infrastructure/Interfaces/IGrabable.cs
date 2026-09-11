@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using Feature.CameraFeature;
+﻿using Features.Camera.Infrastructure.Interfaces;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Interfaces
 {
     public interface IGrabable
     {

@@ -1,9 +1,9 @@
-using Feature.Scene;
 using System;
+using Features.Scene.Config;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Feature.UI
+namespace Features.MainMenu.Infrastructure.Buttons
 {
     public class LoadLevelButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {

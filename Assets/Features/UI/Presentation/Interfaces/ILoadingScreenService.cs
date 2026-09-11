@@ -1,8 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using System.Collections;
-using UnityEngine;
 
-namespace Feature.UI
+namespace Features.UI.Presentation.Interfaces
 {
     public interface ILoadingScreenService
     {

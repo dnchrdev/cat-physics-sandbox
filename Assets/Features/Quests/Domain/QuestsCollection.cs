@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using Features.Quests.Infrastructure.Quests;
 using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Domain
 {
     public class QuestsCollection
     {

@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Features.Player.Insrastructure.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Insrastructure
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]

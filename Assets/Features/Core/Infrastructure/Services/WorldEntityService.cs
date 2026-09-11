@@ -1,8 +1,9 @@
-﻿using Feature.Shared;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Features.Core.Infrastructure.Services.Interfaces;
+using Features.Shared;
 using UnityEngine;
 
-namespace Feature.Core
+namespace Features.Core.Infrastructure.Services
 {
     public class WorldEntityService : IWorldEntityService
     {

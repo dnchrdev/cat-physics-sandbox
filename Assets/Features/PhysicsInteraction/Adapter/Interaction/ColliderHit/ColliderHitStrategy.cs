@@ -1,9 +1,8 @@
-﻿using Feature.Shared;
-using System.Collections;
+﻿using Features.PhysicsInteraction.Infrastructure.Interfaces;
+using Features.Shared;
 using UnityEngine;
-using Zenject;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Adapter.Interaction.ColliderHit
 {
     public class ColliderHitStrategy : IColliderHit
     {

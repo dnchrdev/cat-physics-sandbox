@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class MovableEnemy: IMovableEnemy
     {

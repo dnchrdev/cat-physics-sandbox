@@ -1,11 +1,13 @@
-﻿using Feature.PhysicsInteraction;
+﻿using Features.PhysicsInteraction.Application;
+using Features.Player.Insrastructure;
+using Features.Player.Insrastructure.Interfaces;
 using Zenject;
 
-namespace Feature.PlayerFeature
+namespace Features.Player.Applications
 {
     public class PlayerGameStartedUseCase
     {
-        [Inject] private Player _player;
+        [Inject] private Domain.Player _player;
         [Inject] private ICharacterMotorReset _characterMotor;
         [Inject] private PlayerRig _playerRig;
         [Inject] private InteractableResetService _interactableResetService;

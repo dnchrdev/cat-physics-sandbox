@@ -1,4 +1,5 @@
-using Feature.Core;
+using Features.Core.Utils;
+using Features.Storage.Infrastructure.Interfaces;
 using YG;
 
 namespace YG
@@ -18,120 +19,124 @@ namespace YG
     }
 }
 
-public class PlayerStorage : IPlayerStorage
+namespace Features.Storage.Infrastructure
 {
 
-    public float[] GetAnchoredPositionsX()
+    public class PlayerStorage : IPlayerStorage
     {
-        return YG2.saves.PositionsX;
-    }
-    
-    public float[] GetAnchoredPositionsY()
-    {
-        return YG2.saves.PositionsY;
-    }
-    
-    
-    public bool[] GetDefaults()
-    {
-        return YG2.saves.IsDefault;
-    }
-    
-    public bool GetIsJoystickDynamic()
-    {
-        return YG2.saves.IsDymanicJoystick;
-    }
-    
-    public bool GetIsJoystickFollow()
-    {
-        return YG2.saves.IsFollowJoystick;
-    }
-    
-    public int GetJoystickRadius()
-    {
-        return YG2.saves.JoystickRadius;
-    }
-    
-    public int GetLookSensitivity()
-    {
-        return YG2.saves.LookSensitivity;
-    }
-    
-    public int GetSavedID()
-    {
-        return YG2.saves.SavedID;
-    }
-    
-    public int GetSoundVolume()
-    {
-        return YG2.saves.AudioVolume;
-    }
-    
-    public bool GetTutorialCompleted()
-    {
-        return YG2.saves.TutorialCompleted;
-    }
 
-    public Result IsValid()
-    {
-        if (YG2.isSDKEnabled)
+        public float[] GetAnchoredPositionsX()
         {
-            return Result.Success();
+            return YG2.saves.PositionsX;
         }
-        else
+    
+        public float[] GetAnchoredPositionsY()
         {
-            return Result.Failure("Yandex SDK is not valid");
+            return YG2.saves.PositionsY;
         }
-    }
     
-    public void Save()
-    {
-        YG2.SaveProgress();
-    }
     
-    public void SetAnchoredPositions(float[] positionsX, float[] positionsY)
-    {
-        YG2.saves.PositionsX = positionsX;
-        YG2.saves.PositionsY = positionsY;
-    }
+        public bool[] GetDefaults()
+        {
+            return YG2.saves.IsDefault;
+        }
     
-    public void SetDefaults(bool[] defaults)
-    {
-        YG2.saves.IsDefault = defaults;
-    }
+        public bool GetIsJoystickDynamic()
+        {
+            return YG2.saves.IsDymanicJoystick;
+        }
     
-    public void SetIsJoystickDynamic(bool dynamic)
-    {
-        YG2.saves.IsDymanicJoystick = dynamic;
-    }
+        public bool GetIsJoystickFollow()
+        {
+            return YG2.saves.IsFollowJoystick;
+        }
     
-    public void SetIsJoystickFollow(bool follow)
-    {
-        YG2.saves.IsFollowJoystick = follow;
-    }
+        public int GetJoystickRadius()
+        {
+            return YG2.saves.JoystickRadius;
+        }
     
-    public void SetJoystickRadius(int radius)
-    {
-        YG2.saves.JoystickRadius = radius; 
-    }
+        public int GetLookSensitivity()
+        {
+            return YG2.saves.LookSensitivity;
+        }
     
-    public void SetLookSensitivity(int sensitivity)
-    {
-        YG2.saves.LookSensitivity = sensitivity;
-    }
+        public int GetSavedID()
+        {
+            return YG2.saves.SavedID;
+        }
     
-    public void SetSavedID(int id)
-    {
-        YG2.saves.SavedID = id;
-    }
+        public int GetSoundVolume()
+        {
+            return YG2.saves.AudioVolume;
+        }
     
-    public void SetSoundVolume(int volume)
-    {
-        YG2.saves.AudioVolume = volume;
-    }
+        public bool GetTutorialCompleted()
+        {
+            return YG2.saves.TutorialCompleted;
+        }
+
+        public Result IsValid()
+        {
+            if (YG2.isSDKEnabled)
+            {
+                return Result.Success();
+            }
+            else
+            {
+                return Result.Failure("Yandex SDK is not valid");
+            }
+        }
     
-    public void SetTutorialCompleted(bool completed)
-    {
-        YG2.saves.TutorialCompleted = completed;
+        public void Save()
+        {
+            YG2.SaveProgress();
+        }
+    
+        public void SetAnchoredPositions(float[] positionsX, float[] positionsY)
+        {
+            YG2.saves.PositionsX = positionsX;
+            YG2.saves.PositionsY = positionsY;
+        }
+    
+        public void SetDefaults(bool[] defaults)
+        {
+            YG2.saves.IsDefault = defaults;
+        }
+    
+        public void SetIsJoystickDynamic(bool dynamic)
+        {
+            YG2.saves.IsDymanicJoystick = dynamic;
+        }
+    
+        public void SetIsJoystickFollow(bool follow)
+        {
+            YG2.saves.IsFollowJoystick = follow;
+        }
+    
+        public void SetJoystickRadius(int radius)
+        {
+            YG2.saves.JoystickRadius = radius; 
+        }
+    
+        public void SetLookSensitivity(int sensitivity)
+        {
+            YG2.saves.LookSensitivity = sensitivity;
+        }
+    
+        public void SetSavedID(int id)
+        {
+            YG2.saves.SavedID = id;
+        }
+    
+        public void SetSoundVolume(int volume)
+        {
+            YG2.saves.AudioVolume = volume;
+        }
+    
+        public void SetTutorialCompleted(bool completed)
+        {
+            YG2.saves.TutorialCompleted = completed;
+        }
     }
 }

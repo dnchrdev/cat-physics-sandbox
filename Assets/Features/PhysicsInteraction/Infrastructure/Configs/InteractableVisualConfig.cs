@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using Features.PhysicsInteraction.Infrastructure.Data;
 using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Configs
 {
     [CreateAssetMenu(fileName = "InteractableMaterialConfig", menuName = "Configs/InteractableMaterialConfig")]
     public class InteractableVisualConfig : ScriptableObject

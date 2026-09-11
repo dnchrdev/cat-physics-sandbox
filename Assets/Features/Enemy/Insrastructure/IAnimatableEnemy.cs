@@ -1,4 +1,4 @@
-﻿namespace Feature.EnemyFeature
+﻿namespace Features.Enemy.Insrastructure
 {
     public interface IAnimatableEnemy
     {

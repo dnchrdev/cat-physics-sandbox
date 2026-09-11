@@ -1,16 +1,13 @@
-﻿using Feature.Core;
-using System.Collections;
-using UnityEngine;
-using UnityEngine.AI;
-using Feature.PlayerFeature;
+﻿using Features.Enemy.Application;
+using Features.Enemy.Insrastructure.Configs;
 using Zenject;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class EnemyContext
     {
-        [Inject] public readonly Enemy Enemy;
-        [Inject] public readonly Player Player;
+        [Inject] public readonly Domain.Enemy Enemy;
+        [Inject] public readonly Player.Domain.Player Player;
         [Inject] public readonly EnemyRig EnemyRig;
         [Inject] public readonly IAnimatableEnemy AnimatableEnemy;
         [Inject] public readonly IMovableEnemy MovableEnemy;

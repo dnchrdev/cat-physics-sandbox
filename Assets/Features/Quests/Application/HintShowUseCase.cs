@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Features.Quests.Infrastructure;
 
-namespace Feature.Quests
+namespace Features.Quests.Application
 {
     public class HintShowUseCase
     {

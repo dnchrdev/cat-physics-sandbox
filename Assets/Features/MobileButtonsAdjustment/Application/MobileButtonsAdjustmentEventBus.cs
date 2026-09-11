@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-
-namespace Feature.MobileButtonsAdjustment
+﻿namespace Features.MobileButtonsAdjustment.Application
 {
     public class MobileButtonsAdjustmentEventBus
     {

@@ -1,8 +1,8 @@
-using Feature.PhysicsInteraction;
-using System.Collections.Generic;
-using UnityEngine;
+using Features.PhysicsInteraction.Adapter.Interaction;
+using Features.Quests.Domain;
+using Features.Quests.Infrastructure.Interfaces;
 
-namespace Feature.Quests
+namespace Features.Quests.Infrastructure.Quests
 {
     public class HitQuest : BaseQuest
     {

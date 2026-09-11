@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
+using Features.Core.Infrastructure.Services.Interfaces;
 using UnityEngine;
 using Zenject;
-using Feature.Core;
-using Random = UnityEngine.Random;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     [Serializable]
     public struct SpawnAndPatrolPoints
@@ -23,7 +21,7 @@ namespace Feature.EnemyFeature
         [Inject] private EnemyFactory _enemyFactory;
         [Inject] private IWorldEntityService _worldEntityService;
 
-        private readonly List<Enemy> _spawnedEnemies = new();
+        private readonly List<Domain.Enemy> _spawnedEnemies = new();
 
         public void Initialize()
         {
@@ -38,7 +36,7 @@ namespace Feature.EnemyFeature
                 return;
             }
 
-            var spawnTasks = new List<UniTask<Enemy>>(_spawnAndPatrolPoints.Length);
+            var spawnTasks = new List<UniTask<Domain.Enemy>>(_spawnAndPatrolPoints.Length);
 
             foreach (var point in _spawnAndPatrolPoints)
             {

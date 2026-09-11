@@ -1,6 +1,4 @@
-﻿using Feature.UI;
-
-namespace Feature.Advertising
+﻿namespace Features.Advertising.Adapter.Interfaces
 {
     public interface IAdvView
     {

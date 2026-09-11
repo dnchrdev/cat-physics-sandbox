@@ -1,7 +1,9 @@
-﻿using Feature.BehaviourTree;
+﻿using Features.BehaviourTree;
+using Features.Enemy.Insrastructure;
 using UnityEngine;
+using Blackboard = Features.Enemy.Domain.Blackboard;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Application.Tasks.Patroling
 {
     public class TaskFindGroundedPatrolPoint : EnemyTask
     {

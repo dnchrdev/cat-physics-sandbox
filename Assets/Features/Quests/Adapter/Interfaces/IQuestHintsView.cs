@@ -1,7 +1,6 @@
-﻿using Feature.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.Quests
+namespace Features.Quests.Adapter.Interfaces
 {
     public interface IQuestHintsView
     {

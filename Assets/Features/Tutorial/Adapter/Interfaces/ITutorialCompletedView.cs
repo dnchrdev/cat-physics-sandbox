@@ -1,7 +1,6 @@
 ﻿using System;
-using Feature.UI;
 
-namespace Feature.Tutorial
+namespace Features.Tutorial.Adapter.Interfaces
 {
     public interface ITutorialCompletedView
     {

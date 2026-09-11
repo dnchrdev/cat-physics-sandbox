@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Feature.PhysicsInteraction
+namespace Features.PhysicsInteraction.Infrastructure.Configs
 {
     [CreateAssetMenu(fileName = "InteractionControllerConfig", menuName = "Configs/InteractionControllerConfig")]
         public class InteractionControllerConfig : ScriptableObject

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Feature.EnemyFeature
+namespace Features.Enemy.Insrastructure
 {
     public class PatrolPoints : MonoBehaviour
     {
