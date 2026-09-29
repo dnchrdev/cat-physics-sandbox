@@ -2,7 +2,6 @@
 using UnityEditor;
 using System.Collections.Generic;
 #if TMP_YG2
-using TMPro;
 #endif
 
 namespace YG.LanguageLegacy

@@ -318,10 +318,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 516698497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlight: {fileID: 1667027990}
+  _highlight: {fileID: 0}
   _greyOverlay: {fileID: 0}
 --- !u!114 &516698500
 MonoBehaviour:
@@ -958,7 +958,6 @@ GameObject:
   - component: {fileID: 903196034}
   - component: {fileID: 903196033}
   - component: {fileID: 903196032}
-  - component: {fileID: 903196035}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1053,19 +1052,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &903196035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903196030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b277a125b903a244aa4b17ed17038157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CanvasSortOrder
-  _sortOrder: 0
 --- !u!1 &1059328178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,10 +1289,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124383827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlight: {fileID: 0}
+  _highlight: {fileID: 1720799750}
   _greyOverlay: {fileID: 0}
 --- !u!1 &1225515366
 GameObject:
@@ -1666,7 +1652,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0
@@ -2175,10 +2161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1878453395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlight: {fileID: 1626355843}
+  _highlight: {fileID: 0}
   _greyOverlay: {fileID: 0}
 --- !u!1 &1882851990
 GameObject:
@@ -2268,10 +2254,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882851990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlight: {fileID: 0}
+  _highlight: {fileID: 235404789}
   _greyOverlay: {fileID: 1077583822}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

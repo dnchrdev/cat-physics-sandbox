@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ namespace Features.Quests.Infrastructure.Config
     {
         public string Name;
         public int TargetProgress;
-        public string DescriptionRU; 
+        public string DescriptionRU;
         public string DescriptionENG;
     }
 
@@ -17,25 +17,24 @@ namespace Features.Quests.Infrastructure.Config
     public class QuestsConfig : ScriptableObject
     {
         [field: SerializeField] public string FirstQuestName { get; private set; }
-        
         [SerializeField] private List<QuestData> _quests;
 
         private void OnValidate()
         {
-            if (string.IsNullOrWhiteSpace(FirstQuestName)) throw new Exception("First quest name is invalid");
+            if (string.IsNullOrWhiteSpace(FirstQuestName))
+                Debug.LogWarning($"{name}: first quest name is not set.", this);
         }
 
         public QuestData GetQuest(string name)
         {
-            foreach (var quest in _quests) 
-            { 
-                if(quest.Name == name)
+            foreach (var quest in _quests)
+            {
+                if (quest.Name == name)
                 {
                     return quest;
                 }
             }
-
-            throw new System.Exception($"{name} - is an invalid quest name!");
+            throw new Exception($"{name} - is an invalid quest name!");
         }
     }
 }

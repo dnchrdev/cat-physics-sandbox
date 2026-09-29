@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724fae85303701a448f254d6a9b025a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 58b5ba74f53c4ff1bbe55938fd0313d6, type: 3}
   m_Name: Ragdoll
   m_EditorClassIdentifier: 
-  <DefaultMaterial>k__BackingField: {fileID: 13400000, guid: 3a7f9d76d473fed4ca9eec72de35ef31, type: 2}
-  <DefaultDrag>k__BackingField:
-    <Drag>k__BackingField: 0.05
-    <AngularDrag>k__BackingField: 0.05
+  <DefaultMaterial>k__BackingField: {fileID: 13400000, guid: dc19b86a22e6f424f84ecd38ac439464, type: 2}
+  <DefaultDrag>k__BackingField: 1
+  <DefaultAngularDrag>k__BackingField: 1
   <InteractMaterial>k__BackingField: {fileID: 13400000, guid: dc19b86a22e6f424f84ecd38ac439464, type: 2}
-  <InteractDrag>k__BackingField:
-    <Drag>k__BackingField: 0.05
-    <AngularDrag>k__BackingField: 0.05
+  <InteractDrag>k__BackingField: 0
+  <InteractAngularDrag>k__BackingField: 0

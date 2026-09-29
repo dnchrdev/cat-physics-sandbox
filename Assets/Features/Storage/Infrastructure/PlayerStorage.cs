@@ -1,5 +1,5 @@
-using Features.Core.Utils;
-using Features.Storage.Infrastructure.Interfaces;
+using Features.Shared.Utilities;
+using Features.Storage.UseCases.Ports;
 using YG;
 
 namespace YG
@@ -10,7 +10,7 @@ namespace YG
         public bool TutorialCompleted;
         public int LookSensitivity;
         public int AudioVolume;
-        public bool IsDymanicJoystick;
+        public bool IsDynamicJoystick;
         public bool IsFollowJoystick;
         public int JoystickRadius;
         public float[] PositionsX;
@@ -21,122 +21,44 @@ namespace YG
 
 namespace Features.Storage.Infrastructure
 {
-
-    public class PlayerStorage : IPlayerStorage
+    public sealed class PlayerStorage : IPlayerStorage
     {
+        public Result IsAvailable() =>
+            YG2.isSDKEnabled ? Result.Success() : Result.Failure("Yandex SDK is not valid");
 
-        public float[] GetAnchoredPositionsX()
+        public SaveData Read()
         {
-            return YG2.saves.PositionsX;
-        }
-    
-        public float[] GetAnchoredPositionsY()
-        {
-            return YG2.saves.PositionsY;
-        }
-    
-    
-        public bool[] GetDefaults()
-        {
-            return YG2.saves.IsDefault;
-        }
-    
-        public bool GetIsJoystickDynamic()
-        {
-            return YG2.saves.IsDymanicJoystick;
-        }
-    
-        public bool GetIsJoystickFollow()
-        {
-            return YG2.saves.IsFollowJoystick;
-        }
-    
-        public int GetJoystickRadius()
-        {
-            return YG2.saves.JoystickRadius;
-        }
-    
-        public int GetLookSensitivity()
-        {
-            return YG2.saves.LookSensitivity;
-        }
-    
-        public int GetSavedID()
-        {
-            return YG2.saves.SavedID;
-        }
-    
-        public int GetSoundVolume()
-        {
-            return YG2.saves.AudioVolume;
-        }
-    
-        public bool GetTutorialCompleted()
-        {
-            return YG2.saves.TutorialCompleted;
+            var saves = YG2.saves;
+            return new SaveData
+            {
+                SaveVersion = saves.SavedID,
+                TutorialCompleted = saves.TutorialCompleted,
+                LookSensitivity = saves.LookSensitivity,
+                Volume = saves.AudioVolume,
+                IsDynamicJoystick = saves.IsDynamicJoystick,
+                IsFollowJoystick = saves.IsFollowJoystick,
+                JoystickRadius = saves.JoystickRadius,
+                PositionsX = saves.PositionsX,
+                PositionsY = saves.PositionsY,
+                IsDefaultPosition = saves.IsDefault
+            };
         }
 
-        public Result IsValid()
+        public void Write(SaveData data)
         {
-            if (YG2.isSDKEnabled)
-            {
-                return Result.Success();
-            }
-            else
-            {
-                return Result.Failure("Yandex SDK is not valid");
-            }
+            var saves = YG2.saves;
+            saves.SavedID = data.SaveVersion;
+            saves.TutorialCompleted = data.TutorialCompleted;
+            saves.LookSensitivity = data.LookSensitivity;
+            saves.AudioVolume = data.Volume;
+            saves.IsDynamicJoystick = data.IsDynamicJoystick;
+            saves.IsFollowJoystick = data.IsFollowJoystick;
+            saves.JoystickRadius = data.JoystickRadius;
+            saves.PositionsX = data.PositionsX;
+            saves.PositionsY = data.PositionsY;
+            saves.IsDefault = data.IsDefaultPosition;
         }
-    
-        public void Save()
-        {
-            YG2.SaveProgress();
-        }
-    
-        public void SetAnchoredPositions(float[] positionsX, float[] positionsY)
-        {
-            YG2.saves.PositionsX = positionsX;
-            YG2.saves.PositionsY = positionsY;
-        }
-    
-        public void SetDefaults(bool[] defaults)
-        {
-            YG2.saves.IsDefault = defaults;
-        }
-    
-        public void SetIsJoystickDynamic(bool dynamic)
-        {
-            YG2.saves.IsDymanicJoystick = dynamic;
-        }
-    
-        public void SetIsJoystickFollow(bool follow)
-        {
-            YG2.saves.IsFollowJoystick = follow;
-        }
-    
-        public void SetJoystickRadius(int radius)
-        {
-            YG2.saves.JoystickRadius = radius; 
-        }
-    
-        public void SetLookSensitivity(int sensitivity)
-        {
-            YG2.saves.LookSensitivity = sensitivity;
-        }
-    
-        public void SetSavedID(int id)
-        {
-            YG2.saves.SavedID = id;
-        }
-    
-        public void SetSoundVolume(int volume)
-        {
-            YG2.saves.AudioVolume = volume;
-        }
-    
-        public void SetTutorialCompleted(bool completed)
-        {
-            YG2.saves.TutorialCompleted = completed;
-        }
+
+        public void Commit() => YG2.SaveProgress();
     }
 }

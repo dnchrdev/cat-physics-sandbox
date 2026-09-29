@@ -357,7 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2022217503462366705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}
@@ -596,7 +596,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0
@@ -1656,22 +1656,16 @@ MonoBehaviour:
   _resetAdjustmentButton: {fileID: 8471789856606558511}
   _draggableButtons:
   - Type: 0
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 3515545784497590978}
   - Type: 1
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 4946311779919138852}
   - Type: 2
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 5874619372318857411}
   - Type: 3
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 8653781967198577702}
   - Type: 4
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 4312028390922220706}
   - Type: 5
-    Button: {fileID: 0}
     Draggablebutton: {fileID: 8722592514184487792}
 --- !u!1 &6777194806214450951
 GameObject:
@@ -2243,7 +2237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8733876775332542152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}

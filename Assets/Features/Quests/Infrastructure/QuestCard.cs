@@ -1,5 +1,5 @@
-﻿using System;
-using Features.UI.Presentation.Buttons;
+using System;
+using Features.UI.Infrastructure.Buttons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +18,6 @@ namespace Features.Quests.Infrastructure
 
         private void Awake()
         {
-            //if(_selectButton == null) _selectButton = gameObject.AddComponent<ImageButton>();
             _selectButton.Click += OnQuestSelected;
         }
 

@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 2454758827732320821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -1.44, z: 3.91}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3431630935075955747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3554685374469158180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe759cca285f4f6da489d6c85871fe4e, type: 3}
+  m_Script: {fileID: 11500000, guid: eeebd169f9b3b434484b82a02d2647c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Feature.Tutorial.TutorialCompletedView
   _startGameButton: {fileID: 865946155886296218}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab45d7cd07e5743478955ed0c4a8c381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tutorialCompletedChecker: {fileID: 7341561800711283437}
+  _tutorialRefs: {fileID: 4951494421599003526}
   _tutorialCompletedView: {fileID: 3576124690064282011}
 --- !u!1 &6740429176530475590
 GameObject:
@@ -521,7 +521,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0
@@ -677,9 +677,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8711152062452012644}
-  - component: {fileID: 7341561800711283437}
+  - component: {fileID: 4951494421599003526}
   m_Layer: 0
-  m_Name: TutorialCompletedChecker
+  m_Name: TutorialRefs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ Transform:
   - {fileID: 1627224100307577287}
   m_Father: {fileID: 7791732443316402125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7341561800711283437
+--- !u!114 &4951494421599003526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -710,8 +710,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7085750684764953618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a02d232a5aba34ba3096830879ff81, type: 3}
+  m_Script: {fileID: 11500000, guid: 28f7358df63fc994c88ac9c11735502e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Features.Tutorial.Infrastructure.TutorialRefs
   _finishAreaCenter: {fileID: 1627224100307577287}
-  _radius: 1.5
+  _finishAreaRadius: 1.5

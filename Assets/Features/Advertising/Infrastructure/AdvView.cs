@@ -1,6 +1,6 @@
-﻿using Features.Advertising.Adapter.Interfaces;
-using Features.UI.Infrastructure.Data;
-using Features.UI.Presentation.UIPanelManager.Interfaces;
+using Features.Advertising.InterfaceAdapters.Presenters.Ports;
+using Features.Shared.Entities;
+using Features.Shared.UseCases;
 using TMPro;
 using UnityEngine;
 
@@ -11,7 +11,9 @@ namespace Features.Advertising.Infrastructure
         [SerializeField] private GameObject _interstitialPanel;
         [SerializeField] private TMP_Text _timerText;
 
-        public PanelMode[] PanelModes => new[] { PanelMode.Gameplay };
+        private static readonly PanelMode[] Modes = { PanelMode.Gameplay };
+
+        public PanelMode[] PanelModes => Modes;
         public PanelInput PanelInput => PanelInput.All;
 
         public void InitPanel()
@@ -28,17 +30,17 @@ namespace Features.Advertising.Infrastructure
         {
             gameObject.SetActive(false);
         }
+
+        public void ShowTimer()
+        {
+            _interstitialPanel.SetActive(true);
+        }
+
+        public void HideTimer()
+        {
+            _interstitialPanel.SetActive(false);
+        }
         
-        public void SetActive(bool isActive)
-        {
-            gameObject.SetActive(isActive);
-        }
-
-        public void ShowInterstitialPanel(bool isActive)
-        {
-            _interstitialPanel.SetActive(isActive);
-        }
-
         public void UpdateTimer(int seconds)
         {
             _timerText.SetText("{0}", seconds);

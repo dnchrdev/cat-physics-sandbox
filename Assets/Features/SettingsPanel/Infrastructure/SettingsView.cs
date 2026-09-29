@@ -1,14 +1,14 @@
-﻿using System;
-using Features.SettingsPanel.Adapter.Interfaces;
-using Features.UI.Infrastructure.Data;
-using Features.UI.Presentation.Buttons;
-using Features.UI.Presentation.UIPanelManager.Interfaces;
+using System;
+using Features.SettingsPanel.InterfaceAdapters.Ports;
+using Features.Shared.Entities;
+using Features.Shared.UseCases;
+using Features.UI.Infrastructure.Buttons;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Features.SettingsPanel.Infrastructure
 {
-    public class SettingsView : MonoBehaviour, ISettingsView, IPanel
+    public sealed class SettingsView : MonoBehaviour, ISettingsView, IPanel
     {
         public event Action ExitRequestedEvent;
         public event Action<float> SensitivityChangedEvent;
@@ -16,18 +16,16 @@ namespace Features.SettingsPanel.Infrastructure
         public event Action<float> JoystickRadiusChangedEvent;
         public event Action DynamicJoystickToggledEvent;
         public event Action FollowJoystickToggledEvent;
-
-        public PanelMode[] PanelModes => new [] { PanelMode.Settings };
-        public PanelInput PanelInput => PanelInput.All;
-
+        
         [SerializeField] private ImageButton _exitSettingsButton;
-
         [SerializeField] private Slider _sensitivitySlider;
         [SerializeField] private Slider _volumeSlider;
         [SerializeField] private Slider _joystickSlider;
-
         [SerializeField] private CheckBoxButton _dynamicJoystickButton;
         [SerializeField] private CheckBoxButton _followJoystickButton;
+        
+        public PanelMode[] PanelModes => new[] { PanelMode.Settings };
+        public PanelInput PanelInput => PanelInput.All;
 
         public void InitPanel()
         {
@@ -37,13 +35,10 @@ namespace Features.SettingsPanel.Infrastructure
         public void OnEnterPanel()
         {
             gameObject.SetActive(true);
-
             _exitSettingsButton.Click += OnExitButtonClicked;
-
             _sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
             _volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
             _joystickSlider.onValueChanged.AddListener(OnJoystickRadiusChanged);
-
             _dynamicJoystickButton.Click += OnDynamicJoystickClicked;
             _followJoystickButton.Click += OnFollowJoystickClicked;
         }
@@ -51,24 +46,12 @@ namespace Features.SettingsPanel.Infrastructure
         public void OnExitPanel()
         {
             gameObject.SetActive(false);
-
             _exitSettingsButton.Click -= OnExitButtonClicked;
-
             _sensitivitySlider.onValueChanged.RemoveListener(OnSensitivityChanged);
             _volumeSlider.onValueChanged.RemoveListener(OnVolumeChanged);
             _joystickSlider.onValueChanged.RemoveListener(OnJoystickRadiusChanged);
-
             _dynamicJoystickButton.Click -= OnDynamicJoystickClicked;
             _followJoystickButton.Click -= OnFollowJoystickClicked;
-        }
-
-        public void Tick(float dt)
-        {
-        }
-
-        public void SetActive(bool isActive)
-        {
-            gameObject.SetActive(isActive);
         }
 
         public void SetSensitivityRange(int min, int max, int value)

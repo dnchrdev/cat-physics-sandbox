@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d55d0acaae038149b21b4b935f75c82, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  <GroundMask>k__BackingField:
+  _groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   <WalkAnimationResponse>k__BackingField: 15
   <PatrolSpeed>k__BackingField: 1
   <AnimationPatrolSpeed>k__BackingField: 0.69
@@ -28,11 +28,9 @@ MonoBehaviour:
   <PatrolingIndexMinReverseStrike>k__BackingField: 1
   <PatrolingIndexMaxReverseStrike>k__BackingField: 3
   <HitMinVelocity>k__BackingField: 0.25
-  <PlayerFindDistance>k__BackingField: 25
   <PursuitSpeed>k__BackingField: 1.5
   <AnimationPursuitSpeed>k__BackingField: 0.775
   <PursuitDuration>k__BackingField: 10
-  <VisionSphereRadius>k__BackingField: 0.1
   <AttackStartMaxYawAngle>k__BackingField: 5
   <ApplyDamageMaxYawAngle>k__BackingField: 90
   <AttackRotationSpeed>k__BackingField: 360
@@ -40,11 +38,11 @@ MonoBehaviour:
   <AttackSphereDistance>k__BackingField: 1
   <AttackHorizontalDistance>k__BackingField: 1
   <RespawnDuration>k__BackingField: 5
-  <VisionMask>k__BackingField:
+  _visionMask:
     serializedVersion: 2
     m_Bits: 1
-  <HeadLookYawMaxAngle>k__BackingField: 80
-  <HeadLookPitchMaxAngle>k__BackingField: 80
+  <HeadLookYawMaxAngle>k__BackingField: 90
+  <HeadLookPitchMaxAngle>k__BackingField: 90
   <HeadLookResponse>k__BackingField: 2
   <PatrolingHeadLookMinSeconds>k__BackingField: 2
   <PatrolingHeadLookMaxSeconds>k__BackingField: 4

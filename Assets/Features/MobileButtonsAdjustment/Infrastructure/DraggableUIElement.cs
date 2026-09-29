@@ -1,58 +1,41 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Features.MobileButtonsAdjustment.Infrastructure
-{ 
+{
     [RequireComponent(typeof(RectTransform))]
-    public class DraggableUIElement : MonoBehaviour,
-        IPointerDownHandler, IDragHandler, IPointerUpHandler
+    public class DraggableUIElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
-        public event Action OnDragBegin;
-        public event Action<Vector2> OnDragUpdate;
-        public event Action OnDragEnd;
+        public event Action<Vector2> Dragged;
 
         private RectTransform _rectTransform;
-       // [SerializeField] private Canvas _canvas;
-
         private Vector2 _pointerOffset;
+
+        private RectTransform RectTransform =>
+            _rectTransform != null ? _rectTransform : _rectTransform = GetComponent<RectTransform>();
+
+        public Vector2 AnchoredPosition => RectTransform.anchoredPosition;
+
+        public void SetAnchoredPosition(Vector2 position) => RectTransform.anchoredPosition = position;
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            // Оба в пространстве родителя
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _rectTransform.parent as RectTransform,
-                eventData.position,
-                eventData.pressEventCamera,
-                out Vector2 pointerInParent
-            );
-
-            _pointerOffset = pointerInParent - _rectTransform.anchoredPosition;
-            OnDragBegin?.Invoke();
+            if (TryGetPointerInParent(eventData, out var pointerInParent))
+                _pointerOffset = pointerInParent - RectTransform.anchoredPosition;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    _rectTransform.parent as RectTransform,
-                    eventData.position,
-                    eventData.pressEventCamera,
-                    out Vector2 localPoint)) return;
-
-            OnDragUpdate?.Invoke(localPoint - _pointerOffset);
+            if (TryGetPointerInParent(eventData, out var pointerInParent))
+                Dragged?.Invoke(pointerInParent - _pointerOffset);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            OnDragEnd?.Invoke();
-        }
-
-        public RectTransform GetRectTransform()
-        {
-            if(_rectTransform == null)
-                _rectTransform = GetComponent<RectTransform>();
-            return _rectTransform;
-        }
-        public Vector2 GetAnchoredPosition() => GetRectTransform().anchoredPosition;
+        private bool TryGetPointerInParent(PointerEventData eventData, out Vector2 localPoint) =>
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                RectTransform.parent as RectTransform,
+                eventData.position,
+                eventData.pressEventCamera,
+                out localPoint);
     }
 }

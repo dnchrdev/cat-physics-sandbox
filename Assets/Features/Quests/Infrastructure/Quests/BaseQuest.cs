@@ -1,63 +1,89 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Features.PhysicsInteraction.Adapter.Interaction;
-using Features.PhysicsInteraction.Infrastructure;
-using Features.Quests.Domain;
-using Features.Quests.Infrastructure.Interfaces;
-using Unity.VisualScripting;
+using Features.Interaction.Infrastructure;
+using Features.Interaction.Infrastructure.Interactable;
+using Features.Quests.Entities;
+using Features.Quests.Entities.Objectives;
+using Features.Quests.Infrastructure.Targets;
+using Features.Quests.InterfaceAdapters.Ports;
+using Features.Shared.Entities;
 using UnityEngine;
+using Zenject;
 
 namespace Features.Quests.Infrastructure.Quests
 {
-    public class BaseQuest : MonoBehaviour, IDisposable
+    public class BaseQuest : MonoBehaviour, IQuestSource
     {
-        [field: SerializeField] public string Name { get; private set; }
+        [field: SerializeField] public string QuestName { get; private set; }
+        [SerializeField] protected List<InteractableBehaviour> Targets;
+        [SerializeField] private List<Transform> _additionalTipTransforms;
 
-        [SerializeField] protected List<Interactable> Targets;
-        [SerializeField] private List<Transform> _additionalTips;
+        public event Action<string, QuestTargetEvent> TargetEventOccurred;
 
-        private HashSet<IQuestInteractable> _active = new();
-        private HashSet<IQuestInteractable> _done = new();
+        private readonly List<Action> _unsubscribers = new();
+        private EntityBindResolver _bindResolver;
+        private List<IHintAnchor> _tipAnchors;
 
-        public IEnumerable<IQuestInteractable> GetActiveTargets => _active;
-        public IEnumerable<Transform> GetAdditionalTips => _additionalTips;
-        //public IEnumerable<IQuestInteractable> GetDoneTargets => _done;
+        public int TargetCount => Targets.Count;
 
-        protected QuestsCollection QuestsCollection;
-        protected EntityBindResolver  EntityBindResolver;
+        public IReadOnlyList<IHintAnchor> TipAnchors =>
+            _tipAnchors ??= _additionalTipTransforms.ConvertAll<IHintAnchor>(tip => new TransformHintAnchor(tip));
 
-        public virtual void Init(QuestsCollection questsCollection, EntityBindResolver  entityBindResolver)
+        [Inject]
+        private void Construct(EntityBindResolver bindResolver)
         {
-            QuestsCollection = questsCollection;
-            EntityBindResolver = entityBindResolver;
-
-            _active.AddRange(Targets);
-            Debug.Log($"GetActiveTargets = {GetActiveTargets.ToArray().Length}");
-
+            _bindResolver = bindResolver;
         }
 
-        public virtual void Dispose()
-        {
+        public virtual QuestObjective CreateObjective() => new NoProgressObjective();
 
+        public IHintAnchor GetTargetAnchor(int targetIndex) => new TransformHintAnchor(Targets[targetIndex].transform);
+
+        public void StartReporting()
+        {
+            StopReporting();
+
+            for (var i = 0; i < Targets.Count; i++)
+                Subscribe(i, Targets[i]);
         }
 
-        protected bool TryToDoneTarget(IQuestInteractable questInteractable)
+        public void StopReporting()
         {
-            if (QuestsCollection.IsQuestCompleted(Name) || _done.Contains(questInteractable)) return false;
+            foreach (var unsubscribe in _unsubscribers)
+                unsubscribe();
 
-            _active.Remove(questInteractable);
-            _done.Add(questInteractable);
-
-            return true;
+            _unsubscribers.Clear();
         }
 
-        public void Reset()
+        private void OnDestroy() => StopReporting();
+
+        private void Subscribe(int index, InteractableBehaviour target)
         {
-            _done.Clear();
-            _active.Clear();
-            
-            _active.AddRange(Targets);
+            Action onHit = () => Invoke(QuestTargetEvent.Hit(index));
+            Action<Collision> onCollided = collision => Invoke(ToCollisionEvent(index, target, collision));
+
+            target.Hit += onHit;
+            target.Thrown += onHit;
+            target.Collided += onCollided;
+
+            _unsubscribers.Add(() =>
+            {
+                target.Hit -= onHit;
+                target.Thrown -= onHit;
+                target.Collided -= onCollided;
+            });
         }
+
+        private QuestTargetEvent ToCollisionEvent(int index, InteractableBehaviour target, Collision collision)
+        {
+            var body = target.GetRigidbody();
+            var speed = body != null ? body.linearVelocity.magnitude : 0f;
+            var other = _bindResolver.ResolveAsEntity(collision.collider);
+            var team = other != null ? other.Team : TeamType.None;
+
+            return QuestTargetEvent.Collided(index, target.transform.position.y, speed, team);
+        }
+
+        private void Invoke(QuestTargetEvent targetEvent) => TargetEventOccurred?.Invoke(QuestName, targetEvent);
     }
 }

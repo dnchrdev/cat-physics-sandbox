@@ -1,19 +1,38 @@
-using Features.Scene.Config;
-using Features.Scene.Infrastructure;
+using Features.Scene.Infrastructure.Configs;
+using Features.Scene.InterfaceAdapters;
+using Features.Scene.UseCases;
+using Features.Scene.UseCases.Ports;
+using Features.Shared.UseCases;
 using UnityEngine;
 using Zenject;
 
 namespace Features.Scene.Installer
 {
-    public class SceneInstaller : MonoInstaller
+    public sealed class SceneInstaller : MonoInstaller
     {
         [SerializeField] private ScenesConfig _scenesConfig;
+
         public override void InstallBindings()
         {
-            Container.Bind<SceneLoadingService>().AsSingle();
-            Container.Bind<ISceneLoaderProvider>().To<AddressablesSceneLoaderProvider>().AsSingle();
-            Container.Bind<ScenesConfig>().FromInstance(_scenesConfig).AsSingle();
+            InstallUseCases();
+            InstallAdapters();
+            InstallInfrastructure();
+        }
 
+        private void InstallInfrastructure()
+        {
+            Container.BindInterfacesTo<ScenesConfig>().FromInstance(_scenesConfig).AsSingle();
+        }
+
+        private void InstallAdapters()
+        {
+            Container.Bind<ISceneLoaderProvider>().To<AddressablesSceneLoaderProvider>().AsSingle();
+        }
+
+        private void InstallUseCases()
+        {
+            Container.Bind<ISceneLoadingService>().To<SceneLoadingService>().AsSingle();
+            Container.Bind<ISceneTransition>().To<SceneTransitionUseCase>().AsSingle();
         }
     }
 }

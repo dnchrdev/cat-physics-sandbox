@@ -1,4 +1,4 @@
-Shader "Custom/SilhouetteFillOutline_Clean_BIRP"
+Shader "Custom/SilhouetteFillOutline_Clean_URP"
 {
     Properties
     {
@@ -17,94 +17,44 @@ Shader "Custom/SilhouetteFillOutline_Clean_BIRP"
 
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" "IgnoreProjector"="True" }
-
-        // ---------- PASS 0: depth-only настоящего силуэта ----------
-        // Пишет реальную глубину объекта, чтобы задние грани outline (Pass 1)
-        // корректно резались ZTest'ом и не просвечивали сквозь прозрачный fill.
-        Pass
+        Tags
         {
-            Name "DepthOnly"
-            Cull Back
-            ZWrite On
-            ZTest LEqual
-            ColorMask 0
-
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #include "UnityCG.cginc"
-
-            struct appdata { float4 vertex : POSITION; };
-            struct v2f { float4 pos : SV_POSITION; };
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.vertex);
-                return o;
-            }
-
-            fixed4 frag (v2f i) : SV_Target { return 0; }
-            ENDCG
+            "RenderType"="Transparent"
+            "Queue"="Transparent"
+            "IgnoreProjector"="True"
+            "RenderPipeline"="UniversalPipeline"
         }
 
-        // Pass
-        // {
-        //     Name "Outline"
-        //     Cull Front
-        //     ZWrite On
-        //     ZTest [_ZTest]
-        //     Blend SrcAlpha OneMinusSrcAlpha
-
-        //     CGPROGRAM
-        //     #pragma vertex vert
-        //     #pragma fragment frag
-        //     #include "UnityCG.cginc"
-
-        //     fixed4 _OutlineColor;
-        //     float _OutlineWidth;
-
-        //     struct appdata
-        //     {
-        //         float4 vertex : POSITION;
-        //         float3 normal : NORMAL;
-        //     };
-
-        //     struct v2f { float4 pos : SV_POSITION; };
-
-        //     v2f vert (appdata v)
-        //     {
-        //         v2f o;
-        //         float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-        //         float3 worldNormal = normalize(mul((float3x3)unity_ObjectToWorld, v.normal));
-        //         worldPos += worldNormal * _OutlineWidth;
-        //         o.pos = mul(UNITY_MATRIX_VP, float4(worldPos, 1.0));
-        //         return o;
-        //     }
-
-        //     fixed4 frag (v2f i) : SV_Target { return _OutlineColor; }
-        //     ENDCG
-        // }
+        // Note: the original BIRP shader had a "DepthOnly" pass here that
+        // existed only to support a commented-out Outline pass. It was
+        // removed because two separately compiled passes writing/testing
+        // depth against the same mesh are not guaranteed bit-identical
+        // (no `invariant` qualifier), which made SilhouetteFill fail its
+        // ZTest and rendered the whole object invisible.
 
         Pass
         {
             Name "SilhouetteFill"
+            Tags { "LightMode"="UniversalForward" }
             Cull Back
             ZWrite Off
             ZTest [_ZTest]
             Blend SrcAlpha OneMinusSrcAlpha
 
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
-            sampler2D _MainTex;
-            fixed4 _FillColor;
-            float _PatternScale;
-            float _PatternOffsetX;
-            float _PatternOffsetY;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
+
+            CBUFFER_START(UnityPerMaterial)
+                half4 _FillColor;
+                float _PatternScale;
+                float _PatternOffsetX;
+                float _PatternOffsetY;
+            CBUFFER_END
 
             struct appdata { float4 vertex : POSITION; };
 
@@ -117,24 +67,25 @@ Shader "Custom/SilhouetteFillOutline_Clean_BIRP"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(v.vertex);
+                o.pos = TransformObjectToHClip(v.vertex.xyz);
                 o.screenPos = ComputeScreenPos(o.pos);
                 return o;
             }
-              
-            fixed4 frag (v2f i) : SV_Target
+
+            half4 frag (v2f i) : SV_Target
             {
                 float2 screenUV = i.screenPos.xy / i.screenPos.w;
                 screenUV.x *= _ScreenParams.x / _ScreenParams.y;
 
                 float2 patternUV = screenUV * _PatternScale + float2(_PatternOffsetX, _PatternOffsetY);
-                fixed4 pat = tex2D(_MainTex, patternUV);
+                half4 pat = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, patternUV);
 
-                fixed4 col = _FillColor;
-                col.a *= pat.a;
+                half4 col;
+                col.rgb = _FillColor.rgb;
+                col.a = pat.a * _FillColor.a;
                 return col;
             }
-            ENDCG
+            ENDHLSL
         }
     }
 

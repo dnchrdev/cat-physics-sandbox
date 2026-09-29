@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0472f8422c5d12f409cd26fe6fcec690, type: 3}
+  m_Script: {fileID: 11500000, guid: 3663ab8fd5013ab47b3adc4a683cb89e, type: 3}
   m_Name: PlayerCharacter
   m_EditorClassIdentifier: 
-  JumpSpeed: 2
-  CoyoteTime: 0.25
-  SlideFriction: 0.8
-  SlideGravity: 9.8
-  Gravity: 9.8
+  _jumpSpeed: 2
+  _coyoteTime: 0.35
+  _slideFriction: 0.8
+  _slideGravity: 9.8
+  _gravity: 9.8

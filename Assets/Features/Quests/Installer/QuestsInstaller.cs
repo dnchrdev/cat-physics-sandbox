@@ -1,9 +1,14 @@
-using Features.Quests.Adapter;
-using Features.Quests.Application;
-using Features.Quests.Domain;
+using Features.Quests.Entities;
 using Features.Quests.Infrastructure;
 using Features.Quests.Infrastructure.Config;
-using Features.Storage.Domain.Interfaces;
+using Features.Quests.Infrastructure.Factories;
+using Features.Quests.Infrastructure.Managers;
+using Features.Quests.Infrastructure.Repositories;
+using Features.Quests.Infrastructure.Views;
+using Features.Quests.InterfaceAdapters.Controllers;
+using Features.Quests.InterfaceAdapters.Ports;
+using Features.Quests.InterfaceAdapters.Presenters;
+using Features.Quests.UseCases;
 using UnityEngine;
 using Zenject;
 
@@ -13,52 +18,63 @@ namespace Features.Quests.Installer
     {
         [SerializeField] private QuestsConfig _config;
         [SerializeField] private QuestsRefs _refs;
-        [SerializeField] private PCCurrentQuestView _pcCurrentQuestView;
-        [SerializeField] private MobileCurrentQuestView _mobileCurrentQuestView;
+        [SerializeField] private PCCurrentQuestView _pcView;
+        [SerializeField] private MobileCurrentQuestView _mobileView;
         [SerializeField] private AllQuestsView _allQuestsView;
         [SerializeField] private QuestHintsView _questHintsView;
 
-        private IReadOnlyControlSettings _controlSettings;
-
-        [Inject]
-        private void Construct(IReadOnlyControlSettings controlSettings)
-        {
-            _controlSettings = controlSettings;
-        }
-
         public override void InstallBindings()
         {
-            Container.Bind<GameStartedUseCase>().AsSingle();
-            Container.Bind<HintShowUseCase>().AsSingle();
-            Container.Bind<ResetAllQuestsUseCase>().AsSingle();
-            Container.Bind<QuestCardFactory>().AsSingle();
-            Container.Bind<QuestCaldsManager>().AsSingle();
-            Container.BindInterfacesAndSelfTo<QuestTipsManager>().AsSingle();
-            Container.Bind<HintsFactory>().AsSingle();
+            InstallEntities();
+            InstallUseCases();
+            InstallInterfaceAdapters();
+            InstallInfrastructure();
+        }
 
+        private void InstallEntities()
+        {
+            Container.Bind<QuestsCollection>().AsSingle();
+        }
+
+        private void InstallUseCases()
+        {
+            Container.Bind<CurrentQuestReporter>().AsSingle();
+            Container.BindInterfacesTo<StartQuestsUseCase>().AsSingle();
+            Container.Bind<RecordQuestProgressUseCase>().AsSingle();
+            Container.Bind<RequestQuestHintsUseCase>().AsSingle();
+            Container.Bind<SelectQuestUseCase>().AsSingle();
+            Container.Bind<ResetAllQuestsUseCase>().AsSingle();
+            Container.Bind<QuestListUseCase>().AsSingle();
+            Container.Bind<QuestsNavigationUseCase>().AsSingle();
+        }
+
+        private void InstallInterfaceAdapters()
+        {
+            Container.BindInterfacesTo<QuestProgressController>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<QuestsUIController>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<CurrentQuestPresenter>().AsSingle();
+            Container.BindInterfacesTo<QuestHintsPresenter>().AsSingle();
+            Container.BindInterfacesTo<QuestListPresenter>().AsSingle();
+        }
+
+        private void InstallInfrastructure()
+        {
             Container.Bind<QuestsConfig>().FromInstance(_config).AsSingle();
             Container.Bind<QuestsRefs>().FromInstance(_refs).AsSingle();
-            Container.Bind<QuestsCollection>().AsSingle();
+            Container.BindInterfacesTo<QuestsRepository>().AsSingle();
 
-            if (_controlSettings.IsMobile)
-            {
-                Container.BindInterfacesTo<MobileCurrentQuestView>().FromInstance(_mobileCurrentQuestView).AsSingle();
-                Container.BindInterfacesTo<CurrentQuestPresenter>().AsSingle().NonLazy();;
-                _pcCurrentQuestView.gameObject.SetActive(false);
-            }
-            else
-            {
-                Container.BindInterfacesTo<PCCurrentQuestView>().FromInstance(_pcCurrentQuestView).AsSingle();
-                Container.BindInterfacesTo<CurrentQuestPresenter>().AsSingle().NonLazy();
-                _mobileCurrentQuestView.gameObject.SetActive(false);
-            }
+            foreach (var quest in _refs.GetQuests())
+                Container.Bind<IQuestSource>().FromInstance(quest);
 
-            Container.BindInterfacesAndSelfTo<AllQuestsPresenter>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<QuestHintsPresenter>().AsSingle().NonLazy();
+            Container.Bind<QuestCardFactory>().AsSingle();
+            Container.Bind<HintObjectFactory>().AsSingle();
+            Container.BindInterfacesTo<QuestCardsManager>().AsSingle();
+            Container.BindInterfacesTo<QuestHintsManager>().AsSingle();
 
-            Container.BindInterfacesTo<AllQuestsView>().FromInstance(_allQuestsView).AsSingle();
-            Container.BindInterfacesTo<QuestHintsView>().FromInstance(_questHintsView).AsSingle();
-            
+            Container.BindInterfacesTo<PCCurrentQuestView>().FromInstance(_pcView).AsSingle();
+            Container.BindInterfacesTo<MobileCurrentQuestView>().FromInstance(_mobileView).AsSingle();
+            Container.BindInterfacesAndSelfTo<AllQuestsView>().FromInstance(_allQuestsView).AsSingle();
+            Container.BindInterfacesAndSelfTo<QuestHintsView>().FromInstance(_questHintsView).AsSingle();
         }
     }
 }

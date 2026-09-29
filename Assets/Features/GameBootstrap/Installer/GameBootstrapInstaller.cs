@@ -1,15 +1,25 @@
-using UnityEngine;
+using Features.GameBootstrap.InterfaceAdapters;
+using Features.GameBootstrap.UseCases;
 using Zenject;
 
 namespace Features.GameBootstrap.Installer
 {
     public class GameBootstrapInstaller : MonoInstaller
     {
-        [SerializeField] private GameBootstrap _gameBootstrap;
-
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<GameBootstrap>().FromInstance(_gameBootstrap).AsSingle();
+            InstallAdapters();
+            InstallUseCases();
+        }
+        
+        private void InstallAdapters()
+        {
+            Container.BindInterfacesTo<GameBootstrapController>().AsSingle();
+        }
+        
+        private void InstallUseCases()
+        {
+            Container.Bind<GameLaunchUseCase>().AsSingle();
         }
     }
 }

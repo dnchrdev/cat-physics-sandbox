@@ -1,6 +1,6 @@
-﻿using System;
-using Features.MainMenu.Adapter.Interfaces;
-using Features.UI.Presentation.Buttons;
+using System;
+using Features.MainMenu.InterfaceAdapters.Ports;
+using Features.UI.Infrastructure.Buttons;
 using UnityEngine;
 
 namespace Features.MainMenu.Infrastructure
@@ -21,7 +21,7 @@ namespace Features.MainMenu.Infrastructure
         [SerializeField] private ImageButton _pcControlButton;
         [SerializeField] private ImageButton _mobileControlButton;
 
-        public void SubscribeButtons()
+        private void Awake()
         {
             _tutorialButton.Click += OnTutorialButtonClicked;
             _startGameButton.Click += OnStartGameButtonClicked;
@@ -29,7 +29,7 @@ namespace Features.MainMenu.Infrastructure
             _mobileControlButton.Click += OnMobileControlButtonClicked;
         }
 
-        public void UnsubscribeButtons()
+        private void OnDestroy()
         {
             _tutorialButton.Click -= OnTutorialButtonClicked;
             _startGameButton.Click -= OnStartGameButtonClicked;
@@ -45,9 +45,9 @@ namespace Features.MainMenu.Infrastructure
                 _startGameButton.Disable();
         }
 
-        public void ShowControlChosePanel(bool isActive)
+        public void ShowControlChoosePanel(bool isVisible)
         {
-            _controlPanel.gameObject.SetActive(isActive);
+            _controlPanel.SetActive(isVisible);
         }
 
         private void OnTutorialButtonClicked() => TutorialButtonClickedEvent?.Invoke();

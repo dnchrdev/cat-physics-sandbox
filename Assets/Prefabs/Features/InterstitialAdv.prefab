@@ -326,7 +326,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3131150867496784179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42861b048eaf4ff3a2da5a9702e156d1, type: 3}
+  m_Script: {fileID: 11500000, guid: fbad7ffe1f6615548b68b6913ba59ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interstitialPanel: {fileID: 4681287664701671213}
@@ -489,7 +489,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
     languages:
       ru: 1
       en: 1
-      tr: 0
+      tr: 1
       az: 0
       be: 0
       he: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using Features.Camera.Entities;
+using UnityEngine;
 
 namespace Features.Camera.Infrastructure.Config
 {
@@ -11,7 +12,7 @@ namespace Features.Camera.Infrastructure.Config
         [field: SerializeField, Range(0, 100)] public float MoveSpeedSmoothing { get; private set; }
         [field: SerializeField, Range(0, 100)] public float TurnSpeedSmoothing { get; private set; }
         [field: SerializeField, Range(0, 100)] public float DeadPlayerTurnSpeedResponse { get; private set; }
-        
+
         [field: Header("Headbob")]
         [field: SerializeField] public float BobSpeedMin { get; private set; } = 0f;
         [field: SerializeField] public float BobAmplitudeMin { get; private set; } = 0.01f;
@@ -21,7 +22,6 @@ namespace Features.Camera.Infrastructure.Config
         [field: SerializeField] public float BobAmplitudeMax { get; private set; } = 0.05f;
         [field: SerializeField] public float BobFrequencyMax { get; private set; } = 2.5f;
 
-        [field: SerializeField] public float BobHorizontalMultiplier { get; private set; } = 0.5f;
         [field: SerializeField] public float BobAmplitudeResponse { get; private set; } = 8.0f;
         [field: SerializeField] public float BobFrequencyResponse { get; private set; } = 4.0f;
         [field: SerializeField] public float BobDecayDamping { get; private set; } = 0.12f;
@@ -37,7 +37,17 @@ namespace Features.Camera.Infrastructure.Config
         [field: SerializeField] public float SlideStrength { get; private set; } = 1f;
         [field: SerializeField] public float StrengthResponse { get; private set; } = 1f;
 
-
+        public CameraSettings ToSettings() =>
+            new(
+                new RotationConfig(MinPitchLimit, MaxPitchLimit, TurnSpeedSmoothing),
+                new HeadbobConfig(
+                    BobSpeedMin, BobSpeedMax,
+                    BobAmplitudeMin, BobAmplitudeMax,
+                    BobFrequencyMin, BobFrequencyMax,
+                    BobAmplitudeResponse, BobFrequencyResponse,
+                    BobDecayDamping,
+                    BobSlideAmplitude, BobSlideFrequency),
+                new LeanConfig(AttackDamping, DecayDamping, MoveStrength, SlideStrength, StrengthResponse),
+                DeadPlayerTurnSpeedResponse);
     }
-
 }

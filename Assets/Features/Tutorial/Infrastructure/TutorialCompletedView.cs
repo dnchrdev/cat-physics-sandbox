@@ -1,17 +1,19 @@
-﻿using System;
-using Features.Tutorial.Adapter.Interfaces;
-using Features.UI.Infrastructure.Data;
-using Features.UI.Presentation.Buttons;
-using Features.UI.Presentation.UIPanelManager.Interfaces;
+using System;
+using Features.Shared.Entities;
+using Features.Shared.UseCases;
+using Features.Tutorial.InterfaceAdapters.Ports;
+using Features.UI.Infrastructure.Buttons;
 using UnityEngine;
 
 namespace Features.Tutorial.Infrastructure
 {
-    public class TutorialCompletedView : MonoBehaviour, ITutorialCompletedView, IPanel
+    public sealed class TutorialCompletedView : MonoBehaviour, ITutorialCompletedView, IPanel
     {
+        private static readonly PanelMode[] Modes = { PanelMode.TutorialCompleted };
+
         public event Action StartGameRequestedEvent;
 
-        public PanelMode[] PanelModes => new[] { PanelMode.TutorialCompleted };
+        public PanelMode[] PanelModes => Modes;
         public PanelInput PanelInput => PanelInput.All;
 
         [SerializeField] private ImageButton _startGameButton;
@@ -24,24 +26,13 @@ namespace Features.Tutorial.Infrastructure
         public void OnEnterPanel()
         {
             gameObject.SetActive(true);
-
             _startGameButton.Click += OnStartGameButtonClicked;
         }
 
         public void OnExitPanel()
         {
             gameObject.SetActive(false);
-
             _startGameButton.Click -= OnStartGameButtonClicked;
-        }
-
-        public void Tick(float dt)
-        {
-        }
-
-        public void SetActive(bool isActive)
-        {
-            gameObject.SetActive(isActive);
         }
 
         private void OnStartGameButtonClicked() => StartGameRequestedEvent?.Invoke();

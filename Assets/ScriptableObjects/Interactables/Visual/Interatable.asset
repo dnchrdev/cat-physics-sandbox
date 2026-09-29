@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3acda05a74b580f428de96ebed4f3bd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f33ec0e5cf34f9a97fb3f3a0c7e2299, type: 3}
   m_Name: Interatable
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Features.Interaction.Infrastructure.Configs.InteractableVisualConfig
   <UseGrabPositionIndication>k__BackingField: 1
   <UseOutlineOnFocus>k__BackingField: 1
-  <OutlineModeOnFocus>k__BackingField: 0
-  <OutlineColorOnFocus>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
+  <OutlineModeOnFocus>k__BackingField: 1
+  <OutlineColorOnFocus>k__BackingField: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
   <OutlineWidthOnFocus>k__BackingField: 15
-  <OnGrabMaterial>k__BackingField: {fileID: 0}
+  <OnGrabMaterial>k__BackingField: {fileID: 2100000, guid: 5c973e2e997beff4794ac8712f817284, type: 2}
   <UseOutlineOnGrab>k__BackingField: 1
   <OutlineModeOnGrab>k__BackingField: 0
-  <OutlineColorOnGrab>k__BackingField: {r: 0, g: 0, b: 1, a: 1}
+  <OutlineColorOnGrab>k__BackingField: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
   <OutlineWidthOnGrab>k__BackingField: 15

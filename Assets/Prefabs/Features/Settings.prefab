@@ -107,8 +107,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2939161063696535850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -543,12 +543,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2193820490644148879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3ecb5284868a34c88c7ce8945c95a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c62471cf5e8e994ebfabb931def7de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}
   _greyOverlay: {fileID: 0}
-  _checked: {fileID: 6383069598284614399}
+  _checkedCoverImage: {fileID: 6383069598284614399}
 --- !u!1 &2478529621798614339
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ RectTransform:
   m_Father: {fileID: 8323143368480054081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -702,8 +702,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3633625502800278613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.55, y: 0}
-  m_AnchorMax: {x: 0.55, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -970,12 +970,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4017686830912035375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3ecb5284868a34c88c7ce8945c95a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c62471cf5e8e994ebfabb931def7de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}
   _greyOverlay: {fileID: 0}
-  _checked: {fileID: 6553552681512160193}
+  _checkedCoverImage: {fileID: 6553552681512160193}
 --- !u!1 &4021532942539176603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1820,7 @@ RectTransform:
   m_Father: {fileID: 7098614017178953536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.55, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1971,7 +1971,7 @@ RectTransform:
   m_Father: {fileID: 4058648448225692605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.55, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2723,8 +2723,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9933160123180128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.55, y: 0}
-  m_AnchorMax: {x: 0.55, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2853,13 +2853,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7363286880986985943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4af7220f5b34692bf96d6075e2e3e9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 00f176fcd995e86479015afe05468edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Feature.SettingsPanel.SettingsView
   _exitSettingsButton: {fileID: 2768912574584641991}
   _sensitivitySlider: {fileID: 4826094053912940836}
   _volumeSlider: {fileID: 1218676009478898201}
-  _joystickSlider: {fileID: 1218676009478898201}
+  _joystickSlider: {fileID: 2618408319920620173}
   _dynamicJoystickButton: {fileID: 6469976199704727179}
   _followJoystickButton: {fileID: 6277145963892602524}
 --- !u!1 &7471871263222809410
@@ -3328,7 +3328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8079615159457895004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highlight: {fileID: 0}

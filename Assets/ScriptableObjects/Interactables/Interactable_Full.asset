@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3ad668faea14844b15bffee90678d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d27e87ba002463a965a36950027a4b6, type: 3}
   m_Name: Interactable_Full
   m_EditorClassIdentifier: 
   <IsRagdoll>k__BackingField: 0
   <IsKinematicOnStart>k__BackingField: 0
-  <UseCustomHandDistance>k__BackingField: 0
-  <CustomHandDistance>k__BackingField: 0.25
+  <UseCustomHandDistance>k__BackingField: 1
+  <CustomHandDistance>k__BackingField: 0.35
   <AnchorDirection>k__BackingField: {x: 0, y: 0, z: 1}
-  <InteractableVisualConfig>k__BackingField: {fileID: 11400000, guid: 8115c241c0a7de74593ed51616154861, type: 2}
+  <InteractableVisualConfig>k__BackingField: {fileID: 11400000, guid: 0b9a8534af4045441bcfd9688b4003ac, type: 2}
   <InteractablePhysicsConfig>k__BackingField: {fileID: 11400000, guid: e93c57e1639752a47a509ccba5158aa6, type: 2}
   <HitType>k__BackingField: 1
   <GrabType>k__BackingField: 1

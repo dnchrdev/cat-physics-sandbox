@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 7552915695330924036}
   - component: {fileID: 5013086007085943174}
   - component: {fileID: 6495283005803839500}
-  - component: {fileID: 2427285100086105530}
+  - component: {fileID: 4242881308678315101}
   m_Layer: 0
   m_Name: QuestCard
   m_TagString: Untagged
@@ -380,10 +380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ce4ad1fd1e4e14eb9078187d1214a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectButton: {fileID: 2427285100086105530}
+  _selectButton: {fileID: 4242881308678315101}
   _description: {fileID: 3724987145506368951}
   _fillImage: {fileID: 8079619643885120356}
---- !u!114 &2427285100086105530
+--- !u!114 &4242881308678315101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,9 +392,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6429941256496470088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4e68f5646037e45ba77944627a2db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24257987fb49abc48b93c5aeedd05a7d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Features.UI.Infrastructure.Buttons.ImageButton
   _highlight: {fileID: 0}
   _greyOverlay: {fileID: 0}
 --- !u!1 &7662321806392243696

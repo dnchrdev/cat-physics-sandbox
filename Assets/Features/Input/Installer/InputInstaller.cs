@@ -1,5 +1,5 @@
-using Features.Input.Infrastructure;
-using Features.Storage.Domain.Interfaces;
+using Features.Input.InterfaceAdapters;
+using Features.Shared.Entities.Ports;
 using Zenject;
 
 namespace Features.Input.Installer
@@ -16,14 +16,10 @@ namespace Features.Input.Installer
 
         public override void InstallBindings()
         {
-            if (_controlSettings.IsMobile)
-            {
-                Container.BindInterfacesTo<MobileInput>().AsSingle();
-            }
-            else
-            {
+            Container.BindInterfacesAndSelfTo<GameInput>().AsSingle();
+
+            if (!_controlSettings.IsMobile)
                 Container.BindInterfacesTo<DesktopInput>().AsSingle();
-            }
         }
     }
 }

@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4186060553140189485}
-  - component: {fileID: 5228236973891225775}
+  - component: {fileID: 2699957032072175571}
   m_Layer: 0
   m_Name: LoadingScreenView
   m_TagString: Untagged
@@ -79,7 +79,7 @@ Transform:
   - {fileID: 2531404235300411137}
   m_Father: {fileID: 8152300566608248292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5228236973891225775
+--- !u!114 &2699957032072175571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,9 +88,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2659516709266005081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e7c284141fbd446ae037ea7761c302, type: 3}
+  m_Script: {fileID: 11500000, guid: 28aad8b2953bcea42ae61e67491cdaf4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Features.UI.Infrastructure.Views.LoadingScreenView
   _loadingPanel: {fileID: 495790128652228871}
   _loadingScreen: {fileID: 7830784052461980978}
   _loadingCircle: {fileID: 3973876873357352878}
@@ -129,7 +129,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4186060553140189485}
-  - {fileID: 6982165545292582572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3202852065876705947
@@ -176,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b38617881c50ec44921f49869dbe2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyService: {fileID: 1147619320061949911}
 --- !u!114 &7624947545112517281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,52 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f525090f2c1bcc48a033b8162bb9005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreenView: {fileID: 5228236973891225775}
-  _gameplayPanelConfig: {fileID: 11400000, guid: 18c9c8931e3503b4ea2f3e41a3ee169c, type: 2}
---- !u!1 &3155060601394642120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6982165545292582572}
-  - component: {fileID: 1147619320061949911}
-  m_Layer: 0
-  m_Name: DestroyService
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6982165545292582572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155060601394642120}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8152300566608248292}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1147619320061949911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155060601394642120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b5c20473fc5e34289ecb9ff521277a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _loadingScreenView: {fileID: 2699957032072175571}
+  _panelsConfig: {fileID: 11400000, guid: 18c9c8931e3503b4ea2f3e41a3ee169c, type: 2}
 --- !u!1 &5675147634949742557
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +226,6 @@ GameObject:
   - component: {fileID: 3132309313547599164}
   - component: {fileID: 3565628418768181526}
   - component: {fileID: 3400242882891764004}
-  - component: {fileID: 8946885594563290543}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -364,19 +317,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8946885594563290543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5675147634949742557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b277a125b903a244aa4b17ed17038157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Feature.Shared.CanvasSortOrder
-  _sortOrder: 100
 --- !u!1 &7405941155180692654
 GameObject:
   m_ObjectHideFlags: 0

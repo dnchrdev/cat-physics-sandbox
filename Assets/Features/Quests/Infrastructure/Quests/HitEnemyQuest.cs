@@ -1,46 +1,12 @@
-﻿using Features.PhysicsInteraction.Adapter.Interaction;
-using Features.Quests.Domain;
-using Features.Quests.Infrastructure.Interfaces;
-using Features.Shared;
+using Features.Quests.Entities.Objectives;
 using UnityEngine;
 
 namespace Features.Quests.Infrastructure.Quests
 {
-    public class HitEnemyQuest: BaseQuest
+    public class HitEnemyQuest : BaseQuest
     {
-        [SerializeField] private float _minInteractableHitVelocity = 0.1f;
-        
-        public override void Init(QuestsCollection questCollection, EntityBindResolver entityBindResolver)
-        {
-            base.Init(questCollection,  entityBindResolver);
+        [SerializeField] private float _minHitVelocity = 0.1f;
 
-            foreach (var interactable in Targets)
-            {
-                interactable.QuestColliderHitEvent += OnHit;
-            }
-        }   
-
-        public override void Dispose()
-        {
-            foreach (var interactable in Targets)
-            {
-                interactable.QuestColliderHitEvent -= OnHit;
-            }
-        }
-
-        void OnHit(IQuestInteractable item, Collision collision)
-        {
-            if(item.GetRigidbody().linearVelocity.magnitude < _minInteractableHitVelocity) return;
-            
-            var bind = EntityBindResolver.ResolveEntityBind(collision.collider);
-            
-            if (bind == null) return;
-            
-            if(bind.AsEntity.Team == TeamType.Enemy)
-                QuestsCollection.AddProgress(Name);
-            
-        }
-
-        
+        public override QuestObjective CreateObjective() => new HitEnemyObjective(_minHitVelocity);
     }
 }

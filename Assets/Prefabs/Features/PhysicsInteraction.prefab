@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0434\u0430\u0440\u0438\u0442\u044C"
+  m_text: "\u041B\u041A\u041C - \u0423\u0434\u0430\u0440\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0437\u044F\u0442\u044C"
+  m_text: "\u041F\u041A\u041C - \u0412\u0437\u044F\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1914909366111658526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227777180770391029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92ba9dd7ee9c9e45b0eae64efb3e5ba, type: 3}
+  m_Script: {fileID: 11500000, guid: d8ae8debc2ae47ad849f1b04125a8e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1476662976320348411
@@ -539,7 +539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &206043790090978757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -643,11 +643,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1809773923086150344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c59a18d7aaf7104984e83d7603256f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d1250e0c621a448baefd6dfbe1d85cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionAndHint: []
-  _afterGrabhintObj: []
+  _interactionAndHint:
+  - InteractionType: 1
+    HintObj: []
+  - InteractionType: 2
+    HintObj: []
+  - InteractionType: 3
+    HintObj: []
+  _afterGrabHintObj:
+  - {fileID: 0}
 --- !u!1 &2692657781833220525
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5459548146741707247}
-  - component: {fileID: 4957319540297109446}
+  - component: {fileID: 1608846017335569360}
   m_Layer: 0
   m_Name: Rig
   m_TagString: Untagged
@@ -680,7 +687,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6083387396341737221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4957319540297109446
+--- !u!114 &1608846017335569360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -689,10 +696,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2692657781833220525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcba4b1613afdb458bfad3d2056cf2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e3502e2188042e3abbb6e98baae12a0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  <HandRB>k__BackingField: {fileID: 2722142682499782301}
+  m_EditorClassIdentifier: Assembly-CSharp::Features.Interaction.Infrastructure.Interaction.InteractableHandRefs
+  <HandRigidbody>k__BackingField: {fileID: 2722142682499782301}
   <HandJoint>k__BackingField: {fileID: 972651622919969369}
 --- !u!1 &2702965463641379934
 GameObject:
@@ -703,7 +710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6083387396341737221}
-  - component: {fileID: 6982838836926393966}
+  - component: {fileID: 4046412015435005614}
   m_Layer: 0
   m_Name: PhysicsInteraction
   m_TagString: Untagged
@@ -729,7 +736,7 @@ Transform:
   - {fileID: 7984564324087368549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6982838836926393966
+--- !u!114 &4046412015435005614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -738,15 +745,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2702965463641379934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d8b287fa59f9644aa93062411b8c14, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d05ac2ab77742c2bf918d0f193f18dd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  _handRig: {fileID: 4957319540297109446}
+  m_EditorClassIdentifier: Assembly-CSharp::Features.Interaction.Installer.InteractionInstaller
+  _handRefs: {fileID: 1608846017335569360}
   _interactionRoot: {fileID: 4081955961545571102}
   _interactionControllerConfig: {fileID: 11400000, guid: 2a88111225e91ea48ad6a7c42193a718, type: 2}
   _pcInteractionHintsShower: {fileID: 1998544199243676500}
   _mobileInteractionHintsShower: {fileID: 7600751820211333775}
-  _interactionIndication: {fileID: 4482961902200733272}
+  _interactionIndicator: {fileID: 4482961902200733272}
 --- !u!1 &2903425064044820527
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7992802888997528463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -883,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1149,7 +1156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3814132956571983465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4019aa5e4ba4e5f4f8301169b1d7469f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ceaf5ae495a45b7b60e02099a4a7ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _indication: {fileID: 5426510410727185084}
@@ -1475,7 +1482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0437\u044F\u0442\u044C"
+  m_text: "\u041F\u041A\u041C - \u0412\u0437\u044F\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1525,7 +1532,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -1676,7 +1683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2360460164826061200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1709,7 +1716,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6149116313325260592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c59a18d7aaf7104984e83d7603256f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d1250e0c621a448baefd6dfbe1d85cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionAndHint:
@@ -1722,7 +1729,7 @@ MonoBehaviour:
   - InteractionType: 3
     HintObj:
     - {fileID: 1476662976320348411}
-  _afterGrabhintObj:
+  _afterGrabHintObj:
   - {fileID: 727052019208953692}
 --- !u!1 &6215958017074149563
 GameObject:
@@ -1865,7 +1872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u044C"
+  m_text: "\u041F\u041A\u041C - \u041F\u043E\u043B\u043E\u0436\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1915,7 +1922,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -2002,7 +2009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0411\u0440\u043E\u0441\u0438\u0442\u044C"
+  m_text: "\u041B\u041A\u041C - \u0411\u0440\u043E\u0441\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2052,7 +2059,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -2091,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2753351432849546627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2133,7 +2140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2305,7 +2312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0434\u0430\u0440\u0438\u0442\u044C"
+  m_text: "\u041B\u041A\u041C - \u0423\u0434\u0430\u0440\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2355,7 +2362,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1

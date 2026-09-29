@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a984a583d45916743ba5307c22c3ed09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraRig: {fileID: 7965259214435199341}
-  _cameraPhysics: {fileID: 8580913633053860307}
+  _cameraRefs: {fileID: 7965259214435199341}
+  _cameraPhysical: {fileID: 8580913633053860307}
   _cameraConfig: {fileID: 11400000, guid: 9d0cadde5df74ed439d7d4cc4555b6f3, type: 2}
 --- !u!1 &9083015370207237693
 GameObject:
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9083015370207237693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b53880eddf2b7d49af04722c9d99fce, type: 3}
+  m_Script: {fileID: 11500000, guid: 48c0297e4d724e1e8adc0fdbd434be53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1865214349364483054}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 7728101907878805840}
   - component: {fileID: 7965259214435199341}
   m_Layer: 0
-  m_Name: Rig
+  m_Name: Refs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9191781783758468269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534aca19d79c55c40aefc448022ce4f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b52fddea69b48a8a8372e973cb548f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <PositionRoot>k__BackingField: {fileID: 1515537273391615123}

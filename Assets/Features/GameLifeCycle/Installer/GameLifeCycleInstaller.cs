@@ -1,4 +1,5 @@
-﻿using Features.GameLifeCycle.Application;
+using Features.GameLifeCycle.InterfaceAdapters;
+using Features.GameLifeCycle.UseCases;
 using Zenject;
 
 namespace Features.GameLifeCycle.Installer
@@ -7,7 +8,18 @@ namespace Features.GameLifeCycle.Installer
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<GameStartedUseCase>().AsSingle().NonLazy();
+            InstallAdapters();
+            InstallUseCases();
+        }
+
+        private void InstallAdapters()
+        {
+            Container.BindInterfacesTo<GameLifeCycleController>().AsSingle();
+        }
+        
+        private void InstallUseCases()
+        {
+            Container.Bind<GameLifeCycleUseCase>().AsSingle();
         }
     }
 }
