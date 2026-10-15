@@ -15,8 +15,10 @@ namespace Features.Interaction.Infrastructure.View
         private static readonly int ZTestId = Shader.PropertyToID("_ZTest");
 
         private readonly MeshRenderer _meshRenderer;
+        private readonly MeshFilter _meshFilter;
         private readonly InteractableVisualConfig _config;
         private readonly Material[] _originalMaterials;
+        private readonly List<Material> _materialsBuffer = new();
         private Material _outlineMaskMaterial;
         private Material _outlineFillMaterial;
 
@@ -24,8 +26,10 @@ namespace Features.Interaction.Infrastructure.View
         {
             _meshRenderer = meshRenderer;
             _config = config;
-            if (_meshRenderer != null)
-                _originalMaterials = _meshRenderer.materials;
+            if (_meshRenderer == null) return;
+
+            _originalMaterials = _meshRenderer.sharedMaterials;
+            _meshFilter = _meshRenderer.GetComponent<MeshFilter>();
         }
 
         public void ShowFocus()
@@ -48,17 +52,17 @@ namespace Features.Interaction.Infrastructure.View
         public void Clear()
         {
             if (_meshRenderer == null || _originalMaterials == null) return;
-            _meshRenderer.materials = _originalMaterials;
+            _meshRenderer.sharedMaterials = _originalMaterials;
         }
 
         private void ApplyMaterial(Material material)
         {
             if (_meshRenderer == null) return;
 
-            var materials = _meshRenderer.materials;
-            for (var i = 0; i < materials.Length; i++)
-                materials[i] = material;
-            _meshRenderer.materials = materials;
+            _meshRenderer.GetSharedMaterials(_materialsBuffer);
+            for (var i = 0; i < _materialsBuffer.Count; i++)
+                _materialsBuffer[i] = material;
+            _meshRenderer.SetSharedMaterials(_materialsBuffer);
         }
 
         private void ApplyOutline(Color color, float width, OutlineMode mode)
@@ -87,18 +91,17 @@ namespace Features.Interaction.Infrastructure.View
             _outlineFillMaterial.SetFloat(ZTestId, (float)fillZTest);
             _outlineFillMaterial.SetFloat(OutlineWidthId, outlineWidth);
 
-            var materials = _meshRenderer.materials.ToList();
-            materials.Add(_outlineMaskMaterial);
-            materials.Add(_outlineFillMaterial);
-            _meshRenderer.materials = materials.ToArray();
+            _meshRenderer.GetSharedMaterials(_materialsBuffer);
+            _materialsBuffer.Add(_outlineMaskMaterial);
+            _materialsBuffer.Add(_outlineFillMaterial);
+            _meshRenderer.SetSharedMaterials(_materialsBuffer);
         }
 
         private void ApplySmoothNormals()
         {
-            var meshFilter = _meshRenderer.GetComponent<MeshFilter>();
-            if (meshFilter == null || meshFilter.sharedMesh == null) return;
+            if (_meshFilter == null || _meshFilter.sharedMesh == null) return;
 
-            var mesh = meshFilter.sharedMesh;
+            var mesh = _meshFilter.sharedMesh;
             if (!SmoothNormalsApplied.Add(mesh)) return;
 
             var groups = mesh.vertices

@@ -5,7 +5,7 @@
     "AudioVolume": 42,
     "IsDynamicJoystick": true,
     "IsFollowJoystick": true,
-    "JoystickRadius": 50,
+    "JoystickRadius": 151,
     "PositionsX": [
         0.0,
         0.0,
@@ -38,5 +38,5 @@
         false,
         false
     ],
-    "idSave": 105
+    "idSave": 106
 }
