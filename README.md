@@ -4,7 +4,7 @@
 
 ## Демо
 
-[▶ Смотреть видео геймплея](media/cat_physics_sandbox.mp4)
+https://github.com/user-attachments/assets/75ee053c-6b06-440e-b22c-14fc97c266a7
 
 ## Цель
  
