@@ -74,4 +74,3 @@ Assets/Features/
 | Factory | Создание врагов из Addressables и сборка интерактивного предмета из сущности, шлюзов и презентера | [`EnemyFactory`](Assets/Features/Enemy/Infrastructure/Spawning/EnemyFactory.cs), [`InteractableFactory`](Assets/Features/Interaction/Infrastructure/Interactable/InteractableFactory.cs) |
 | Repository | Квесты собираются из конфига и объектов сцены за портом `IQuestsRepository` | [`QuestsRepository`](Assets/Features/Quests/Infrastructure/Repositories/QuestsRepository.cs) |
 | Object Pool | Карточки квестов не уничтожаются, а прячутся и переиспользуются | [`QuestCardsManager`](Assets/Features/Quests/Infrastructure/Managers/QuestCardsManager.cs) |
-| DTO | Формат сохранения отделён от SDK и от игровых сущностей | [`SaveData`](Assets/Features/Storage/UseCases/Ports/SaveData.cs) |
