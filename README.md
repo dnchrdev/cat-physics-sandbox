@@ -1,10 +1,13 @@
 # Cat Physics Sandbox
 
-Физическая песочница от первого лица. Игрок в роли кота: хватает и швыряет предметы, сбивает ими человека, который патрулирует комнаты, и выполняет квесты. Сборка под WebGL (Яндекс Игры), управление для ПК и мобильных.
+Физическая песочница от первого лица. Игрок в роли кота: хватает и швыряет предметы, сбивает ими человека, который патрулирует комнаты, и выполняет квесты. 
+
+Сборка под WebGL (Яндекс Игры), управление для PC/Mobile.
+https://yandex.ru/games/app/562872?draft=true&lang=ru
 
 ## Демо
 
-[▶ Смотреть видео геймплея](media/cat_physics_sandbox.mp4)
+https://github.com/user-attachments/assets/75ee053c-6b06-440e-b22c-14fc97c266a7
 
 ## Цель
  
@@ -74,4 +77,3 @@ Assets/Features/
 | Factory | Создание врагов из Addressables и сборка интерактивного предмета из сущности, шлюзов и презентера | [`EnemyFactory`](Assets/Features/Enemy/Infrastructure/Spawning/EnemyFactory.cs), [`InteractableFactory`](Assets/Features/Interaction/Infrastructure/Interactable/InteractableFactory.cs) |
 | Repository | Квесты собираются из конфига и объектов сцены за портом `IQuestsRepository` | [`QuestsRepository`](Assets/Features/Quests/Infrastructure/Repositories/QuestsRepository.cs) |
 | Object Pool | Карточки квестов не уничтожаются, а прячутся и переиспользуются | [`QuestCardsManager`](Assets/Features/Quests/Infrastructure/Managers/QuestCardsManager.cs) |
-| DTO | Формат сохранения отделён от SDK и от игровых сущностей | [`SaveData`](Assets/Features/Storage/UseCases/Ports/SaveData.cs) |
