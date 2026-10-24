@@ -18,137 +18,164 @@ MonoBehaviour:
   - m_GUID: 05f5d81be4597294fb9ececd3883c41b
     m_Address: Assets/ScriptableObjects/Surfaces.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d4427e968e720644b7c4a42a70c0854
     m_Address: Assets/Plugins/SimpleInput/Sprites/FlatLight/Arrows/flatLight23.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a88111225e91ea48ad6a7c42193a718
     m_Address: Assets/ScriptableObjects/InteractionController.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d74e30f760ce5c42ae17645aa84819a
     m_Address: Assets/UITextures/pixel_jump.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e498d1c8094910479dc3e1b768306a4
     m_Address: Fonts & Materials/LiberationSans SDF - Fallback
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3623192ec5ae7f845904f90b9e5e639a
     m_Address: Assets/UITextures/pixel_rightdrop.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 36e335017ad71d54fbb10842863188ae
     m_Address: Packages/com.unity.render-pipelines.core/Runtime/RenderPipelineResources/FallbackShader.shader
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6f701895c491ae24fb40eec073935bfc
     m_Address: Assets/UITextures/WhiteSquare.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7eed05c99fbd64f498a0ce2d0eacb804
     m_Address: Assets/PhysicsMaterials/ZeroFriction.physicMaterial
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 812e13948909e0845b0b8a3016cfeb8b
     m_Address: Assets/Materials/M_Player.mat
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 83b4d2d7539de7a439576f4abc1d8354
     m_Address: Assets/Plugins/SimpleInput/Sprites/ShadedDark/Arrows/shadedDark27.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f586378b4e144a9851e7b34d9b748ee
     m_Address: Fonts & Materials/LiberationSans SDF
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 90e27099d01c07a47a7028e8e64f3f54
     m_Address: Assets/Materials/Shaders/ProceduralGrid.shader
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 933532a4fcc9baf4fa0491de14d08ed7
     m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9d0cadde5df74ed439d7d4cc4555b6f3
     m_Address: Assets/ScriptableObjects/Camera.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9d88b5413377a0941b2185f187ef652f
     m_Address: Assets/UITextures/pixel_settings.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a025adcf9643f2a4fb0c834f20e7ce08
     m_Address: Assets/Materials/M_Grid.mat
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b0f52c134f5fe394caf4b1971dad4135
     m_Address: Assets/UITextures/video.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be6deb8bf525f96498b79add47297699
     m_Address: Assets/Plugins/SimpleInput/Sprites/ShadedDark/Buttons/shadedDark45.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbe53ee11b8b16b4986e16fc2c13abcd
     m_Address: Assets/Plugins/SimpleInput/Sprites/FlatLight/Arrows/flatLight22.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2f20be4a9f1c184485bcdc7bc65e23f
     m_Address: Assets/Plugins/SimpleInput/Sprites/ShadedDark/Arrows/shadedDark26.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3265ab4bf004d28a9537516768c1c75
     m_Address: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e6e9a19c3678ded42a3bc431ebef7dbd
     m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Utils/FallbackError.shader
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e8068bab7ae5edc45ac893cb0a270517
     m_Address: Assets/ScriptableObjects/PlayerCharacter.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec82f38f33c98ad4e9b63e173baec013
     m_Address: Assets/Plugins/SimpleInput/Sprites/FlatDark/flatDark06.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe393ace9b354375a9cb14cdbbc28be4
     m_Address: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: feb4e677e7afc03429ca1c69ca33d783
     m_Address: Assets/Plugins/SimpleInput/Sprites/FlatDark/Joystick/flatDark00.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - common
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0e3cad970ca2aaf478c40f3ecf1ad763, type: 2}

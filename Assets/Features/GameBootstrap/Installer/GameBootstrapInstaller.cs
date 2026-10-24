@@ -15,6 +15,7 @@ namespace Features.GameBootstrap.Installer
         private void InstallAdapters()
         {
             Container.BindInterfacesTo<GameBootstrapController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CommonAssetsHolder>().AsSingle();
         }
         
         private void InstallUseCases()
